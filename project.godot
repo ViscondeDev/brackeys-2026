@@ -8,6 +8,10 @@
 
 config_version=5
 
+[Fmod]
+
+General/live_update=1
+
 [application]
 
 config/name="Farm Crimes"
