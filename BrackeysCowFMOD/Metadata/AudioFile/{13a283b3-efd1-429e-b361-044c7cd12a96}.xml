@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{13a283b3-efd1-429e-b361-044c7cd12a96}">
+		<property name="assetPath">
+			<value>UI/Paperflip-02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{0d33d670-fca5-41df-8bb1-26bf70179dd2}</destination>
+		</relationship>
+	</object>
+</objects>
