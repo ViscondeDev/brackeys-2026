@@ -14,12 +14,14 @@ func _ready() -> void:
 
 
 func load_settings() -> void:
-	for item in level_settings:
+	for i in level_settings.size():
+		var item := level_settings[i]
 		var new_suspect: Suspect = item.suspect
 		for statement in item.claims:
 			var new_claim := Claim.new()
 			new_claim.statement = statement
 			new_suspect.claims.append(new_claim)
+		new_suspect.id = i
 		suspects.append(new_suspect)
 
 
@@ -32,3 +34,7 @@ func setup_suspects_tab() -> void:
 		var out: int = new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button")
+
+
+func update_suspect_info(suspect: Suspect) -> void:
+	suspects[suspect.id] = suspect

@@ -58,4 +58,5 @@ grow_vertical = 2
 
 [node name="SuspectFile" parent="SuspectsTab" unique_id=174276162 instance=ExtResource("2_6h51b")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2

@@ -2,5 +2,7 @@
 class_name ClaimScene
 extends HBoxContainer
 
+var id: int
+
 @onready var statement_label: Label = %Label
 @onready var certainty_menu_button: OptionButton = %OptionButton
