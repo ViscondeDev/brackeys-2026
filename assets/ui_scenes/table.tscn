@@ -60,6 +60,3 @@ grow_vertical = 2
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
-
-[node name="FmodBankLoader" type="FmodBankLoader" parent="." unique_id=1712375275]
-bank_paths = ["res://BrackeysCowFMOD/Build/Desktop//Master.strings.bank", "res://BrackeysCowFMOD/Build/Desktop//Master.bank"]
