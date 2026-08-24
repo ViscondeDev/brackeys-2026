@@ -2,14 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://assets/ui_scenes/table.gd" id="1_6h51b"]
 [ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://assets/ui_scenes/suspect_file.tscn" id="2_6h51b"]
-[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://assets/resource/suspect_claims.gd" id="2_ajlhi"]
-[ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://assets/resource/suspects/madonna.tres" id="4_pa6pc"]
-
-[sub_resource type="Resource" id="Resource_6h51b"]
-script = ExtResource("2_ajlhi")
-suspect = ExtResource("4_pa6pc")
-claims = Array[String](["I was at the barn", "Never seen this bih in my life yo"])
-metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [node name="Table" type="Control" unique_id=1200437378]
 layout_mode = 3
@@ -19,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6h51b")
-suspects = Array[ExtResource("2_ajlhi")]([SubResource("Resource_6h51b")])
 
 [node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
 custom_minimum_size = Vector2(640, 0)

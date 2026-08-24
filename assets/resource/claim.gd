@@ -8,5 +8,5 @@ enum Certainty {
 	UNCERTAIN,
 }
 
-@export var claim: String
+@export var statement: String
 var cenrtainty: Certainty
