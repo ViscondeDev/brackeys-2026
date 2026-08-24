@@ -19,6 +19,13 @@ var suspect_info: Suspect:
 
 func setup_suspect_file(suspect: Suspect) -> void:
 	visible = true
+	# Node attempt
+	var sfx = %FmodEventEmitter2D as FmodEventEmitter2D
+	sfx.play()
+
+	# Code attempt
+	FmodServer.play_one_shot("event:/UI/Paperflip")
+
 	for claim in suspect_claims.get_children():
 		claim.queue_free()
 	suspect_info = suspect

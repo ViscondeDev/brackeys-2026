@@ -64,4 +64,11 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
+[node name="FmodEventEmitter2D" type="FmodEventEmitter2D" parent="." unique_id=1277149746]
+event_name = "event:/UI/Paperflip"
+event_guid = "{beac152c-0015-428c-b8cb-4e096eb96542}"
+unique_name_in_owner = true
+
+[node name="FmodListener2D" type="FmodListener2D" parent="." unique_id=419719854]
+
 [connection signal="text_changed" from="VBoxContainer/Notes/TextEdit" to="." method="update_notes"]
