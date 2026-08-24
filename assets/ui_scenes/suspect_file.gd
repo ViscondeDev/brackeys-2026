@@ -11,6 +11,8 @@ extends ColorRect
 
 
 func setup_suspect_file(suspect: Suspect) -> void:
+	for claim in suspect_claims.get_children():
+		claim.queue_free()
 	suspect_name.text = suspect.suspect_name
 	suspect_role.text = suspect.suspect_role
 	suspect_portrait.texture = suspect.suspect_portrait

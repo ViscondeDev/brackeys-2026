@@ -5,10 +5,12 @@ extends Control
 var suspects: Array[Suspect]
 
 @onready var suspect_file: SuspectFile = %SuspectFile
+@onready var portraits_container: VBoxContainer = %PortraitsContainer
 
 
 func _ready() -> void:
 	load_settings()
+	setup_suspects_tab()
 
 
 func load_settings() -> void:
@@ -19,4 +21,11 @@ func load_settings() -> void:
 			new_claim.statement = statement
 			new_suspect.claims.append(new_claim)
 		suspects.append(new_suspect)
-	suspect_file.setup_suspect_file(suspects[0])
+
+func setup_suspects_tab() -> void:
+	for i in suspects.size():
+		var suspect = suspects[i]
+		var new_button := Button.new()
+		new_button.icon = suspect.suspect_portrait
+		portraits_container.add_child(new_button)
+		new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
