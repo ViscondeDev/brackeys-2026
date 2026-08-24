@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c00fgjnaetb0i"]
 
 [ext_resource type="Texture2D" uid="uid://dd5gxfssr1bu4" path="res://assets/Screenshot_20260823_141504.png" id="1_2mhs7"]
+[ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://assets/ui_scenes/table.gd" id="1_6h51b"]
 
 [node name="Table" type="Control" unique_id=1200437378]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6h51b")
 
 [node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
 custom_minimum_size = Vector2(320, 0)
@@ -17,73 +19,91 @@ anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
 
-[node name="Portraits" type="VBoxContainer" parent="SuspectsTab" unique_id=579858527]
+[node name="TextureRect" type="ColorRect" parent="SuspectsTab" unique_id=548384124]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="SuspectsTab/Portraits" unique_id=1278973637]
+[node name="Portraits" type="VBoxContainer" parent="SuspectsTab/TextureRect" unique_id=579858527]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="SuspectsTab/TextureRect/Portraits" unique_id=1278973637]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="Button2" type="Button" parent="SuspectsTab/Portraits" unique_id=584665096]
+[node name="Button2" type="Button" parent="SuspectsTab/TextureRect/Portraits" unique_id=584665096]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="Button3" type="Button" parent="SuspectsTab/Portraits" unique_id=941696572]
+[node name="Button3" type="Button" parent="SuspectsTab/TextureRect/Portraits" unique_id=941696572]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="Button4" type="Button" parent="SuspectsTab/Portraits" unique_id=750025983]
+[node name="Button4" type="Button" parent="SuspectsTab/TextureRect/Portraits" unique_id=750025983]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="SuspectFile" type="VBoxContainer" parent="SuspectsTab" unique_id=438862899]
+[node name="ColorRect" type="ColorRect" parent="SuspectsTab" unique_id=1982391713]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0.36367702, 0.36367702, 0.36367702, 1)
 
-[node name="Header" type="HBoxContainer" parent="SuspectsTab/SuspectFile" unique_id=1693655115]
+[node name="SuspectFile" type="VBoxContainer" parent="SuspectsTab/ColorRect" unique_id=438862899]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="SuspectsTab/ColorRect/SuspectFile" unique_id=1693655115]
 layout_mode = 2
 
-[node name="NameRole" type="VBoxContainer" parent="SuspectsTab/SuspectFile/Header" unique_id=1501483802]
+[node name="NameRole" type="VBoxContainer" parent="SuspectsTab/ColorRect/SuspectFile/Header" unique_id=1501483802]
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 1
 
-[node name="Name" type="Label" parent="SuspectsTab/SuspectFile/Header/NameRole" unique_id=562092111]
+[node name="Name" type="Label" parent="SuspectsTab/ColorRect/SuspectFile/Header/NameRole" unique_id=562092111]
 layout_mode = 2
 text = "Madonna	"
 horizontal_alignment = 1
 
-[node name="Role" type="Label" parent="SuspectsTab/SuspectFile/Header/NameRole" unique_id=652858871]
+[node name="Role" type="Label" parent="SuspectsTab/ColorRect/SuspectFile/Header/NameRole" unique_id=652858871]
 layout_mode = 2
 text = "Ground Scratcher"
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="SuspectsTab/SuspectFile/Header" unique_id=200253383]
+[node name="TextureRect" type="TextureRect" parent="SuspectsTab/ColorRect/SuspectFile/Header" unique_id=200253383]
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("1_2mhs7")
 expand_mode = 2
 
-[node name="Claims" type="VBoxContainer" parent="SuspectsTab/SuspectFile" unique_id=1953438724]
+[node name="Claims" type="VBoxContainer" parent="SuspectsTab/ColorRect/SuspectFile" unique_id=1953438724]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Title" type="Label" parent="SuspectsTab/SuspectFile/Claims" unique_id=45160920]
+[node name="Title" type="Label" parent="SuspectsTab/ColorRect/SuspectFile/Claims" unique_id=45160920]
 layout_mode = 2
 text = "Claims"
 horizontal_alignment = 1
 
-[node name="Claim" type="HBoxContainer" parent="SuspectsTab/SuspectFile/Claims" unique_id=843958131]
+[node name="Claim" type="HBoxContainer" parent="SuspectsTab/ColorRect/SuspectFile/Claims" unique_id=843958131]
 layout_mode = 2
 
-[node name="Text" type="Label" parent="SuspectsTab/SuspectFile/Claims/Claim" unique_id=1258862701]
+[node name="Text" type="Label" parent="SuspectsTab/ColorRect/SuspectFile/Claims/Claim" unique_id=1258862701]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "I wasn't at the barn at all bruv that's craaazy"
 autowrap_mode = 2
 
-[node name="MenuButton" type="MenuButton" parent="SuspectsTab/SuspectFile/Claims/Claim" unique_id=439557621]
+[node name="MenuButton" type="MenuButton" parent="SuspectsTab/ColorRect/SuspectFile/Claims/Claim" unique_id=439557621]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 flat = false
@@ -95,13 +115,13 @@ popup/item_1/id = 1
 popup/item_2/text = "True"
 popup/item_2/id = 0
 
-[node name="Notes" type="VBoxContainer" parent="SuspectsTab/SuspectFile" unique_id=1141813508]
+[node name="Notes" type="VBoxContainer" parent="SuspectsTab/ColorRect/SuspectFile" unique_id=1141813508]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="SuspectsTab/SuspectFile/Notes" unique_id=1462806616]
+[node name="Title" type="Label" parent="SuspectsTab/ColorRect/SuspectFile/Notes" unique_id=1462806616]
 layout_mode = 2
 text = "Notes"
 
-[node name="TextEdit" type="TextEdit" parent="SuspectsTab/SuspectFile/Notes" unique_id=1587628474]
+[node name="TextEdit" type="TextEdit" parent="SuspectsTab/ColorRect/SuspectFile/Notes" unique_id=1587628474]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
