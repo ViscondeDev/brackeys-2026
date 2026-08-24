@@ -15,6 +15,7 @@ General/live_update=1
 [application]
 
 config/name="Farm Crimes"
+run/main_scene="uid://c00fgjnaetb0i"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

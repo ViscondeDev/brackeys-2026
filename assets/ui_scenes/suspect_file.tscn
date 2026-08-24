@@ -28,21 +28,22 @@ alignment = 1
 [node name="Name" type="Label" parent="VBoxContainer/Header/NameRole" unique_id=825311840]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Madonna	"
 horizontal_alignment = 1
 
 [node name="Role" type="Label" parent="VBoxContainer/Header/NameRole" unique_id=1740842536]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Ground Scratcher"
 horizontal_alignment = 1
 
 [node name="Portrait" type="TextureRect" parent="VBoxContainer/Header" unique_id=1598036651]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 texture = ExtResource("1_xpcw8")
 expand_mode = 4
 
 [node name="Claims" type="VBoxContainer" parent="VBoxContainer" unique_id=494339726]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 
@@ -50,27 +51,6 @@ size_flags_vertical = 3
 layout_mode = 2
 text = "Claims"
 horizontal_alignment = 1
-
-[node name="Claim" type="HBoxContainer" parent="VBoxContainer/Claims" unique_id=1432775089]
-layout_mode = 2
-
-[node name="Text" type="Label" parent="VBoxContainer/Claims/Claim" unique_id=1970173812]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "I wasn't at the barn at all bruv that's craaazy"
-autowrap_mode = 2
-
-[node name="MenuButton" type="MenuButton" parent="VBoxContainer/Claims/Claim" unique_id=1720382233]
-custom_minimum_size = Vector2(50, 0)
-layout_mode = 2
-flat = false
-item_count = 3
-popup/item_0/text = "Uncertain"
-popup/item_0/id = 2
-popup/item_1/text = "False"
-popup/item_1/id = 1
-popup/item_2/text = "True"
-popup/item_2/id = 0
 
 [node name="Notes" type="VBoxContainer" parent="VBoxContainer" unique_id=962849666]
 layout_mode = 2
@@ -80,5 +60,6 @@ layout_mode = 2
 text = "Notes"
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/Notes" unique_id=2039982232]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2

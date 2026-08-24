@@ -3,10 +3,10 @@ class_name Claim
 extends Resource
 
 enum Certainty {
+	UNCERTAIN,
 	FALSE,
 	TRUE,
-	UNCERTAIN,
 }
 
 @export var statement: String
-var cenrtainty: Certainty
+var certainty: Certainty

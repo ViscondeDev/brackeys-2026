@@ -1,4 +1,3 @@
-@abstract
 @icon("res://addons/at-icons/mesh/paw_print.svg")
 class_name Suspect
 extends Resource
