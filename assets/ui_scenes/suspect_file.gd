@@ -2,7 +2,7 @@
 class_name SuspectFile
 extends ColorRect
 
-@onready var claim_scene = preload("uid://cg8bhn4rbyv8j")
+@onready var claim_scene: PackedScene = preload("uid://cg8bhn4rbyv8j")
 @onready var suspect_name: Label = %Name
 @onready var suspect_role: Label = %Role
 @onready var suspect_portrait: TextureRect = %Portrait

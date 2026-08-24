@@ -22,10 +22,13 @@ func load_settings() -> void:
 			new_suspect.claims.append(new_claim)
 		suspects.append(new_suspect)
 
+
 func setup_suspects_tab() -> void:
 	for i in suspects.size():
-		var suspect = suspects[i]
+		var suspect := suspects[i]
 		var new_button := Button.new()
 		new_button.icon = suspect.suspect_portrait
 		portraits_container.add_child(new_button)
-		new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
+		var out: int = new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
+		if out == ERR_INVALID_PARAMETER:
+			printerr("Failed to connect button")
