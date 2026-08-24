@@ -1,5 +1,3 @@
 extends Control
 
-
-func populate_suspects():
-	pass
+@export var level_settings: Array[SuspectClaims]
