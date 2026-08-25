@@ -55,7 +55,7 @@ texture = ExtResource("6_ho76x")
 expand_mode = 2
 
 [node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
-custom_minimum_size = Vector2(640, 0)
+custom_minimum_size = Vector2(960, 0)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -75,9 +75,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SuspectFile" parent="SuspectsTab" unique_id=174276162 instance=ExtResource("2_6h51b")]
-unique_name_in_owner = true
-visible = false
+[node name="SuspectFile" parent="SuspectsTab" unique_id=1977787239 instance=ExtResource("2_6h51b")]
 layout_mode = 2
 
 [node name="Audio" type="Node" parent="." unique_id=827490189]

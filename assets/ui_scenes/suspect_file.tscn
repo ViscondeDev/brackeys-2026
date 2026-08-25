@@ -13,10 +13,16 @@ streams_count = 3
 stream_0/stream = ExtResource("3_naxq3")
 stream_1/stream = ExtResource("4_scr4r")
 stream_2/stream = ExtResource("5_xyf37")
+[ext_resource type="Texture2D" uid="uid://dceddl5do2jln" path="res://assets/ui_elements/suspect_file.png" id="1_xudbm"]
 
-[node name="SuspectFile" type="ColorRect" unique_id=174276162]
+[node name="SuspectFile" type="NinePatchRect" unique_id=1977787239]
 size_flags_horizontal = 3
-color = Color(0.36367702, 0.36367702, 0.36367702, 1)
+texture = ExtResource("1_xudbm")
+region_rect = Rect2(0, 0, 1202.559, 2091)
+patch_margin_left = 10
+patch_margin_top = 20
+patch_margin_right = 10
+patch_margin_bottom = 20
 script = ExtResource("1_nt3xh")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1748737335]
