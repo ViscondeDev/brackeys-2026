@@ -62,7 +62,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 
 [node name="Portraits" type="ColorRect" parent="SuspectsTab" unique_id=548384124]
-custom_minimum_size = Vector2(160, 0)
+custom_minimum_size = Vector2(240, 0)
 layout_mode = 2
 color = Color(0, 0, 0, 0.4627451)
 
@@ -74,9 +74,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Button" type="Button" parent="SuspectsTab/Portraits/PortraitsContainer" unique_id=1144018189]
-layout_mode = 2
 
 [node name="SuspectFile" parent="SuspectsTab" unique_id=174276162 instance=ExtResource("2_6h51b")]
 unique_name_in_owner = true
