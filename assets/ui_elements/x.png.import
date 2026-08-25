@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blnn0dti1h0e"
-valid=false
+uid="uid://wpn36cr37luc"
+path="res://.godot/imported/x.png-b8c91c44ec30a9d451c87f80c26fcc09.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/ui_elements/marker_section2.png"
+source_file="res://assets/ui_elements/x.png"
+dest_files=["res://.godot/imported/x.png-b8c91c44ec30a9d451c87f80c26fcc09.ctex"]
 
 [params]
 

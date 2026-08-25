@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_ho76x"]
 [ext_resource type="AudioStream" uid="uid://bmd6bhrf1rq44" path="res://Audio/Music/Idea2.mp3" id="8_5yuuw"]
 [ext_resource type="AudioStream" uid="uid://camjual4ih2fi" path="res://Audio/Music/Idea1.mp3" id="8_i3wqm"]
+[ext_resource type="Texture2D" uid="uid://cmjyha6sse1gd" path="res://assets/ui_elements/suspect_folder.png" id="7_5yuuw"]
+[ext_resource type="Texture2D" uid="uid://53mnxfrl01hg" path="res://assets/ui_elements/coffe.png" id="8_i3wqn"]
+[ext_resource type="Texture2D" uid="uid://bo3wqyjtcw67e" path="res://assets/ui_elements/crime_summary.png" id="8_y8xl2"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -54,29 +57,44 @@ grow_vertical = 2
 texture = ExtResource("6_ho76x")
 expand_mode = 2
 
-[node name="Phisical" type="Control" parent="." unique_id=1863658343]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Button" type="Button" parent="Phisical" unique_id=412238982]
+[node name="SuspectsFolder" type="Button" parent="." unique_id=412238982]
+custom_minimum_size = Vector2(150, 300)
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 164.99994
+offset_top = 232.99997
+offset_right = 464.99994
+offset_bottom = 533.0
+rotation = -0.39351276
+icon = ExtResource("7_5yuuw")
 flat = true
+expand_icon = true
 
-[node name="Overlay" type="Control" parent="." unique_id=90858267]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="CrimeSummary" type="Button" parent="." unique_id=1148271384]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 0
+offset_left = 933.00006
+offset_top = 97.000015
+offset_right = 1233.0
+offset_bottom = 397.00006
+rotation = 0.32864836
+icon = ExtResource("8_y8xl2")
+flat = true
+expand_icon = true
 
-[node name="SuspectsTab" type="HBoxContainer" parent="Overlay" unique_id=670705892]
+[node name="Coffe" type="Button" parent="." unique_id=2083269590]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 1478.0
+offset_top = 106.0
+offset_right = 1678.0
+offset_bottom = 306.0
+icon = ExtResource("8_i3wqn")
+flat = true
+expand_icon = true
+
+[node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
+unique_name_in_owner = true
+visible = false
 custom_minimum_size = Vector2(960, 0)
 layout_mode = 1
 anchors_preset = 9
@@ -84,12 +102,12 @@ anchor_bottom = 1.0
 offset_right = 960.0
 grow_vertical = 2
 
-[node name="Portraits" type="ColorRect" parent="Overlay/SuspectsTab" unique_id=548384124]
+[node name="PortraitsTab" type="ColorRect" parent="SuspectsTab" unique_id=548384124]
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 color = Color(0, 0, 0, 0.4627451)
 
-[node name="PortraitsContainer" type="VBoxContainer" parent="Overlay/SuspectsTab/Portraits" unique_id=579858527]
+[node name="PortraitsContainer" type="VBoxContainer" parent="SuspectsTab/PortraitsTab" unique_id=579858527]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -98,7 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SuspectFile" parent="Overlay/SuspectsTab" unique_id=1977787239 instance=ExtResource("2_6h51b")]
+[node name="SuspectFile" parent="SuspectsTab" unique_id=1977787239 instance=ExtResource("2_6h51b")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
@@ -107,3 +125,6 @@ layout_mode = 2
 
 [node name="Music" type="AudioStreamPlayer2D" parent="Audio" unique_id=1470982205]
 stream = SubResource("AudioStreamRandomizer_scr4r")
+
+[connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
+[connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]

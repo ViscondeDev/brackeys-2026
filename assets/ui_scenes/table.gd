@@ -6,6 +6,7 @@ var suspects: Array[Suspect]
 
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
+@onready var suspects_tab: HBoxContainer = %SuspectsTab
 
 
 func _ready() -> void:
@@ -39,3 +40,10 @@ func setup_suspects_tab() -> void:
 
 func update_suspect_info(suspect: Suspect) -> void:
 	suspects[suspect.id] = suspect
+
+
+func open_suspects_tab() -> void:
+	suspects_tab.visible = true
+
+func close_suspects_tab() -> void:
+	suspects_tab.visible = false

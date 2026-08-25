@@ -16,12 +16,12 @@ stream_2/stream = ExtResource("5_xyf37")
 [ext_resource type="Texture2D" uid="uid://dceddl5do2jln" path="res://assets/ui_elements/suspect_file.png" id="1_xudbm"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="3_scr4r"]
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="4_scr4s"]
+[ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="5_scr4r"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naxq3"]
 load_path = "res://.godot/imported/marker_section1.png-179d31e5d2bbdbb9cebe51345518e608.ctex"
 
 [node name="SuspectFile" type="NinePatchRect" unique_id=1977787239]
-custom_minimum_size = Vector2(720, 1080)
 size_flags_horizontal = 3
 texture = ExtResource("1_xudbm")
 region_rect = Rect2(0, 0, 1202.559, 2091)
@@ -127,5 +127,18 @@ placeholder_text = "Write here"
 [node name="SuspectFileOpen" type="AudioStreamPlayer2D" parent="Audio" unique_id=279211448]
 stream = SubResource("AudioStreamRandomizer_xudbm")
 
-[connection signal="text_changed" from="VBoxContainer/Notes/TextEdit" to="." method="update_notes"]
+[node name="Button" type="Button" parent="." unique_id=2145020788]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_bottom = 100.0
+grow_horizontal = 0
+icon = ExtResource("5_scr4r")
+flat = true
+expand_icon = true
+
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Notes/TextEdit" to="." method="update_notes"]
+[connection signal="pressed" from="Button" to="." method="close_tab"]

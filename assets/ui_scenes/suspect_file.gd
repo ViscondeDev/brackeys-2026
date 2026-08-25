@@ -3,6 +3,7 @@ class_name SuspectFile
 extends NinePatchRect
 
 signal suspect_updated(suspect: Suspect)
+signal closed_tab
 
 var suspect_info: Suspect:
 	set(v):
@@ -51,3 +52,7 @@ func update_notes() -> void:
 
 func update_certainty(option: int, claim: int) -> void:
 	suspect_info.claims[claim].certainty = option as Claim.Certainty
+
+
+func close_tab() -> void:
+	closed_tab.emit()
