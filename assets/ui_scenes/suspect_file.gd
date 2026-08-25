@@ -18,6 +18,7 @@ var suspect_info: Suspect:
 
 
 func setup_suspect_file(suspect: Suspect) -> void:
+	get_node("Audio/SuspectFileOpen").play()
 	visible = true
 	for claim in suspect_claims.get_children():
 		claim.queue_free()

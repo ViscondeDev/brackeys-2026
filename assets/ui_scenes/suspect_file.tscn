@@ -2,6 +2,17 @@
 
 [ext_resource type="Script" uid="uid://cpqn4e6bf1pna" path="res://assets/ui_scenes/suspect_file.gd" id="1_nt3xh"]
 [ext_resource type="Texture2D" uid="uid://dd5gxfssr1bu4" path="res://assets/Screenshot_20260823_141504.png" id="1_xpcw8"]
+[ext_resource type="AudioStream" uid="uid://de2cm71288jqx" path="res://Audio/SFX/UI/Paperflip-01.ogg" id="3_naxq3"]
+[ext_resource type="AudioStream" uid="uid://co6n32pdb1nj0" path="res://Audio/SFX/UI/Paperflip-02.ogg" id="4_scr4r"]
+[ext_resource type="AudioStream" uid="uid://rklpybbkdecp" path="res://Audio/SFX/UI/Paperflip-03.ogg" id="5_xyf37"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xudbm"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 3
+stream_0/stream = ExtResource("3_naxq3")
+stream_1/stream = ExtResource("4_scr4r")
+stream_2/stream = ExtResource("5_xyf37")
 
 [node name="SuspectFile" type="ColorRect" unique_id=174276162]
 size_flags_horizontal = 3
@@ -63,5 +74,10 @@ text = "Notes"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
+
+[node name="Audio" type="Node" parent="." unique_id=1298090245]
+
+[node name="SuspectFileOpen" type="AudioStreamPlayer2D" parent="Audio" unique_id=279211448]
+stream = SubResource("AudioStreamRandomizer_xudbm")
 
 [connection signal="text_changed" from="VBoxContainer/Notes/TextEdit" to="." method="update_notes"]
