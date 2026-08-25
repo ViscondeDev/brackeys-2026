@@ -1,0 +1,9 @@
+[gd_resource type="Theme" format=3 uid="uid://ctcaf1s74pnhp"]
+
+[ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="1_1wtb0"]
+
+[resource]
+default_font = ExtResource("1_1wtb0")
+default_font_size = 28
+Label/colors/Color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)

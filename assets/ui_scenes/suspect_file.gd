@@ -1,6 +1,6 @@
 @icon("res://addons/at-icons/control/file_pencil.svg")
 class_name SuspectFile
-extends ColorRect
+extends NinePatchRect
 
 signal suspect_updated(suspect: Suspect)
 
@@ -21,7 +21,8 @@ func setup_suspect_file(suspect: Suspect) -> void:
 	get_node("Audio/SuspectFileOpen").play()
 	visible = true
 	for claim in suspect_claims.get_children():
-		claim.queue_free()
+		if claim is not Label:
+			claim.queue_free()
 	suspect_info = suspect
 	suspect_name.text = suspect.suspect_name
 	suspect_role.text = suspect.suspect_role

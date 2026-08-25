@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://assets/resource/suspect_claims.gd" id="2_ajlhi"]
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="4_oo5ns"]
 [ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://assets/resource/suspects/madonna.tres" id="4_pa6pc"]
-[ext_resource type="Texture2D" uid="uid://c7rbft5bp6p2g" path="res://icon.svg" id="5_ho76x"]
+[ext_resource type="Texture2D" uid="uid://bfmx51qnruroa" path="res://assets/resource/suspects/pig_portrait.png" id="5_ho76x"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_ho76x"]
 [ext_resource type="AudioStream" uid="uid://bmd6bhrf1rq44" path="res://Audio/Music/Idea2.mp3" id="8_5yuuw"]
 [ext_resource type="AudioStream" uid="uid://camjual4ih2fi" path="res://Audio/Music/Idea1.mp3" id="8_i3wqm"]
@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="Resource" id="Resource_pa6pc"]
 script = ExtResource("4_oo5ns")
-suspect_name = "Godot"
+suspect_name = "Pig"
 suspect_portrait = ExtResource("5_ho76x")
 suspect_role = "Test"
 metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
@@ -54,19 +54,42 @@ grow_vertical = 2
 texture = ExtResource("6_ho76x")
 expand_mode = 2
 
-[node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
+[node name="Phisical" type="Control" parent="." unique_id=1863658343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Phisical" unique_id=412238982]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+flat = true
+
+[node name="Overlay" type="Control" parent="." unique_id=90858267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SuspectsTab" type="HBoxContainer" parent="Overlay" unique_id=670705892]
 custom_minimum_size = Vector2(960, 0)
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_right = 960.0
 grow_vertical = 2
 
-[node name="Portraits" type="ColorRect" parent="SuspectsTab" unique_id=548384124]
-custom_minimum_size = Vector2(240, 0)
+[node name="Portraits" type="ColorRect" parent="Overlay/SuspectsTab" unique_id=548384124]
+custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 color = Color(0, 0, 0, 0.4627451)
 
-[node name="PortraitsContainer" type="VBoxContainer" parent="SuspectsTab/Portraits" unique_id=579858527]
+[node name="PortraitsContainer" type="VBoxContainer" parent="Overlay/SuspectsTab/Portraits" unique_id=579858527]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
@@ -75,7 +98,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SuspectFile" parent="SuspectsTab" unique_id=1977787239 instance=ExtResource("2_6h51b")]
+[node name="SuspectFile" parent="Overlay/SuspectsTab" unique_id=1977787239 instance=ExtResource("2_6h51b")]
+unique_name_in_owner = true
+visible = false
 layout_mode = 2
 
 [node name="Audio" type="Node" parent="." unique_id=827490189]
