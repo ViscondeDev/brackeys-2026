@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dyw4w7opyexso"]
+
+[ext_resource type="AudioStream" uid="uid://c1u4mofrdwtk5" path="res://Audio/Music/02/Investigation_background_1.ogg" id="1_r4vw5"]
+[ext_resource type="AudioStream" uid="uid://co6n32pdb1nj0" path="res://Audio/SFX/UI/Paperflip-02.ogg" id="2_04opr"]
+
+[node name="TableAudio" type="Node2D" unique_id=1196760623]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=952269829]
+stream = ExtResource("1_r4vw5")
+autoplay = true
+max_distance = 4096.0
+panning_strength = 0.0
+
+[node name="FileOpen" type="AudioStreamPlayer2D" parent="." unique_id=1591868439]
+stream = ExtResource("2_04opr")
+volume_db = 2.0

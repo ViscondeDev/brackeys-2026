@@ -12,7 +12,6 @@ var suspects: Array[Suspect]
 func _ready() -> void:
 	load_settings()
 	setup_suspects_tab()
-	get_node("Audio/Music").play()
 
 
 func load_settings() -> void:

@@ -17,9 +17,16 @@ var suspect_info: Suspect:
 @onready var suspect_notes: TextEdit = %TextEdit
 @onready var suspect_claims: VBoxContainer = %Claims
 
+## AUDIO ##
+@onready var audio_player: AudioStreamPlayer2D
+## AUDIO END ##
 
 func setup_suspect_file(suspect: Suspect) -> void:
-	get_node("Audio/SuspectFileOpen").play()
+	## AUDIO ##
+	audio_player = get_node("SuspectFileAudio/SuspectFileOpen")
+	audio_player.play()
+	## AUDIO END ##
+	
 	visible = true
 	for claim in suspect_claims.get_children():
 		if claim is not Label:

@@ -8,10 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bfmx51qnruroa" path="res://assets/resource/suspects/pig_portrait.png" id="5_ho76x"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_ho76x"]
 [ext_resource type="Texture2D" uid="uid://ujdejh1j5wfa" path="res://assets/ui_elements/suspect_folder.png" id="7_5yuuw"]
-[ext_resource type="AudioStream" uid="uid://bmd6bhrf1rq44" path="res://Audio/Music/Idea2.mp3" id="8_5yuuw"]
-[ext_resource type="AudioStream" uid="uid://camjual4ih2fi" path="res://Audio/Music/Idea1.mp3" id="8_i3wqm"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/ui_elements/coffe.png" id="8_i3wqn"]
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/ui_elements/crime_summary.png" id="8_y8xl2"]
+[ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="12_4avul"]
+[ext_resource type="PackedScene" uid="uid://dyw4w7opyexso" path="res://Audio/table_audio.tscn" id="13_gy5u2"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -31,11 +31,6 @@ script = ExtResource("2_ajlhi")
 suspect = SubResource("Resource_pa6pc")
 claims = Array[String](["I don't claim anything tbh"])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_scr4r"]
-streams_count = 2
-stream_0/stream = ExtResource("8_i3wqm")
-stream_1/stream = ExtResource("8_5yuuw")
 
 [node name="Table" type="Control" unique_id=1200437378]
 layout_mode = 3
@@ -121,10 +116,9 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="Audio" type="Node" parent="." unique_id=827490189]
-
-[node name="Music" type="AudioStreamPlayer2D" parent="Audio" unique_id=1470982205]
-stream = SubResource("AudioStreamRandomizer_scr4r")
+[node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]
+script = ExtResource("12_4avul")
 
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
+[connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]

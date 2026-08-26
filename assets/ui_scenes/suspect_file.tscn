@@ -2,23 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cpqn4e6bf1pna" path="res://assets/ui_scenes/suspect_file.gd" id="1_nt3xh"]
 [ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/ui_elements/suspect_file.png" id="1_xudbm"]
-[ext_resource type="AudioStream" uid="uid://de2cm71288jqx" path="res://Audio/SFX/UI/Paperflip-01.ogg" id="3_naxq3"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="3_scr4r"]
-[ext_resource type="AudioStream" uid="uid://co6n32pdb1nj0" path="res://Audio/SFX/UI/Paperflip-02.ogg" id="4_scr4r"]
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="4_scr4s"]
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="5_scr4r"]
-[ext_resource type="AudioStream" uid="uid://rklpybbkdecp" path="res://Audio/SFX/UI/Paperflip-03.ogg" id="5_xyf37"]
+[ext_resource type="PackedScene" uid="uid://crpme068tjc45" path="res://Audio/SFX/suspect_file_audio.tscn" id="6_xyf37"]
+[ext_resource type="Script" uid="uid://b3oo0vfqrkxsh" path="res://Audio/Scripts/suspect_file_audio.gd" id="7_0a840"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naxq3"]
 load_path = "res://.godot/imported/marker_section1.png-179d31e5d2bbdbb9cebe51345518e608.ctex"
-
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xudbm"]
-random_pitch = 1.122462
-random_volume_offset_db = 2.0
-streams_count = 3
-stream_0/stream = ExtResource("3_naxq3")
-stream_1/stream = ExtResource("4_scr4r")
-stream_2/stream = ExtResource("5_xyf37")
 
 [node name="SuspectFile" type="NinePatchRect" unique_id=1977787239]
 size_flags_horizontal = 3
@@ -121,11 +112,6 @@ size_flags_vertical = 3
 theme = ExtResource("4_scr4s")
 placeholder_text = "Write here"
 
-[node name="Audio" type="Node" parent="." unique_id=1298090245]
-
-[node name="SuspectFileOpen" type="AudioStreamPlayer2D" parent="Audio" unique_id=279211448]
-stream = SubResource("AudioStreamRandomizer_xudbm")
-
 [node name="Button" type="Button" parent="." unique_id=2145020788]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
@@ -138,5 +124,8 @@ grow_horizontal = 0
 icon = ExtResource("5_scr4r")
 flat = true
 expand_icon = true
+
+[node name="SuspectFileAudio" parent="." unique_id=820096805 instance=ExtResource("6_xyf37")]
+script = ExtResource("7_0a840")
 
 [connection signal="pressed" from="Button" to="." method="close_tab"]
