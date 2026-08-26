@@ -2,8 +2,13 @@
 
 [ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="1_1wtb0"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh6pq"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.54901963)
+
 [resource]
 default_font = ExtResource("1_1wtb0")
 default_font_size = 28
+Button/colors/font_color = Color(0, 0, 0, 1)
 Label/colors/Color = Color(0, 0, 0, 1)
 Label/colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_wh6pq")

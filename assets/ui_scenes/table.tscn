@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c00fgjnaetb0i"]
 
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://assets/ui_scenes/table.gd" id="1_6h51b"]
+[ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="1_edakw"]
 [ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://assets/ui_scenes/suspect_file.tscn" id="2_6h51b"]
 [ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://assets/resource/suspect_claims.gd" id="2_ajlhi"]
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="4_oo5ns"]
@@ -12,6 +13,13 @@
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/ui_elements/crime_summary.png" id="8_y8xl2"]
 [ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="12_4avul"]
 [ext_resource type="PackedScene" uid="uid://dyw4w7opyexso" path="res://Audio/table_audio.tscn" id="13_gy5u2"]
+[ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://assets/ui_scenes/crime_summary.gd" id="14_1nqv2"]
+[ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/ui_elements/suspect_file.png" id="14_deiwr"]
+[ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="15_bnpxl"]
+[ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/ui_elements/marker_section1.png" id="16_deiwr"]
+[ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="17_bnpxl"]
+[ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/ui_elements/blame.png" id="19_04pw7"]
+[ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="19_qm3u3"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -32,6 +40,22 @@ suspect = SubResource("Resource_pa6pc")
 claims = Array[String](["I don't claim anything tbh"])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nqv2"]
+atlas = ExtResource("14_deiwr")
+region = Rect2(0, 0, 1210.1726, 2091)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh6pq"]
+content_margin_left = 47.0
+content_margin_top = 10.0
+content_margin_right = 47.0
+content_margin_bottom = 10.0
+texture = ExtResource("16_deiwr")
+
+[sub_resource type="Theme" id="Theme_uwoax"]
+default_font = ExtResource("17_bnpxl")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_wh6pq")
+
 [node name="Table" type="Control" unique_id=1200437378]
 layout_mode = 3
 anchors_preset = 15
@@ -39,6 +63,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_edakw")
 script = ExtResource("1_6h51b")
 level_settings = Array[ExtResource("2_ajlhi")]([SubResource("Resource_6h51b"), SubResource("Resource_ajlhi")])
 
@@ -121,4 +146,105 @@ script = ExtResource("12_4avul")
 
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
+
+[node name="Crime Summary" type="Panel" parent="." unique_id=1745212918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("14_1nqv2")
+
+[node name="TextureRect" type="TextureRect" parent="Crime Summary" unique_id=909616572]
+custom_minimum_size = Vector2(700, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -360.0
+offset_right = 275.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1nqv2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Crime Summary/TextureRect" unique_id=336324107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Crime Summary/TextureRect/MarginContainer" unique_id=534276644]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=371947333]
+layout_mode = 2
+theme = ExtResource("15_bnpxl")
+text = "CRIME SUMMARY"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1758578665]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uwoax")
+
+[node name="MarginContainer" type="MarginContainer" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel" unique_id=503376255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 47
+theme_override_constants/margin_bottom = 25
+
+[node name="Label2" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1865474277]
+layout_mode = 2
+size_flags_vertical = 0
+text = "After a meeting at the barn at 11AM, everybody ate watermelon, except for the horse, which was out to the vet.
+When he arrived at 11:40 AM, the watermelon piece that was waiting for him, wasn't there.
+Whoever did it, was fast or small, the crime had no witnesses
+
+THEFT, TOTAL DAMAGE ~2cents
+
+Check suspects folders to see the claims"
+autowrap_mode = 2
+
+[node name="Button2" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
+layout_mode = 2
+theme = ExtResource("1_edakw")
+text = "BLAME"
+icon = ExtResource("19_04pw7")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="Button" type="Button" parent="Crime Summary/TextureRect/MarginContainer" unique_id=1986349345]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("19_qm3u3")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
+[connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
+[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_suspects_folder_pressed"]
+[connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="Crime Summary" method="close_tab"]
