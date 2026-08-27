@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="19_qm3u3"]
 [ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/ui_elements/X_White_PNG.png" id="21_06edn"]
 [ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://assets/ui_scenes/blame_screen.gd" id="21_x7xbf"]
-[ext_resource type="PackedScene" uid="uid://v4imfh3a4t4g" path="res://assets/ui_scenes/suspect_item.tscn" id="23_x7xbf"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -227,7 +226,8 @@ THEFT, TOTAL DAMAGE ~2cents
 Check suspects folders to see the claims"
 autowrap_mode = 2
 
-[node name="Button2" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
+[node name="Blame" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
+unique_name_in_owner = true
 layout_mode = 2
 disabled = true
 text = "BLAME"
@@ -247,6 +247,8 @@ flat = true
 expand_icon = true
 
 [node name="BlameScreen" type="Panel" parent="." unique_id=357223526]
+unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -292,12 +294,11 @@ icon = ExtResource("21_06edn")
 flat = true
 expand_icon = true
 
-[node name="SuspectItem1" parent="BlameScreen/SuspectContainer" unique_id=570502750 instance=ExtResource("23_x7xbf")]
-layout_mode = 2
-
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
 [connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_suspects_folder_pressed"]
 [connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="Crime Summary" method="close_tab"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/Button" to="." method="close_blame_tab"]

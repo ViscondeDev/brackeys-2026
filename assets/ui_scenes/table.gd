@@ -7,7 +7,8 @@ var suspects: Array[Suspect]
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
 @onready var suspects_tab: HBoxContainer = %SuspectsTab
-@onready var blame_screen: HBoxContainer = %BlameScreen
+@onready var blame_screen: Panel = %BlameScreen
+@onready var blame_button: Button = %Blame
 
 
 func _ready() -> void:
@@ -49,7 +50,16 @@ func update_suspect_info(suspect: Suspect) -> void:
 
 func open_suspects_tab() -> void:
 	suspects_tab.visible = true
+	blame_button.disabled = false
 
 
 func close_suspects_tab() -> void:
 	suspects_tab.visible = false
+
+
+func open_blame_tab() -> void:
+	blame_screen.visible = true
+
+
+func close_blame_tab() -> void:
+	blame_screen.visible = false
