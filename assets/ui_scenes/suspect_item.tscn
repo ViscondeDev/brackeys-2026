@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://v4imfh3a4t4g"]
+
+[ext_resource type="Script" uid="uid://d1y0hvubidcqj" path="res://assets/ui_scenes/suspect_item.gd" id="1_3bh3k"]
+[ext_resource type="Texture2D" uid="uid://bm3svq4l4rtfv" path="res://assets/resource/suspects/chicken_portrait.png" id="1_ned4q"]
+
+[node name="SuspectItem1" type="HBoxContainer" unique_id=570502750]
+script = ExtResource("1_3bh3k")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=920176314]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_ned4q")
+
+[node name="Label" type="Label" parent="." unique_id=477612985]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Madonna | Ground Scratcher"

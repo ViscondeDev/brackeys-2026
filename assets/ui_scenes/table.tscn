@@ -20,6 +20,9 @@
 [ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="17_bnpxl"]
 [ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/ui_elements/blame.png" id="19_04pw7"]
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="19_qm3u3"]
+[ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/ui_elements/X_White_PNG.png" id="21_06edn"]
+[ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://assets/ui_scenes/blame_screen.gd" id="21_x7xbf"]
+[ext_resource type="PackedScene" uid="uid://v4imfh3a4t4g" path="res://assets/ui_scenes/suspect_item.tscn" id="23_x7xbf"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -148,6 +151,7 @@ script = ExtResource("12_4avul")
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
 
 [node name="Crime Summary" type="Panel" parent="." unique_id=1745212918]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -225,7 +229,7 @@ autowrap_mode = 2
 
 [node name="Button2" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
 layout_mode = 2
-theme = ExtResource("1_edakw")
+disabled = true
 text = "BLAME"
 icon = ExtResource("19_04pw7")
 flat = true
@@ -241,6 +245,55 @@ size_flags_vertical = 0
 icon = ExtResource("19_qm3u3")
 flat = true
 expand_icon = true
+
+[node name="BlameScreen" type="Panel" parent="." unique_id=357223526]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_bnpxl")
+script = ExtResource("21_x7xbf")
+
+[node name="SuspectContainer" type="VBoxContainer" parent="BlameScreen" unique_id=205099891]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -90.0
+offset_right = 92.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BlameScreen/SuspectContainer" unique_id=1597132762]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=1058853291]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Who did it?"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=442902463]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("21_06edn")
+flat = true
+expand_icon = true
+
+[node name="SuspectItem1" parent="BlameScreen/SuspectContainer" unique_id=570502750 instance=ExtResource("23_x7xbf")]
+layout_mode = 2
 
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]

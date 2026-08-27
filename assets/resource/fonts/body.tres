@@ -9,6 +9,7 @@ bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.54901963)
 default_font = ExtResource("1_1wtb0")
 default_font_size = 28
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.4545251, 0.45452386, 0.45452428, 0.5019608)
 Label/colors/Color = Color(0, 0, 0, 1)
 Label/colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
 Panel/styles/panel = SubResource("StyleBoxFlat_wh6pq")

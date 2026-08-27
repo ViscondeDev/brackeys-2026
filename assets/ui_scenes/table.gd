@@ -7,6 +7,7 @@ var suspects: Array[Suspect]
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
 @onready var suspects_tab: HBoxContainer = %SuspectsTab
+@onready var blame_screen: HBoxContainer = %BlameScreen
 
 
 func _ready() -> void:
@@ -29,12 +30,17 @@ func load_settings() -> void:
 func setup_suspects_tab() -> void:
 	for i in suspects.size():
 		var suspect := suspects[i]
-		var new_button := Button.new()
-		new_button.icon = suspect.suspect_portrait
-		portraits_container.add_child(new_button)
-		var out: int = new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
-		if out == ERR_INVALID_PARAMETER:
-			printerr("Failed to connect button")
+		add_suspect_to_tab(suspect)
+		blame_screen.add_suspect(suspect)
+
+
+func add_suspect_to_tab(suspect: Suspect) -> void:
+	var new_button := Button.new()
+	new_button.icon = suspect.suspect_portrait
+	portraits_container.add_child(new_button)
+	var out: int = new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
+	if out == ERR_INVALID_PARAMETER:
+		printerr("Failed to connect button")
 
 
 func update_suspect_info(suspect: Suspect) -> void:
@@ -43,6 +49,7 @@ func update_suspect_info(suspect: Suspect) -> void:
 
 func open_suspects_tab() -> void:
 	suspects_tab.visible = true
+
 
 func close_suspects_tab() -> void:
 	suspects_tab.visible = false
