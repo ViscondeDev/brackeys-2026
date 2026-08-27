@@ -35,7 +35,7 @@ func setup_suspects_tab() -> void:
 		var suspect := suspects[i]
 		add_suspect_to_tab(suspect)
 		var button: Button = blame_screen.add_suspect(suspect)
-		var out = button.pressed.connect(blame.bind(suspect)):
+		var out = button.pressed.connect(blame.bind(suspect))
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button")
 
