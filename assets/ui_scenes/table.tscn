@@ -144,6 +144,7 @@ visible = false
 layout_mode = 2
 
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]
+unique_name_in_owner = true
 script = ExtResource("12_4avul")
 
 [node name="Crime Summary" type="Panel" parent="." unique_id=1745212918]
@@ -293,9 +294,12 @@ expand_icon = true
 
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
-[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_suspects_folder_pressed"]
+[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_crime_summary_pressed"]
 [connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="TableAudio" method="_on_close_tab_pressed"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="Crime Summary" method="close_tab"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/Button" to="." method="close_blame_tab"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/Button" to="TableAudio" method="_on_close_tab_pressed"]

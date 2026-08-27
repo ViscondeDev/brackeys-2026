@@ -1,6 +1,7 @@
 extends Control
 
 @export var level_settings: Array[SuspectClaims]
+@export var culprit: Suspect
 
 var suspects: Array[Suspect]
 
@@ -9,6 +10,7 @@ var suspects: Array[Suspect]
 @onready var suspects_tab: HBoxContainer = %SuspectsTab
 @onready var blame_screen: BlameScreen = %BlameScreen
 @onready var blame_button: Button = %Blame
+@onready var audio_manager: SFXManager = %TableAudio
 
 
 func _ready() -> void:
@@ -32,7 +34,10 @@ func setup_suspects_tab() -> void:
 	for i in suspects.size():
 		var suspect := suspects[i]
 		add_suspect_to_tab(suspect)
-		blame_screen.add_suspect(suspect)
+		var button: Button = blame_screen.add_suspect(suspect)
+		var out = button.pressed.connect(blame.bind(suspect)):
+		if out == ERR_INVALID_PARAMETER:
+			printerr("Failed to connect button")
 
 
 func add_suspect_to_tab(suspect: Suspect) -> void:
@@ -43,9 +48,19 @@ func add_suspect_to_tab(suspect: Suspect) -> void:
 	if out == ERR_INVALID_PARAMETER:
 		printerr("Failed to connect button")
 
+	out = new_button.pressed.connect(audio_manager.on_blame_pressed)
+	if out == ERR_INVALID_PARAMETER:
+		printerr("Failed to connect button")
+
+
+
 
 func update_suspect_info(suspect: Suspect) -> void:
 	suspects[suspect.id] = suspect
+
+
+func blame(suspect: Suspect) -> void:
+	pass
 
 
 func open_suspects_tab() -> void:
