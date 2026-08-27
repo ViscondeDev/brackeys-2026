@@ -4,6 +4,6 @@
 
 [resource]
 default_font = ExtResource("1_krhq4")
-default_font_size = 30
+default_font_size = 40
 Label/colors/Color = Color(0, 0, 0, 1)
 Label/colors/font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)

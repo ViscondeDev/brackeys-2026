@@ -1,0 +1,22 @@
+@icon("res://addons/at-icons/node/hourglass.svg")
+class_name LoadingScreen
+extends CanvasLayer
+
+signal screen_ready
+
+@export var animation: AnimationPlayer
+
+
+func _ready() -> void:
+	animation.play("fade")
+	await animation.animation_finished
+	screen_ready.emit()
+
+
+func fade_out():
+	animation.play_backwards("fade")
+	await animation.animation_finished
+	queue_free()
+
+func update_progress(value:float):
+	%ProgressBar.value = value
