@@ -7,7 +7,7 @@ var suspects: Array[Suspect]
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
 @onready var suspects_tab: HBoxContainer = %SuspectsTab
-@onready var blame_screen: Panel = %BlameScreen
+@onready var blame_screen: BlameScreen = %BlameScreen
 @onready var blame_button: Button = %Blame
 
 

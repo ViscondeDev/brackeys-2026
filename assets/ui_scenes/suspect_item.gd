@@ -1,12 +1,21 @@
 class_name SuspectItem
 extends HBoxContainer
 
-@onready var portrait: TextureRect = %TextureRect
+signal blame(suspect: Suspect)
+
+var suspect: Suspect
+
+@onready var portrait: Button = %Button
 @onready var label: Label = %Label
 
 
-func load_suspect(suspect: Suspect) -> void:
-	portrait.texture = suspect.suspect_portrait
+func load_suspect(new_suspect: Suspect) -> void:
+	suspect = new_suspect
+	portrait.icon = suspect.suspect_portrait
 
 	var string := str(suspect.suspect_name, " | ", suspect.suspect_role)
 	label.text = string
+
+
+func blame_suspect() -> void:
+	blame.emit(suspect)

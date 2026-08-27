@@ -1,3 +1,4 @@
+class_name BlameScreen
 extends Panel
 
 var suspect_item: PackedScene = preload("uid://v4imfh3a4t4g")

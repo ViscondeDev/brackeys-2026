@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://v4imfh3a4t4g"]
 
 [ext_resource type="Script" uid="uid://d1y0hvubidcqj" path="res://assets/ui_scenes/suspect_item.gd" id="1_3bh3k"]
-[ext_resource type="Texture2D" uid="uid://bm3svq4l4rtfv" path="res://assets/resource/suspects/chicken_portrait.png" id="1_ned4q"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ned4q"]
+load_path = "res://.godot/imported/chicken_portrait.png-87824f0087a25eda5b26b3598ae98912.ctex"
 
 [node name="SuspectItem1" type="HBoxContainer" unique_id=570502750]
 script = ExtResource("1_3bh3k")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=920176314]
+[node name="Button" type="Button" parent="." unique_id=1260207433]
 unique_name_in_owner = true
 layout_mode = 2
-texture = ExtResource("1_ned4q")
+icon = SubResource("CompressedTexture2D_ned4q")
+flat = true
 
 [node name="Label" type="Label" parent="." unique_id=477612985]
 unique_name_in_owner = true

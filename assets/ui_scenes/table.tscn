@@ -146,9 +146,6 @@ layout_mode = 2
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]
 script = ExtResource("12_4avul")
 
-[connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
-[connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
-
 [node name="Crime Summary" type="Panel" parent="." unique_id=1745212918]
 visible = false
 layout_mode = 1
