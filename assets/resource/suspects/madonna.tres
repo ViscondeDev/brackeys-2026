@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://opfpvsm425br"]
 
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="1_lb7i0"]
-[ext_resource type="Texture2D" uid="uid://bm3svq4l4rtfv" path="res://assets/resource/suspects/chicken_portrait.png" id="2_lb7i0"]
+[ext_resource type="Texture2D" uid="uid://blc4me1m6r2ds" path="res://assets/resource/suspects/portraits/Portait_Duck_PNG.png" id="2_lb7i0"]
 
 [resource]
 script = ExtResource("1_lb7i0")
 suspect_name = "Madonna"
 suspect_portrait = ExtResource("2_lb7i0")
-suspect_role = "GroundScratcher"
+suspect_role = "Egg Sitter"
 metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

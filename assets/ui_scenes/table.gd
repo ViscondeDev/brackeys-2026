@@ -1,6 +1,7 @@
 extends Control
 
 @export var level_settings: Array[SuspectClaims]
+@export_multiline var crime_summary: String
 @export var culprit: Suspect
 
 var suspects: Array[Suspect]
@@ -16,6 +17,7 @@ var _targeted_suspect: Suspect
 @onready var audio_manager: SFXManager = %TableAudio
 @onready var props_animation: AnimationPlayer = %PropsAnimatinon
 @onready var final_judgement_buton: Button = %FinalJudgement
+@onready var summary: Label = %Summary
 
 
 func _ready() -> void:
@@ -29,6 +31,7 @@ func _ready() -> void:
 	## AUDIO END ##
 	await get_tree().create_timer(3).timeout
 	props_animation.play("crime_summary")
+	summary.text = crime_summary
 
 
 func load_settings() -> void:

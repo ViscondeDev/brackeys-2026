@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crf81016jltsj"
-path="res://.godot/imported/sheep_portrait.png-115096f0eca41d8317dcdf6ae3a99114.ctex"
+path="res://.godot/imported/sheep_portrait.png-c538460b96334657ea40e108a7efc4ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resource/suspects/sheep_portrait.png"
-dest_files=["res://.godot/imported/sheep_portrait.png-115096f0eca41d8317dcdf6ae3a99114.ctex"]
+source_file="res://assets/resource/suspects/portraits/sheep_portrait.png"
+dest_files=["res://.godot/imported/sheep_portrait.png-c538460b96334657ea40e108a7efc4ab.ctex"]
 
 [params]
 

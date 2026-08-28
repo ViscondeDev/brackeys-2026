@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsbonwexa1a2m"
-path="res://.godot/imported/cow_portrait.png-b42ad6474e36ecbd018589cea6715fdb.ctex"
+uid="uid://bfmx51qnruroa"
+path="res://.godot/imported/pig_portrait.png-2699d778c3434324ce8fa2d1008c3372.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resource/suspects/cow_portrait.png"
-dest_files=["res://.godot/imported/cow_portrait.png-b42ad6474e36ecbd018589cea6715fdb.ctex"]
+source_file="res://assets/resource/suspects/portraits/pig_portrait.png"
+dest_files=["res://.godot/imported/pig_portrait.png-2699d778c3434324ce8fa2d1008c3372.ctex"]
 
 [params]
 

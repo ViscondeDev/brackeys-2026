@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://h8qx4sb851ww"]
+
+[ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="1_cjq4b"]
+[ext_resource type="Texture2D" uid="uid://iasvi84lydj8" path="res://assets/resource/suspects/portraits/Portrait_Goat_PNG.png" id="2_62q5e"]
+
+[resource]
+script = ExtResource("1_cjq4b")
+suspect_name = "Gatsby"
+suspect_portrait = ExtResource("2_62q5e")
+suspect_role = "Tailor"
+metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

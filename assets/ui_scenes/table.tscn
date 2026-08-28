@@ -4,9 +4,8 @@
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="1_edakw"]
 [ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://assets/ui_scenes/suspect_file.tscn" id="2_6h51b"]
 [ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://assets/resource/suspect_claims.gd" id="2_ajlhi"]
-[ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="4_oo5ns"]
-[ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://assets/resource/suspects/madonna.tres" id="4_pa6pc"]
-[ext_resource type="Texture2D" uid="uid://bfmx51qnruroa" path="res://assets/resource/suspects/pig_portrait.png" id="5_ho76x"]
+[ext_resource type="Resource" uid="uid://bbe4naaa4iy42" path="res://assets/resource/suspects/elton.tres" id="4_4af6t"]
+[ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://assets/resource/suspects/sherlock.tres" id="4_t50tk"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_ho76x"]
 [ext_resource type="Texture2D" uid="uid://ujdejh1j5wfa" path="res://assets/ui_elements/suspect_folder.png" id="7_5yuuw"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/ui_elements/coffe.png" id="8_i3wqn"]
@@ -27,23 +26,16 @@
 [ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/ui_elements/ending/Hands_Together_PNG.png" id="23_gklel"]
 [ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/ui_elements/ending/Come_Here_Hand__Hay.png" id="24_3gyjp"]
 
-[sub_resource type="Resource" id="Resource_6h51b"]
+[sub_resource type="Resource" id="Resource_uwoax"]
 script = ExtResource("2_ajlhi")
-suspect = ExtResource("4_pa6pc")
-claims = Array[String](["I was there", "And i was the one who did it"])
+suspect = ExtResource("4_4af6t")
+claims = Array[String](["The noise happened in the middle of the night", "I went out checking, when i saw Sherlock running from the storage room", "I went back to sleep when he screamed \"I'm on it\""])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
-[sub_resource type="Resource" id="Resource_pa6pc"]
-script = ExtResource("4_oo5ns")
-suspect_name = "Pig"
-suspect_portrait = ExtResource("5_ho76x")
-suspect_role = "Test"
-metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
-
-[sub_resource type="Resource" id="Resource_ajlhi"]
+[sub_resource type="Resource" id="Resource_4af6t"]
 script = ExtResource("2_ajlhi")
-suspect = SubResource("Resource_pa6pc")
-claims = Array[String](["I don't claim anything tbh"])
+suspect = ExtResource("4_t50tk")
+claims = Array[String](["I was on the storage when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody, except for Elton. He was quite sleepy."])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="Animation" id="Animation_06edn"]
@@ -219,8 +211,15 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_edakw")
 script = ExtResource("1_6h51b")
-level_settings = Array[ExtResource("2_ajlhi")]([SubResource("Resource_6h51b"), SubResource("Resource_ajlhi")])
-culprit = ExtResource("4_pa6pc")
+level_settings = Array[ExtResource("2_ajlhi")]([SubResource("Resource_uwoax"), SubResource("Resource_4af6t")])
+crime_summary = "In the middle of the night, a loud crash came from the stable storage room.
+Some tools fell, but only one broke.
+
+[ PROPERTY DAMAGE – LOSS: US$ 8 ]
+
+Check the suspects folder to investigate.
+Come back here if you find the culprit."
+culprit = ExtResource("4_t50tk")
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
 layout_mode = 1
@@ -366,16 +365,16 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 47
 theme_override_constants/margin_bottom = 25
 
-[node name="Label2" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1865474277]
+[node name="Summary" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1865474277]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 0
-text = "After a meeting at the barn at 11AM, everybody ate watermelon, except for the horse, which was out to the vet.
-When he arrived at 11:40 AM, the watermelon piece that was waiting for him, wasn't there.
-Whoever did it, was fast or small, the crime had no witnesses
+text = "In the middle of the night, a stranger came from the storage room.
+Some tools fell, but only one broke.
 
-THEFT, TOTAL DAMAGE ~2cents
+PROPERTY DAMAGE - LOSS: $8
 
-Check suspects folders to see the claims"
+Check the suspects folder to investigate."
 autowrap_mode = 2
 
 [node name="Blame" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
@@ -516,15 +515,15 @@ script = ExtResource("12_4avul")
 
 [connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
-[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_crime_summary_pressed"]
 [connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
+[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_crime_summary_pressed"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
 [connection signal="crime_introduced" from="Crime Summary" to="." method="_release_suspects_folder"]
 [connection signal="crime_introduced" from="Crime Summary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
-[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="TableAudio" method="_on_close_tab_pressed"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="Crime Summary" method="close_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="TableAudio" method="_on_close_tab_pressed"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="." method="close_blame_tab"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="TableAudio" method="_on_close_button_pressed"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/FinalJudgement" to="." method="_on_final_judgement_pressed"]

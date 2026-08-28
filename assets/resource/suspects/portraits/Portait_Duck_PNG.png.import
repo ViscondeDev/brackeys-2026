@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm3svq4l4rtfv"
-path="res://.godot/imported/chicken_portrait.png-87824f0087a25eda5b26b3598ae98912.ctex"
+uid="uid://blc4me1m6r2ds"
+path="res://.godot/imported/Portait_Duck_PNG.png-ee72b38b750387911f2f6ddd0f71fb80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/resource/suspects/chicken_portrait.png"
-dest_files=["res://.godot/imported/chicken_portrait.png-87824f0087a25eda5b26b3598ae98912.ctex"]
+source_file="res://assets/resource/suspects/portraits/Portait_Duck_PNG.png"
+dest_files=["res://.godot/imported/Portait_Duck_PNG.png-ee72b38b750387911f2f6ddd0f71fb80.ctex"]
 
 [params]
 

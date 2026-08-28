@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://25dppg4jko3r"]
+
+[ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://assets/resource/suspects/suspect.gd" id="1_6koxh"]
+[ext_resource type="Texture2D" uid="uid://bfmx51qnruroa" path="res://assets/resource/suspects/portraits/pig_portrait.png" id="2_6koxh"]
+
+[resource]
+script = ExtResource("1_6koxh")
+suspect_name = "Hércules"
+suspect_portrait = ExtResource("2_6koxh")
+suspect_role = "Farm Hands"
+metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
