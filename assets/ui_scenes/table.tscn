@@ -29,13 +29,13 @@
 [sub_resource type="Resource" id="Resource_uwoax"]
 script = ExtResource("2_ajlhi")
 suspect = ExtResource("4_4af6t")
-claims = Array[String](["The noise happened in the middle of the night", "I went out checking, when i saw Sherlock running from the storage room", "I went back to sleep when he screamed \"I'm on it\""])
+claims = Array[String](["The noise happened in the middle of the night. I was at my stall at that moment", "I went out checking, when i saw Sherlock running from the storage room from the storage room", "I went back to sleep when he screamed \"I'm on it\""])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="Resource" id="Resource_4af6t"]
 script = ExtResource("2_ajlhi")
 suspect = ExtResource("4_t50tk")
-claims = Array[String](["I was on the storage when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody, except for Elton. He was quite sleepy."])
+claims = Array[String](["I was on the storage room when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody on my way out, except for Elton. He was quite sleepy."])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3gyjp"]
