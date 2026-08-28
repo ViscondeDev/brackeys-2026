@@ -10,9 +10,13 @@ script = ExtResource("1_3bh3k")
 
 [node name="Button" type="Button" parent="." unique_id=1260207433]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 150)
+custom_maximum_size = Vector2(150, 150)
 layout_mode = 2
+size_flags_horizontal = 3
 icon = SubResource("CompressedTexture2D_ned4q")
 flat = true
+expand_icon = true
 
 [node name="Label" type="Label" parent="." unique_id=477612985]
 unique_name_in_owner = true

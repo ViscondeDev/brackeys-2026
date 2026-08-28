@@ -6,6 +6,8 @@ extends Control
 var suspects: Array[Suspect]
 var is_suspects_folder_released: bool
 
+var _targeted_suspect: Suspect
+
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
 @onready var suspects_tab: HBoxContainer = %SuspectsTab
@@ -13,6 +15,7 @@ var is_suspects_folder_released: bool
 @onready var blame_button: Button = %Blame
 @onready var audio_manager: SFXManager = %TableAudio
 @onready var props_animation: AnimationPlayer = %PropsAnimatinon
+@onready var final_judgement_buton: Button = %FinalJudgement
 
 
 func _ready() -> void:
@@ -44,8 +47,9 @@ func setup_suspects_tab() -> void:
 	for i in suspects.size():
 		var suspect := suspects[i]
 		add_suspect_to_tab(suspect)
+
 		var button: Button = blame_screen.add_suspect(suspect)
-		var out = button.pressed.connect(blame.bind(suspect))
+		var out := button.pressed.connect(blame.bind(suspect))
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button")
 
@@ -76,7 +80,8 @@ func update_suspect_info(suspect: Suspect) -> void:
 
 
 func blame(suspect: Suspect) -> void:
-	pass
+	final_judgement_buton.disabled = false
+	_targeted_suspect = suspect
 
 
 func open_suspects_tab() -> void:
@@ -105,3 +110,10 @@ func _release_suspects_folder() -> void:
 	if not is_suspects_folder_released:
 		props_animation.play("suspects_folder")
 		is_suspects_folder_released = true
+
+
+func _on_final_judgement_pressed() -> void:
+	if _targeted_suspect.id == culprit.id:
+		print("You got it right")
+	else:
+		print("Wrong, sorry")

@@ -132,6 +132,7 @@ grow_vertical = 2
 theme = ExtResource("1_edakw")
 script = ExtResource("1_6h51b")
 level_settings = Array[ExtResource("2_ajlhi")]([SubResource("Resource_6h51b"), SubResource("Resource_ajlhi")])
+culprit = ExtResource("4_pa6pc")
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
 layout_mode = 1
@@ -357,6 +358,15 @@ icon = ExtResource("21_06edn")
 flat = true
 expand_icon = true
 
+[node name="FinalJudgement" type="Button" parent="BlameScreen/SuspectContainer" unique_id=1130879573]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("15_bnpxl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+disabled = true
+text = "Blame"
+
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]
 unique_name_in_owner = true
 script = ExtResource("12_4avul")
@@ -374,3 +384,4 @@ script = ExtResource("12_4avul")
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="Crime Summary" method="close_tab"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="." method="close_blame_tab"]
 [connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="TableAudio" method="_on_close_button_pressed"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/FinalJudgement" to="." method="_on_final_judgement_pressed"]

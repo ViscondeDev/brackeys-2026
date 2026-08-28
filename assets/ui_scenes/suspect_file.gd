@@ -53,18 +53,18 @@ func populate_claims(claims: Array[Claim]) -> void:
 			printerr("Failed to connect button")
 		
 		## AUDIO ##
-		var hoverAudio:AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
-		hoverAudio.position = menu_button.position
-		menu_button.add_child(hoverAudio)
-		var out = menu_button.mouse_entered.connect(_on_mouse_entered.bind(hoverAudio))
+		var hover_audio:AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
+		hover_audio.position = menu_button.position
+		menu_button.add_child(hover_audio)
+		var out = menu_button.mouse_entered.connect(_on_mouse_entered.bind(hover_audio))
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button (AUDIO mouse entered)")
 		
-		var pressedAudio:AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
-		pressedAudio.pitch_scale = 0.8
-		pressedAudio.position = menu_button.position
-		menu_button.add_child(pressedAudio)
-		out = menu_button.pressed.connect(_on_menu_button_pressed.bind(pressedAudio))
+		var pressed_audio:AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
+		pressed_audio.pitch_scale = 0.8
+		pressed_audio.position = menu_button.position
+		menu_button.add_child(pressed_audio)
+		out = menu_button.pressed.connect(_on_menu_button_pressed.bind(pressed_audio))
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button (AUDIO mouse pressed)")
 		### AUDIO END ##
@@ -82,8 +82,8 @@ func update_certainty(option: int, claim: int) -> void:
 func close_tab() -> void:
 	closed_tab.emit()
 
-func _on_mouse_entered(hoverAudio: AudioStreamPlayer2D) -> void:
-	hoverAudio.play()
+func _on_mouse_entered(hover_audio: AudioStreamPlayer2D) -> void:
+	hover_audio.play()
 
-func _on_menu_button_pressed(pressedAudio: AudioStreamPlayer2D) -> void:
-	pressedAudio.play()
+func _on_menu_button_pressed(pressed_audio: AudioStreamPlayer2D) -> void:
+	pressed_audio.play()
