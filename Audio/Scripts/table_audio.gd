@@ -30,3 +30,7 @@ func _on_close_tab_pressed() -> void:
 func _on_close_button_pressed() -> void:
 	audio_player = get_node("BlameClose")
 	audio_player.play()
+
+
+func _new_evidence_or_prop_introduced() -> void:
+	pass # Replace with function body.

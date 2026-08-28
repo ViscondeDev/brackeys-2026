@@ -367,6 +367,7 @@ script = ExtResource("12_4avul")
 [connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
 [connection signal="crime_introduced" from="Crime Summary" to="." method="_release_suspects_folder"]
+[connection signal="crime_introduced" from="Crime Summary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="TableAudio" method="_on_close_tab_pressed"]
