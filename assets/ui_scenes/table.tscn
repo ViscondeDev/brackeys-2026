@@ -24,7 +24,6 @@
 [ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://assets/ui_scenes/blame_screen.gd" id="21_x7xbf"]
 [ext_resource type="Texture2D" uid="uid://tt0usv3q7csn" path="res://assets/ui_elements/ending/Barn_Doors_Open.png" id="22_3gyjp"]
 [ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/ui_elements/ending/Hands_Together_PNG.png" id="23_gklel"]
-[ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/ui_elements/ending/Come_Here_Hand__Hay.png" id="24_3gyjp"]
 
 [sub_resource type="Resource" id="Resource_uwoax"]
 script = ExtResource("2_ajlhi")
@@ -156,9 +155,34 @@ tracks/2/keys = {
 "update": 1,
 "values": [ExtResource("23_gklel")]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Result:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_50oi6"]
-resource_name = "cinamatic_blame"
+resource_name = "cinematic_blame"
+length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -190,16 +214,52 @@ tracks/2/path = NodePath("Hands:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.50382787),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("23_gklel")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Result:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Result:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("23_gklel"), ExtResource("24_3gyjp")]
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xuraf"]
 _data = {
 &"RESET": SubResource("Animation_gklel"),
-&"cinamatic_blame": SubResource("Animation_50oi6")
+&"cinematic_blame": SubResource("Animation_50oi6")
 }
 
 [node name="Table" type="Control" unique_id=1200437378]
@@ -212,6 +272,7 @@ grow_vertical = 2
 theme = ExtResource("1_edakw")
 script = ExtResource("1_6h51b")
 level_settings = Array[ExtResource("2_ajlhi")]([SubResource("Resource_uwoax"), SubResource("Resource_4af6t")])
+culprit = ExtResource("4_t50tk")
 crime_summary = "In the middle of the night, a loud crash came from the stable storage room.
 Some tools fell, but only one broke.
 
@@ -219,7 +280,6 @@ Some tools fell, but only one broke.
 
 Check the suspects folder to investigate.
 Come back here if you find the culprit."
-culprit = ExtResource("4_t50tk")
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
 layout_mode = 1
@@ -506,7 +566,28 @@ texture = ExtResource("23_gklel")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Ending" unique_id=1245525047]
+[node name="Result" type="Label" parent="Ending" unique_id=1073709426]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("15_bnpxl")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 193
+text = "INNOCENT"
+
+[node name="EndingAnimation" type="AnimationPlayer" parent="Ending" unique_id=1245525047]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_xuraf")
 
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]

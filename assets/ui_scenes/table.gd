@@ -1,8 +1,10 @@
 extends Control
 
 @export var level_settings: Array[SuspectClaims]
-@export_multiline var crime_summary: String
 @export var culprit: Suspect
+@export var next_level_path: String
+
+@export_multiline var crime_summary: String
 
 var suspects: Array[Suspect]
 var is_suspects_folder_released: bool
@@ -18,6 +20,8 @@ var _targeted_suspect: Suspect
 @onready var props_animation: AnimationPlayer = %PropsAnimatinon
 @onready var final_judgement_buton: Button = %FinalJudgement
 @onready var summary: Label = %Summary
+@onready var result: Label = %Result
+@onready var ending_animation: AnimationPlayer = %EndingAnimation
 
 
 func _ready() -> void:
@@ -116,7 +120,14 @@ func _release_suspects_folder() -> void:
 
 
 func _on_final_judgement_pressed() -> void:
+	var load_scene_path: String
 	if _targeted_suspect.id == culprit.id:
-		print("You got it right")
+		result.text = "CULPRIT"
+		load_scene_path = next_level_path
 	else:
-		print("Wrong, sorry")
+		result.text = "INNOCENT"
+		load_scene_path = self.scene_file_path
+
+	ending_animation.play("cinematic_blame")
+	await ending_animation.animation_finished
+	Game.current.load_scene(load_scene_path)
