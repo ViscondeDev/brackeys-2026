@@ -4,6 +4,7 @@ extends Control
 @export var culprit: Suspect
 
 var suspects: Array[Suspect]
+var is_suspects_folder_released: bool
 
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
@@ -11,17 +12,20 @@ var suspects: Array[Suspect]
 @onready var blame_screen: BlameScreen = %BlameScreen
 @onready var blame_button: Button = %Blame
 @onready var audio_manager: SFXManager = %TableAudio
+@onready var props_animation: AnimationPlayer = %PropsAnimatinon
 
 
 func _ready() -> void:
 	load_settings()
 	setup_suspects_tab()
-	
+
 	## AUDIO ##
 	var music: AudioStreamPlayer = AudioGlobal.get_node("Music")
-	var interactiveMusic = music.get_stream_playback() as AudioStreamPlaybackInteractive
-	interactiveMusic.switch_to_clip_by_name("Investigation")
+	var interactive_music := music.get_stream_playback() as AudioStreamPlaybackInteractive
+	interactive_music.switch_to_clip_by_name("Investigation")
 	## AUDIO END ##
+	await get_tree().create_timer(3).timeout
+	props_animation.play("crime_summary")
 
 
 func load_settings() -> void:
@@ -57,16 +61,14 @@ func add_suspect_to_tab(suspect: Suspect) -> void:
 	out = new_button.pressed.connect(audio_manager.on_blame_pressed)
 	if out == ERR_INVALID_PARAMETER:
 		printerr("Failed to connect button (AUDIO blame pressed)")
-	
+
 	## AUDIO ##
-	var hoverAudio = AudioGlobal.get_node("ButtonHover").duplicate()
-	new_button.add_child(hoverAudio)
-	out = new_button.mouse_entered.connect(_on_mouse_entered.bind(hoverAudio))
+	var hover_audio = AudioGlobal.get_node("ButtonHover").duplicate()
+	new_button.add_child(hover_audio)
+	out = new_button.mouse_entered.connect(_on_mouse_entered.bind(hover_audio))
 	if out == ERR_INVALID_PARAMETER:
 		printerr("Failed to connect button (AUDIO mouse entered)")
 	### AUDIO END ##
-
-
 
 
 func update_suspect_info(suspect: Suspect) -> void:
@@ -95,6 +97,11 @@ func close_blame_tab() -> void:
 
 
 ## AUDIO ##
+func _on_mouse_entered(hover_audio: AudioStreamPlayer2D) -> void:
+	hover_audio.play()
 
-func _on_mouse_entered(hoverAudio: AudioStreamPlayer2D) -> void:
-	hoverAudio.play()
+
+func _release_suspects_folder() -> void:
+	if not is_suspects_folder_released:
+		props_animation.play("suspects_folder")
+		is_suspects_folder_released = true
