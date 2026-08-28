@@ -20,8 +20,12 @@
 [ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="17_bnpxl"]
 [ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/ui_elements/blame.png" id="19_04pw7"]
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="19_qm3u3"]
+[ext_resource type="Texture2D" uid="uid://cld0gslv5ntxm" path="res://assets/ui_elements/ending/Outside_Dark.png" id="21_4af6t"]
 [ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/ui_elements/X_White_PNG.png" id="21_06edn"]
 [ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://assets/ui_scenes/blame_screen.gd" id="21_x7xbf"]
+[ext_resource type="Texture2D" uid="uid://tt0usv3q7csn" path="res://assets/ui_elements/ending/Barn_Doors_Open.png" id="22_3gyjp"]
+[ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/ui_elements/ending/Hands_Together_PNG.png" id="23_gklel"]
+[ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/ui_elements/ending/Come_Here_Hand__Hay.png" id="24_3gyjp"]
 
 [sub_resource type="Resource" id="Resource_6h51b"]
 script = ExtResource("2_ajlhi")
@@ -121,6 +125,90 @@ texture = ExtResource("16_deiwr")
 default_font = ExtResource("17_bnpxl")
 Label/colors/font_color = Color(0, 0, 0, 1)
 Panel/styles/panel = SubResource("StyleBoxTexture_wh6pq")
+
+[sub_resource type="Animation" id="Animation_gklel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outside:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_4af6t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barn:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_3gyjp")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hands:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("23_gklel")]
+}
+
+[sub_resource type="Animation" id="Animation_50oi6"]
+resource_name = "cinamatic_blame"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outside:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_4af6t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barn:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_3gyjp")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hands:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.50382787),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("23_gklel"), ExtResource("24_3gyjp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuraf"]
+_data = {
+&"RESET": SubResource("Animation_gklel"),
+&"cinamatic_blame": SubResource("Animation_50oi6")
+}
 
 [node name="Table" type="Control" unique_id=1200437378]
 layout_mode = 3
@@ -366,6 +454,61 @@ theme = ExtResource("15_bnpxl")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Blame"
+
+[node name="Ending" type="Panel" parent="." unique_id=1892932566]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outside" type="TextureRect" parent="Ending" unique_id=1959556679]
+custom_maximum_size = Vector2(202, 382.5)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -159.0
+offset_right = 63.0
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_4af6t")
+expand_mode = 1
+
+[node name="Barn" type="TextureRect" parent="Ending" unique_id=1864861659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("22_3gyjp")
+expand_mode = 1
+
+[node name="Hands" type="TextureRect" parent="Ending" unique_id=1085777207]
+custom_minimum_size = Vector2(1416, 292)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -292.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("23_gklel")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Ending" unique_id=1245525047]
+libraries/ = SubResource("AnimationLibrary_xuraf")
 
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("13_gy5u2")]
 unique_name_in_owner = true
