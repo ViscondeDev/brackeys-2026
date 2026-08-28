@@ -1,16 +1,45 @@
 [gd_scene format=3 uid="uid://dyw4w7opyexso"]
 
-[ext_resource type="AudioStream" uid="uid://c1u4mofrdwtk5" path="res://Audio/Music/02/Investigation_background_1.ogg" id="1_r4vw5"]
-[ext_resource type="AudioStream" uid="uid://co6n32pdb1nj0" path="res://Audio/SFX/UI/Paperflip-02.ogg" id="2_04opr"]
+[ext_resource type="AudioStream" uid="uid://dgrgpvnkwj6hp" path="res://Audio/SFX/UI/Paperflip Open.ogg" id="1_r4vw5"]
+[ext_resource type="AudioStream" uid="uid://bg4toyxuqsmbh" path="res://Audio/SFX/UI/Paperflip Close.ogg" id="2_04opr"]
+[ext_resource type="AudioStream" uid="uid://cmg27x7x77obp" path="res://Audio/SFX/UI/Mouse Hover.ogg" id="3_aj36v"]
+[ext_resource type="AudioStream" uid="uid://uy7mhfa4pemk" path="res://Audio/SFX/UI/BlameOpen.ogg" id="4_vy73c"]
 
 [node name="TableAudio" type="Node2D" unique_id=1196760623]
 
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=952269829]
-stream = ExtResource("1_r4vw5")
-autoplay = true
-max_distance = 4096.0
-panning_strength = 0.0
-
 [node name="FileOpen" type="AudioStreamPlayer2D" parent="." unique_id=1591868439]
+stream = ExtResource("1_r4vw5")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="FileClose" type="AudioStreamPlayer2D" parent="." unique_id=1379058919]
 stream = ExtResource("2_04opr")
-volume_db = 2.0
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="BlameOpen" type="AudioStreamPlayer2D" parent="." unique_id=1141336925]
+position = Vector2(960, 540)
+stream = ExtResource("4_vy73c")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="BlameClose" type="AudioStreamPlayer2D" parent="." unique_id=1412018030]
+position = Vector2(960, 540)
+stream = ExtResource("3_aj36v")
+volume_db = -16.0
+pitch_scale = 0.66
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="BlameClose old" type="AudioStreamPlayer2D" parent="." unique_id=2009236268]
+position = Vector2(960, 540)
+stream = ExtResource("3_aj36v")
+volume_db = -12.0
+pitch_scale = 0.31
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"

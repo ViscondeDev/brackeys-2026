@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6nfskq3t6pvu"
+path="res://.godot/imported/ClaimChoose 04.ogg-018a62d70ef1987e0923a53c5883fefa.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/ClaimChoose 04.ogg"
+dest_files=["res://.godot/imported/ClaimChoose 04.ogg-018a62d70ef1987e0923a53c5883fefa.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bgrpcwlo6cj2b"]
+
+[ext_resource type="AudioStream" uid="uid://cmg27x7x77obp" path="res://Audio/SFX/UI/Mouse Hover.ogg" id="1_nnvre"]
+[ext_resource type="AudioStream" uid="uid://bjbpf36g81c66" path="res://Audio/Music/02/Title_MainMenu_pass_1.ogg" id="2_48blk"]
+[ext_resource type="AudioStream" uid="uid://c2ml2u5jcx1ls" path="res://Audio/SFX/UI/Mouse Hover Main Menu.ogg" id="2_rs3km"]
+[ext_resource type="AudioStream" uid="uid://c1u4mofrdwtk5" path="res://Audio/Music/02/Investigation_background_1.ogg" id="3_rs3km"]
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fgi6g"]
+clip_count = 2
+clip_0/name = &"MainMenu"
+clip_0/stream = ExtResource("2_48blk")
+clip_0/auto_advance = 0
+clip_1/name = &"Investigation"
+clip_1/stream = ExtResource("3_rs3km")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(-1, -1): {
+"fade_beats": 4.0,
+"fade_mode": 3,
+"from_time": 1,
+"to_time": 1
+}
+}
+
+[node name="AudioGlobal" type="Node2D" unique_id=1361412736]
+
+[node name="ButtonHover" type="AudioStreamPlayer2D" parent="." unique_id=2022153481]
+stream = ExtResource("1_nnvre")
+volume_db = -22.0
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="ButtonHover_MainMenu" type="AudioStreamPlayer2D" parent="." unique_id=2104697031]
+position = Vector2(960, 540)
+stream = ExtResource("2_rs3km")
+volume_db = -31.831
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=847624706]
+stream = SubResource("AudioStreamInteractive_fgi6g")
+autoplay = true
+bus = &"MUSIC"

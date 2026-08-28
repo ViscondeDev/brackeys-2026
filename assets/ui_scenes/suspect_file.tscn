@@ -5,7 +5,7 @@
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="3_scr4r"]
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="4_scr4s"]
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="5_scr4r"]
-[ext_resource type="PackedScene" uid="uid://crpme068tjc45" path="res://Audio/SFX/suspect_file_audio.tscn" id="6_xyf37"]
+[ext_resource type="PackedScene" uid="uid://crpme068tjc45" path="res://Audio/suspect_file_audio.tscn" id="6_xyf37"]
 [ext_resource type="Script" uid="uid://b3oo0vfqrkxsh" path="res://Audio/Scripts/suspect_file_audio.gd" id="7_0a840"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naxq3"]
@@ -95,6 +95,11 @@ theme = ExtResource("3_scr4r")
 text = "Claims"
 horizontal_alignment = 1
 
+[node name="MenuButton" type="MenuButton" parent="MarginContainer/VBoxContainer/NinePatchRect/MarginContainer/Claims/Title" unique_id=1797131118]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
 [node name="Notes" type="VBoxContainer" parent="MarginContainer/VBoxContainer" unique_id=962849666]
 custom_minimum_size = Vector2(0, 250)
 layout_mode = 2
@@ -111,8 +116,12 @@ layout_mode = 2
 size_flags_vertical = 3
 theme = ExtResource("4_scr4s")
 placeholder_text = "Write here"
+wrap_mode = 1
+scroll_smooth = true
+scroll_v_scroll_speed = 25.0
+caret_blink = true
 
-[node name="Button" type="Button" parent="." unique_id=2145020788]
+[node name="CloseButton" type="Button" parent="." unique_id=2145020788]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 1
 anchors_preset = 1
@@ -128,4 +137,6 @@ expand_icon = true
 [node name="SuspectFileAudio" parent="." unique_id=820096805 instance=ExtResource("6_xyf37")]
 script = ExtResource("7_0a840")
 
-[connection signal="pressed" from="Button" to="." method="close_tab"]
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Notes/TextEdit" to="SuspectFileAudio" method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="CloseButton" to="." method="close_tab"]
+[connection signal="pressed" from="CloseButton" to="SuspectFileAudio" method="_on_close_button_pressed"]

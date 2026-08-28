@@ -235,7 +235,7 @@ alignment = 2
 icon_alignment = 2
 expand_icon = true
 
-[node name="Button" type="Button" parent="Crime Summary/TextureRect/MarginContainer" unique_id=1986349345]
+[node name="CloseButton" type="Button" parent="Crime Summary/TextureRect/MarginContainer" unique_id=1986349345]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -283,7 +283,7 @@ theme_override_font_sizes/font_size = 80
 text = "Who did it?"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=442902463]
+[node name="CloseButton" type="Button" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=442902463]
 custom_minimum_size = Vector2(60, 60)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -299,7 +299,7 @@ expand_icon = true
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
-[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="TableAudio" method="_on_close_tab_pressed"]
-[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/Button" to="Crime Summary" method="close_tab"]
-[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/Button" to="." method="close_blame_tab"]
-[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/Button" to="TableAudio" method="_on_close_tab_pressed"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="TableAudio" method="_on_close_tab_pressed"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="Crime Summary" method="close_tab"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="." method="close_blame_tab"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="TableAudio" method="_on_close_button_pressed"]

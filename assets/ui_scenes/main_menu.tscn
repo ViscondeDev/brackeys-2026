@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bdaqirluh7pol" path="res://assets/ui_elements/main_menu.jpg" id="1_bdany"]
 [ext_resource type="Script" uid="uid://4byekjq51pxd" path="res://assets/ui_scenes/main_menu.gd" id="1_g6xfn"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="2_g6xfn"]
+[ext_resource type="AudioStream" uid="uid://c2ml2u5jcx1ls" path="res://Audio/SFX/UI/Mouse Hover Main Menu.ogg" id="4_35mlj"]
 
 [node name="Main Menu" type="Control" unique_id=414716971]
 layout_mode = 3
@@ -31,7 +32,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 130.0
 offset_top = -581.0
-offset_right = 730.0
+offset_right = 430.0
 offset_bottom = -210.0
 grow_vertical = 0
 theme = ExtResource("2_g6xfn")
@@ -39,20 +40,33 @@ theme_override_constants/separation = 25
 
 [node name="Play" type="Button" parent="VBoxContainer" unique_id=1347154652]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Play"
 flat = true
 alignment = 0
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1846228178]
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=1846228178]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Credits"
 flat = true
 alignment = 0
 
-[node name="Button3" type="Button" parent="VBoxContainer" unique_id=876743249]
+[node name="Quit" type="Button" parent="VBoxContainer" unique_id=876743249]
 layout_mode = 2
+size_flags_horizontal = 0
 text = "Quit"
 flat = true
 alignment = 0
 
+[node name="ButtonHover_MainMenu" type="AudioStreamPlayer2D" parent="VBoxContainer" unique_id=1077289511]
+stream = ExtResource("4_35mlj")
+volume_db = -31.831
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Credits" to="." method="_on_button_2_mouse_entered"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_button_3_mouse_entered"]

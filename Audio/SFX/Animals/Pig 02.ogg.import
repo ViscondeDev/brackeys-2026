@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dc34460mvo0qs"
+path="res://.godot/imported/Pig 02.ogg-3ae7490d44317b6b4eedd23a1770ab6b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Pig 02.ogg"
+dest_files=["res://.godot/imported/Pig 02.ogg-3ae7490d44317b6b4eedd23a1770ab6b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

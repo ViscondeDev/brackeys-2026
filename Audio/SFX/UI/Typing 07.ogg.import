@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dv33p47jok6gt"
+path="res://.godot/imported/Typing 07.ogg-183c606838960fab36c3224f6c5a7b1c.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Typing 07.ogg"
+dest_files=["res://.godot/imported/Typing 07.ogg-183c606838960fab36c3224f6c5a7b1c.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

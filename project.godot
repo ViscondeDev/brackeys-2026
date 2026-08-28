@@ -19,6 +19,14 @@ run/main_scene="uid://cd31wo5c4ssxe"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://c4vetkenk3ls0"
+
+[autoload]
+
+AudioGlobal="*uid://bgrpcwlo6cj2b"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=1

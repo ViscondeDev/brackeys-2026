@@ -16,6 +16,12 @@ var suspects: Array[Suspect]
 func _ready() -> void:
 	load_settings()
 	setup_suspects_tab()
+	
+	## AUDIO ##
+	var music: AudioStreamPlayer = AudioGlobal.get_node("Music")
+	var interactiveMusic = music.get_stream_playback() as AudioStreamPlaybackInteractive
+	interactiveMusic.switch_to_clip_by_name("Investigation")
+	## AUDIO END ##
 
 
 func load_settings() -> void:
@@ -50,7 +56,15 @@ func add_suspect_to_tab(suspect: Suspect) -> void:
 
 	out = new_button.pressed.connect(audio_manager.on_blame_pressed)
 	if out == ERR_INVALID_PARAMETER:
-		printerr("Failed to connect button")
+		printerr("Failed to connect button (AUDIO blame pressed)")
+	
+	## AUDIO ##
+	var hoverAudio = AudioGlobal.get_node("ButtonHover").duplicate()
+	new_button.add_child(hoverAudio)
+	out = new_button.mouse_entered.connect(_on_mouse_entered.bind(hoverAudio))
+	if out == ERR_INVALID_PARAMETER:
+		printerr("Failed to connect button (AUDIO mouse entered)")
+	### AUDIO END ##
 
 
 
@@ -78,3 +92,9 @@ func open_blame_tab() -> void:
 
 func close_blame_tab() -> void:
 	blame_screen.visible = false
+
+
+## AUDIO ##
+
+func _on_mouse_entered(hoverAudio: AudioStreamPlayer2D) -> void:
+	hoverAudio.play()

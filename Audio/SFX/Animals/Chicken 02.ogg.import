@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cw8nyadc3mi1b"
+path="res://.godot/imported/Chicken 02.ogg-07ba8e1e70904e7af16d7b6bcdb0698a.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Chicken 02.ogg"
+dest_files=["res://.godot/imported/Chicken 02.ogg-07ba8e1e70904e7af16d7b6bcdb0698a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

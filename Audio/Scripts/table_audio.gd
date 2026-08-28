@@ -15,11 +15,18 @@ func _on_crime_summary_pressed() -> void:
 
 
 func _on_blame_opened() -> void:
-	pass #Open seection
+	audio_player = get_node("BlameOpen")
+	audio_player.play()
 
 
 func on_blame_pressed() -> void:
 	pass #Blame someone for real
 
 func _on_close_tab_pressed() -> void:
-	pass # Replace with function body.
+	audio_player = get_node("FileClose")
+	audio_player.play()
+
+
+func _on_close_button_pressed() -> void:
+	audio_player = get_node("BlameClose")
+	audio_player.play()
