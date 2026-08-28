@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://xkqw6qqrpxug"
+path="res://.godot/imported/Sipping Coffee 02.ogg-84e26b660fb2662a059b652e68e560fb.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/UI/Sipping Coffee 02.ogg"
+dest_files=["res://.godot/imported/Sipping Coffee 02.ogg-84e26b660fb2662a059b652e68e560fb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

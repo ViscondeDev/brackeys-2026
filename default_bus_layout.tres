@@ -10,7 +10,22 @@ resource_name = "Compressor"
 threshold = -10.0
 ratio = 3.0
 release_ms = 50.0
-sidechain = &"SFX"
+sidechain = &"UI"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_g28q7"]
+resource_name = "Compressor"
+threshold = -10.0
+ratio = 3.0
+release_ms = 50.0
+sidechain = &"UI"
+
+[sub_resource type="AudioEffectCompressor" id="AudioEffectCompressor_n8wo2"]
+resource_name = "Compressor"
+threshold = -10.0
+ratio = 2.0
+attack_us = 2000.0
+release_ms = 500.0
+sidechain = &"MUSIC"
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_j3pel")
@@ -41,3 +56,7 @@ bus/4/mute = false
 bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"SFX"
+bus/4/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
+bus/4/effect/0/enabled = true
+bus/4/effect/1/effect = SubResource("AudioEffectCompressor_n8wo2")
+bus/4/effect/1/enabled = true

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://csdin0426oaea"
+path="res://.godot/imported/Horse 03.ogg-9f70c2879016b2701070e2d30eef5f79.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Horse 03.ogg"
+dest_files=["res://.godot/imported/Horse 03.ogg-9f70c2879016b2701070e2d30eef5f79.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

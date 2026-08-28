@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c70g7vuj1w1w6"
+path="res://.godot/imported/Duck 01.ogg-35d65dc82f38637382e9f9c3c89beb0b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Duck 01.ogg"
+dest_files=["res://.godot/imported/Duck 01.ogg-35d65dc82f38637382e9f9c3c89beb0b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

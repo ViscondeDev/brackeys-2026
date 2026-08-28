@@ -10,7 +10,7 @@ func _on_suspects_folder_pressed() -> void:
 
 
 func _on_crime_summary_pressed() -> void:
-	audio_player = get_node("FileOpen")
+	audio_player = get_node("SummaryOpen")
 	audio_player.play()
 
 
@@ -23,7 +23,7 @@ func on_blame_pressed() -> void:
 	pass #Blame someone for real
 
 func _on_close_tab_pressed() -> void:
-	audio_player = get_node("FileClose")
+	audio_player = get_node("SummaryClose")
 	audio_player.play()
 
 

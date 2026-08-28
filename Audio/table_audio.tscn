@@ -19,6 +19,20 @@ attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"
 
+[node name="SummaryOpen" type="AudioStreamPlayer2D" parent="." unique_id=1306927587]
+position = Vector2(960, 540)
+stream = ExtResource("1_r4vw5")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="SummaryClose" type="AudioStreamPlayer2D" parent="." unique_id=1731029247]
+position = Vector2(960, 540)
+stream = ExtResource("2_04opr")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
 [node name="BlameOpen" type="AudioStreamPlayer2D" parent="." unique_id=1141336925]
 position = Vector2(960, 540)
 stream = ExtResource("4_vy73c")
@@ -31,15 +45,6 @@ position = Vector2(960, 540)
 stream = ExtResource("3_aj36v")
 volume_db = -16.0
 pitch_scale = 0.66
-attenuation = 0.0
-panning_strength = 2.0
-bus = &"UI"
-
-[node name="BlameClose old" type="AudioStreamPlayer2D" parent="." unique_id=2009236268]
-position = Vector2(960, 540)
-stream = ExtResource("3_aj36v")
-volume_db = -12.0
-pitch_scale = 0.31
 attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"

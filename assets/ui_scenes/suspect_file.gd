@@ -18,13 +18,15 @@ var suspect_info: Suspect:
 @onready var suspect_claims: VBoxContainer = %Claims
 
 ## AUDIO ##
-@onready var audio_player: AudioStreamPlayer2D
+@onready var audio_node_name: String = "SuspectFileAudio/Animals/" + %Name.text
+@onready var audio_player_animal: AudioStreamPlayer2D
+@onready var audio_player_page: AudioStreamPlayer2D
 ## AUDIO END ##
 
 func setup_suspect_file(suspect: Suspect) -> void:
 	## AUDIO ##
-	audio_player = get_node("SuspectFileAudio/SuspectFileOpen")
-	audio_player.play()
+	audio_player_page = get_node("SuspectFileAudio/SuspectFileOpen")
+	audio_player_page.play()
 	## AUDIO END ##
 	
 	visible = true
@@ -37,6 +39,11 @@ func setup_suspect_file(suspect: Suspect) -> void:
 	suspect_portrait.texture = suspect.suspect_portrait
 	suspect_notes.text = suspect.notes
 	populate_claims(suspect.claims)
+	
+	audio_node_name = "SuspectFileAudio/Animals/" + %Name.text
+	audio_player_animal = get_node(audio_node_name)
+	audio_player_animal.play()
+	print(audio_node_name)
 
 
 func populate_claims(claims: Array[Claim]) -> void:

@@ -4,23 +4,42 @@
 [ext_resource type="AudioStream" uid="uid://bjbpf36g81c66" path="res://Audio/Music/02/Title_MainMenu_pass_1.ogg" id="2_48blk"]
 [ext_resource type="AudioStream" uid="uid://c2ml2u5jcx1ls" path="res://Audio/SFX/UI/Mouse Hover Main Menu.ogg" id="2_rs3km"]
 [ext_resource type="AudioStream" uid="uid://c1u4mofrdwtk5" path="res://Audio/Music/02/Investigation_background_1.ogg" id="3_rs3km"]
+[ext_resource type="AudioStream" uid="uid://6od5ysjqcpe8" path="res://Audio/Music/03/ClosingCinematic.ogg" id="5_rs3km"]
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fgi6g"]
-clip_count = 2
+clip_count = 3
 clip_0/name = &"MainMenu"
 clip_0/stream = ExtResource("2_48blk")
 clip_0/auto_advance = 0
 clip_1/name = &"Investigation"
 clip_1/stream = ExtResource("3_rs3km")
 clip_1/auto_advance = 0
+clip_2/name = &"Cinematic"
+clip_2/stream = ExtResource("5_rs3km")
+clip_2/auto_advance = 0
 _transitions = {
 Vector2i(-1, -1): {
 "fade_beats": 4.0,
 "fade_mode": 3,
 "from_time": 1,
 "to_time": 1
+},
+Vector2i(2, -1): {
+"fade_beats": 1.0,
+"fade_mode": 2,
+"from_time": 0,
+"to_time": 0
 }
 }
+
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_5xpoe"]
+clip_count = 3
+clip_0/name = &"MainMenu"
+clip_0/auto_advance = 0
+clip_1/name = &"Investigation"
+clip_1/auto_advance = 0
+clip_2/name = &"Cinematic"
+clip_2/auto_advance = 0
 
 [node name="AudioGlobal" type="Node2D" unique_id=1361412736]
 
@@ -43,3 +62,8 @@ bus = &"UI"
 stream = SubResource("AudioStreamInteractive_fgi6g")
 autoplay = true
 bus = &"MUSIC"
+
+[node name="Amb" type="AudioStreamPlayer" parent="." unique_id=1332297195]
+stream = SubResource("AudioStreamInteractive_5xpoe")
+autoplay = true
+bus = &"Amb"

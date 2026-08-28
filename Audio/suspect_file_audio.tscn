@@ -1,19 +1,91 @@
 [gd_scene format=3 uid="uid://crpme068tjc45"]
 
 [ext_resource type="AudioStream" uid="uid://b41apvofn0ydc" path="res://Audio/SFX/UI/Typing 01.ogg" id="1_8a3oh"]
+[ext_resource type="AudioStream" uid="uid://cb5ij2olalelf" path="res://Audio/SFX/Animals/Chicken 01.ogg" id="1_eut6d"]
 [ext_resource type="AudioStream" uid="uid://dbe35ti8cwnyq" path="res://Audio/SFX/UI/Paperflip Change.ogg" id="1_jo7kk"]
+[ext_resource type="AudioStream" uid="uid://cw8nyadc3mi1b" path="res://Audio/SFX/Animals/Chicken 02.ogg" id="2_fxa1c"]
 [ext_resource type="AudioStream" uid="uid://q6k3gjaxuet4" path="res://Audio/SFX/UI/Typing 02.ogg" id="2_jo7kk"]
 [ext_resource type="AudioStream" uid="uid://dgywplq8qyb4b" path="res://Audio/SFX/UI/Typing 03.ogg" id="3_65vpa"]
+[ext_resource type="AudioStream" uid="uid://b821dedrd4mdk" path="res://Audio/SFX/Animals/Chicken 03.ogg" id="3_eng6h"]
 [ext_resource type="AudioStream" uid="uid://d02kfy1wjjmuk" path="res://Audio/SFX/UI/Typing 04.ogg" id="4_c0wa3"]
+[ext_resource type="AudioStream" uid="uid://dwepbdgmwbuor" path="res://Audio/SFX/Animals/Cow 01.ogg" id="4_ebv2j"]
+[ext_resource type="AudioStream" uid="uid://ybcegosciypt" path="res://Audio/SFX/Animals/Cow 02.ogg" id="5_2fpbw"]
 [ext_resource type="AudioStream" uid="uid://7k43lrpulvaj" path="res://Audio/SFX/UI/Typing 05.ogg" id="5_s2y5u"]
+[ext_resource type="AudioStream" uid="uid://dxq6ldvf0073b" path="res://Audio/SFX/Animals/Cow 03.ogg" id="6_1mjm2"]
 [ext_resource type="AudioStream" uid="uid://javbq3px3fby" path="res://Audio/SFX/UI/Typing 06.ogg" id="6_2s3ya"]
 [ext_resource type="AudioStream" uid="uid://dv33p47jok6gt" path="res://Audio/SFX/UI/Typing 07.ogg" id="7_h7ca8"]
+[ext_resource type="AudioStream" uid="uid://kpq5finqsoca" path="res://Audio/SFX/Animals/Dog 01.ogg" id="7_pk8ds"]
 [ext_resource type="AudioStream" uid="uid://dnwkkqjcj6mhe" path="res://Audio/SFX/UI/Typing 08.ogg" id="8_nc3md"]
+[ext_resource type="AudioStream" uid="uid://mnv8v3y6y10n" path="res://Audio/SFX/Animals/Dog 02.ogg" id="8_nqwoe"]
+[ext_resource type="AudioStream" uid="uid://bucbagy6856t8" path="res://Audio/SFX/Animals/Dog 03.ogg" id="9_xlbhw"]
 [ext_resource type="AudioStream" uid="uid://bg4toyxuqsmbh" path="res://Audio/SFX/UI/Paperflip Close.ogg" id="10_65vpa"]
+[ext_resource type="AudioStream" uid="uid://c70g7vuj1w1w6" path="res://Audio/SFX/Animals/Duck 01.ogg" id="10_guoxc"]
+[ext_resource type="AudioStream" uid="uid://bdgf7lam0jx32" path="res://Audio/SFX/Animals/Duck 02.ogg" id="11_auhah"]
 [ext_resource type="AudioStream" uid="uid://bkyfjq64kdee7" path="res://Audio/SFX/UI/ClaimChoose 01.ogg" id="11_h7ca8"]
+[ext_resource type="AudioStream" uid="uid://bl6q3bic4id2j" path="res://Audio/SFX/Animals/Duck 03.ogg" id="12_flyfk"]
 [ext_resource type="AudioStream" uid="uid://cdkevkoai4q1p" path="res://Audio/SFX/UI/ClaimChoose 02.ogg" id="12_nc3md"]
+[ext_resource type="AudioStream" uid="uid://bnltdewvj75or" path="res://Audio/SFX/Animals/Goat 01.ogg" id="13_8jtx8"]
 [ext_resource type="AudioStream" uid="uid://b0ffvpn8dymfs" path="res://Audio/SFX/UI/ClaimChoose 03.ogg" id="13_uqtv0"]
+[ext_resource type="AudioStream" uid="uid://dwla2qq8fh1fe" path="res://Audio/SFX/Animals/Goat 02.ogg" id="14_11ctk"]
 [ext_resource type="AudioStream" uid="uid://c6nfskq3t6pvu" path="res://Audio/SFX/UI/ClaimChoose 04.ogg" id="14_d542t"]
+[ext_resource type="AudioStream" uid="uid://coijp6s2jlmg2" path="res://Audio/SFX/Animals/Goat 03.ogg" id="15_2nxru"]
+[ext_resource type="AudioStream" uid="uid://cuoc54hr661" path="res://Audio/SFX/Animals/Horse 01.ogg" id="16_l2xs7"]
+[ext_resource type="AudioStream" uid="uid://67tg2ins8xhj" path="res://Audio/SFX/Animals/Horse 02.ogg" id="17_gqtv6"]
+[ext_resource type="AudioStream" uid="uid://csdin0426oaea" path="res://Audio/SFX/Animals/Horse 03.ogg" id="18_0m5p3"]
+[ext_resource type="AudioStream" uid="uid://dkakx7u3s4veh" path="res://Audio/SFX/Animals/Pig 01.ogg" id="19_hiw87"]
+[ext_resource type="AudioStream" uid="uid://dc34460mvo0qs" path="res://Audio/SFX/Animals/Pig 02.ogg" id="20_2d8gt"]
+[ext_resource type="AudioStream" uid="uid://yxncveb03dwa" path="res://Audio/SFX/Animals/Pig 03.ogg" id="21_valxq"]
+[ext_resource type="AudioStream" uid="uid://b746ml6vopvo" path="res://Audio/SFX/Animals/Sheep 01.ogg" id="22_1e8aj"]
+[ext_resource type="AudioStream" uid="uid://clp8i0i2naowy" path="res://Audio/SFX/Animals/Sheep 02.ogg" id="23_glhay"]
+[ext_resource type="AudioStream" uid="uid://bqli25c4qnphp" path="res://Audio/SFX/Animals/Sheep 03.ogg" id="24_ty5lh"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4v6ay"]
+streams_count = 3
+stream_0/stream = ExtResource("1_eut6d")
+stream_1/stream = ExtResource("2_fxa1c")
+stream_2/stream = ExtResource("3_eng6h")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_i54ic"]
+streams_count = 3
+stream_0/stream = ExtResource("4_ebv2j")
+stream_1/stream = ExtResource("5_2fpbw")
+stream_2/stream = ExtResource("6_1mjm2")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ahypa"]
+streams_count = 3
+stream_0/stream = ExtResource("7_pk8ds")
+stream_1/stream = ExtResource("8_nqwoe")
+stream_2/stream = ExtResource("9_xlbhw")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_wjwna"]
+streams_count = 3
+stream_0/stream = ExtResource("10_guoxc")
+stream_1/stream = ExtResource("11_auhah")
+stream_2/stream = ExtResource("12_flyfk")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_2vcxq"]
+streams_count = 3
+stream_0/stream = ExtResource("13_8jtx8")
+stream_1/stream = ExtResource("14_11ctk")
+stream_2/stream = ExtResource("15_2nxru")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_s74ba"]
+streams_count = 3
+stream_0/stream = ExtResource("16_l2xs7")
+stream_1/stream = ExtResource("17_gqtv6")
+stream_2/stream = ExtResource("18_0m5p3")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mx7o6"]
+streams_count = 3
+stream_0/stream = ExtResource("19_hiw87")
+stream_1/stream = ExtResource("20_2d8gt")
+stream_2/stream = ExtResource("21_valxq")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x6wnh"]
+streams_count = 3
+stream_0/stream = ExtResource("22_1e8aj")
+stream_1/stream = ExtResource("23_glhay")
+stream_2/stream = ExtResource("24_ty5lh")
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_j3pel"]
 random_pitch = 1.122462
@@ -42,20 +114,75 @@ stream_3/stream = ExtResource("14_d542t")
 
 [node name="SuspectFileAudio" type="Node2D" unique_id=820096805]
 
+[node name="Animals" type="Node" parent="." unique_id=331686320]
+
+[node name="Honda" type="AudioStreamPlayer2D" parent="Animals" unique_id=1640575383]
+stream = SubResource("AudioStreamRandomizer_4v6ay")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Oprah" type="AudioStreamPlayer2D" parent="Animals" unique_id=1204882363]
+stream = SubResource("AudioStreamRandomizer_i54ic")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Sherlock" type="AudioStreamPlayer2D" parent="Animals" unique_id=1967046698]
+stream = SubResource("AudioStreamRandomizer_ahypa")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Madonna" type="AudioStreamPlayer2D" parent="Animals" unique_id=17730898]
+stream = SubResource("AudioStreamRandomizer_wjwna")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Gatsby" type="AudioStreamPlayer2D" parent="Animals" unique_id=744364913]
+stream = SubResource("AudioStreamRandomizer_2vcxq")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Elton" type="AudioStreamPlayer2D" parent="Animals" unique_id=1099209799]
+stream = SubResource("AudioStreamRandomizer_s74ba")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Hercules" type="AudioStreamPlayer2D" parent="Animals" unique_id=981371458]
+stream = SubResource("AudioStreamRandomizer_mx7o6")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Socrates" type="AudioStreamPlayer2D" parent="Animals" unique_id=1163080924]
+stream = SubResource("AudioStreamRandomizer_x6wnh")
+volume_db = 3.0
+attenuation = 0.0
+bus = &"UI"
+
 [node name="SuspectFileOpen" type="AudioStreamPlayer2D" parent="." unique_id=1989198707]
 stream = SubResource("AudioStreamRandomizer_j3pel")
+volume_db = -3.0
 attenuation = 0.0
+bus = &"UI"
 
 [node name="TypeNotes" type="AudioStreamPlayer2D" parent="." unique_id=279179840]
 stream = SubResource("AudioStreamRandomizer_0vfq7")
 volume_db = -15.0
 attenuation = 0.0
+bus = &"UI"
 
 [node name="FileClose" type="AudioStreamPlayer2D" parent="." unique_id=1166957313]
 stream = ExtResource("10_65vpa")
 attenuation = 0.0
+bus = &"UI"
 
 [node name="ClaimChoose" type="AudioStreamPlayer2D" parent="." unique_id=1686432948]
 stream = SubResource("AudioStreamRandomizer_c0wa3")
 volume_db = -8.529
 attenuation = 0.0
+bus = &"UI"

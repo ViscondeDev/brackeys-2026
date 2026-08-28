@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://b746ml6vopvo"
+path="res://.godot/imported/Sheep 01.ogg-cd16d20bfc26edb9b72e8b02a728a9ae.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Sheep 01.ogg"
+dest_files=["res://.godot/imported/Sheep 01.ogg-cd16d20bfc26edb9b72e8b02a728a9ae.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bucbagy6856t8"
+path="res://.godot/imported/Dog 03.ogg-e8d77bac2960e9d21b363cb81564dc82.oggvorbisstr"
+
+[deps]
+
+source_file="res://Audio/SFX/Animals/Dog 03.ogg"
+dest_files=["res://.godot/imported/Dog 03.ogg-e8d77bac2960e9d21b363cb81564dc82.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
