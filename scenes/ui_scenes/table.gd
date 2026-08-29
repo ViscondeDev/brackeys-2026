@@ -83,8 +83,10 @@ func enable_blaming() -> void:
 
 
 func animate_prop_in(animation: String) -> void:
-	print("attempting to play ",animation)
+	print("attempting to play ", animation)
 	if not _revealed_props.has(animation):
+		if props_animation.is_playing():
+			return
 		props_animation.play(animation)
 		_revealed_props.append(animation)
 

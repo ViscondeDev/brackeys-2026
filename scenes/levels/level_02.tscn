@@ -136,7 +136,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(0.29730228, 1),
 "update": 0,
-"values": [Vector2(674.00024, -324.99994), Vector2(1601, 696)]
+"values": [Vector2(674.00024, -324.99994), Vector2(1601, 776)]
 }
 
 [sub_resource type="Animation" id="Animation_t50tk"]
@@ -292,12 +292,17 @@ script = ExtResource("22_6ssb5")
 
 [connection signal="pressed" from="SuspectsFolder" to="SuspectsTab" method="_open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
-[connection signal="pressed" from="SuspectsFolder" to="." method="animate_prop_in" binds= ["picture"]]
+[connection signal="pressed" from="SuspectsFolder" to="." method="animate_prop_in" binds= ["blueprint"]]
+[connection signal="pressed" from="Summary" to="." method="_release_suspects_folder"]
 [connection signal="pressed" from="Summary" to="CrimeSummary" method="open_tab"]
 [connection signal="pressed" from="Summary" to="TableAudio" method="_on_crime_summary_pressed"]
-[connection signal="closed" from="EvidenceDisplay" to="." method="_release_suspects_folder"]
-[connection signal="closed" from="EvidenceDisplay" to="." method="animate_prop_in" binds= ["blueprint"]]
+[connection signal="opened" from="EvidenceDisplay" to="." method="animate_prop_in" binds= ["picture"]]
 [connection signal="opened" from="SuspectsTab" to="." method="enable_blaming"]
 [connection signal="crime_introduced" from="CrimeSummary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="started_blaming" from="CrimeSummary" to="BlameScreen" method="open_blame_tab"]
 [connection signal="final_decision_took" from="BlameScreen" to="." method="_on_final_judgement_pressed"]
+[connection signal="animal_walk" from="EndingScreen" to="TableAudio" method="_on_animal_walk"]
+[connection signal="doors_close" from="EndingScreen" to="TableAudio" method="_on_doors_close"]
+[connection signal="doors_open" from="EndingScreen" to="TableAudio" method="_on_doors_open"]
+[connection signal="pointing_hand" from="EndingScreen" to="TableAudio" method="_on_pointing_hand"]
+[connection signal="thunder" from="EndingScreen" to="TableAudio" method="_on_thunder"]

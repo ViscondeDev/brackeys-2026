@@ -49,7 +49,7 @@ func _on_doors_open() -> void:
 func _on_thunder() -> void:
 	$Cinematic/Thunder.play()
 
-func _on_animal_talk(animalName) -> void:
+func _on_animal_talk(_animal_name) -> void:
 	var audio_player = $Cinematic/DoorsOpen
 	audio_player.play()
 
