@@ -329,7 +329,7 @@ icon = ExtResource("9_bc07b")
 flat = true
 expand_icon = true
 
-[node name="PropsAnimatinon" type="AnimationPlayer" parent="." unique_id=708165391]
+[node name="PropsAnimation" type="AnimationPlayer" parent="." unique_id=708165391]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_t50tk")
 

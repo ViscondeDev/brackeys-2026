@@ -38,7 +38,7 @@ func _ready() -> void:
 	## AUDIO END ##
 	await get_tree().create_timer(3).timeout
 	props_animation.play("crime_summary")
-	$"CrimeSummary/Evidence Introduced".play()
+	#$"CrimeSummary/Evidence Introduced".play()
 	summary.text = crime_summary
 
 
@@ -122,7 +122,7 @@ func _on_mouse_entered(hover_audio: AudioStreamPlayer2D) -> void:
 func _release_suspects_folder() -> void:
 	if not is_suspects_folder_released:
 		props_animation.play("suspects_folder")
-		$"SuspectsFolder/Evidence Introduced".play()
+		#$"SuspectsFolder/Evidence Introduced".play()
 		is_suspects_folder_released = true
 
 

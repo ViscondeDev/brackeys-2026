@@ -47,6 +47,10 @@ suspect = ExtResource("6_xopth")
 claims = Array[String](["I was having tea at the kitchen when the brute rushed thru the corridor.", "I didn't want to hear the horrors on the next door, so i left.", "The brute ate it. It wasn't me!"])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6h53"]
+atlas = ExtResource("12_8eqp4")
+region = Rect2(593.24194, 70.43616, 2668.3838, 1962.6525)
+
 [sub_resource type="Animation" id="Animation_06edn"]
 length = 0.001
 tracks/0/type = "value"
@@ -336,7 +340,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("11_a6h53")
-evidence_close_up = ExtResource("12_8eqp4")
+evidence_close_up = SubResource("AtlasTexture_a6h53")
 metadata/_custom_type_script = "uid://b365lfdmtu82s"
 
 [node name="Coffe" type="Button" parent="." unique_id=2083269590]
@@ -350,7 +354,7 @@ icon = ExtResource("9_1h6t3")
 flat = true
 expand_icon = true
 
-[node name="PropsAnimatinon" type="AnimationPlayer" parent="." unique_id=708165391]
+[node name="PropsAnimation" type="AnimationPlayer" parent="." unique_id=708165391]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_t50tk")
 
