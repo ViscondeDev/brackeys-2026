@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://assets/resource/suspects/sherlock.tres" id="4_t50tk"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_ho76x"]
 [ext_resource type="Texture2D" uid="uid://ujdejh1j5wfa" path="res://assets/ui_elements/suspect_folder.png" id="7_5yuuw"]
+[ext_resource type="AudioStream" uid="uid://sr5lsalgsh00" path="res://Audio/SFX/UI/Evidence Introduced.ogg" id="8_4af6t"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/ui_elements/coffe.png" id="8_i3wqn"]
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/ui_elements/crime_summary.png" id="8_y8xl2"]
 [ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="12_4avul"]
@@ -36,6 +37,12 @@ script = ExtResource("2_ajlhi")
 suspect = ExtResource("4_t50tk")
 claims = Array[String](["I was on the storage when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody, except for Elton. He was quite sleepy."])
 metadata/_custom_type_script = "uid://baneahiclaxn6"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_3gyjp"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("8_4af6t")
 
 [sub_resource type="Animation" id="Animation_06edn"]
 length = 0.001
@@ -303,6 +310,13 @@ icon = ExtResource("7_5yuuw")
 flat = true
 expand_icon = true
 
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="SuspectsFolder" unique_id=730536370]
+stream = SubResource("AudioStreamRandomizer_3gyjp")
+volume_db = -3.0
+attenuation = 0.0
+panning_strength = 6.0
+bus = &"UI"
+
 [node name="CrimeSummary" type="Button" parent="." unique_id=1148271384]
 custom_minimum_size = Vector2(150, 300)
 layout_mode = 0
@@ -316,7 +330,12 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Coffe" type="Button" parent="." unique_id=2083269590]
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="CrimeSummary" unique_id=154512386]
+stream = SubResource("AudioStreamRandomizer_3gyjp")
+attenuation = 0.0
+bus = &"UI"
+
+[node name="Coffee" type="Button" parent="." unique_id=2083269590]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 0
 offset_left = 1478.0
@@ -327,7 +346,7 @@ icon = ExtResource("8_i3wqn")
 flat = true
 expand_icon = true
 
-[node name="PropsAnimatinon" type="AnimationPlayer" parent="." unique_id=708165391]
+[node name="PropsAnimation" type="AnimationPlayer" parent="." unique_id=708165391]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_t50tk")
 
@@ -598,9 +617,9 @@ script = ExtResource("12_4avul")
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
 [connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
 [connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_crime_summary_pressed"]
+[connection signal="pressed" from="Coffee" to="TableAudio" method="_on_coffee_pressed"]
 [connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
 [connection signal="crime_introduced" from="Crime Summary" to="." method="_release_suspects_folder"]
-[connection signal="crime_introduced" from="Crime Summary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
 [connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="Crime Summary" method="close_tab"]

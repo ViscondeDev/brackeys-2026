@@ -24,11 +24,11 @@ Vector2i(-1, -1): {
 "from_time": 1,
 "to_time": 1
 },
-Vector2i(2, -1): {
-"fade_beats": 1.0,
-"fade_mode": 2,
+Vector2i(-1, 2): {
+"fade_beats": 0.5,
+"fade_mode": 3,
 "from_time": 0,
-"to_time": 0
+"to_time": 1
 }
 }
 

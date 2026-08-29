@@ -22,6 +22,7 @@ func _on_blame_opened() -> void:
 func on_blame_pressed() -> void:
 	pass #Blame someone for real
 
+
 func _on_close_tab_pressed() -> void:
 	audio_player = get_node("SummaryClose")
 	audio_player.play()
@@ -32,5 +33,11 @@ func _on_close_button_pressed() -> void:
 	audio_player.play()
 
 
-func _new_evidence_or_prop_introduced() -> void:
-	pass # Replace with function body.
+#func _new_evidence_or_prop_introduced() -> void:
+	#audio_player = get_node("Evidence Introduced")
+	#audio_player.play()
+
+
+func _on_coffee_pressed() -> void:
+	audio_player = get_node("Sipping Coffee")
+	audio_player.play()

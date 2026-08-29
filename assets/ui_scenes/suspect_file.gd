@@ -42,8 +42,8 @@ func setup_suspect_file(suspect: Suspect) -> void:
 	
 	audio_node_name = "SuspectFileAudio/Animals/" + %Name.text
 	audio_player_animal = get_node(audio_node_name)
-	audio_player_animal.play()
-	print(audio_node_name)
+	var timer = get_tree().create_timer(0.15)	
+	timer.timeout.connect(_delayed_play.bind(audio_player_animal))
 
 
 func populate_claims(claims: Array[Claim]) -> void:
@@ -67,11 +67,7 @@ func populate_claims(claims: Array[Claim]) -> void:
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button (AUDIO mouse entered)")
 		
-		var pressed_audio:AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
-		pressed_audio.pitch_scale = 0.8
-		pressed_audio.position = menu_button.position
-		menu_button.add_child(pressed_audio)
-		out = menu_button.pressed.connect(_on_menu_button_pressed.bind(pressed_audio))
+		out = menu_button.pressed.connect($SuspectFileAudio._on_menu_button_pressed)
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button (AUDIO mouse pressed)")
 		### AUDIO END ##
@@ -92,5 +88,12 @@ func close_tab() -> void:
 func _on_mouse_entered(hover_audio: AudioStreamPlayer2D) -> void:
 	hover_audio.play()
 
-func _on_menu_button_pressed(pressed_audio: AudioStreamPlayer2D) -> void:
-	pressed_audio.play()
+func _on_menu_button_pressed() -> void:
+	#pressed_audio.play()
+	AudioGlobal.get_node("ButtonHover").play()
+
+## AUDIO ##
+func _delayed_play(audio_player: AudioStreamPlayer2D) -> void:
+	audio_player.play()
+	print("Runs after 2 seconds, but doesn’t block other code")
+## AUDIO END##

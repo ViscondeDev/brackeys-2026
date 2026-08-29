@@ -4,6 +4,22 @@
 [ext_resource type="AudioStream" uid="uid://bg4toyxuqsmbh" path="res://Audio/SFX/UI/Paperflip Close.ogg" id="2_04opr"]
 [ext_resource type="AudioStream" uid="uid://cmg27x7x77obp" path="res://Audio/SFX/UI/Mouse Hover.ogg" id="3_aj36v"]
 [ext_resource type="AudioStream" uid="uid://uy7mhfa4pemk" path="res://Audio/SFX/UI/BlameOpen.ogg" id="4_vy73c"]
+[ext_resource type="AudioStream" uid="uid://t627j5om7mnb" path="res://Audio/SFX/UI/Sipping Coffee 01.ogg" id="5_jfy3a"]
+[ext_resource type="AudioStream" uid="uid://xkqw6qqrpxug" path="res://Audio/SFX/UI/Sipping Coffee 02.ogg" id="6_env5u"]
+[ext_resource type="AudioStream" uid="uid://5c3xwdx2u2xa" path="res://Audio/SFX/UI/Sipping Coffee 03.ogg" id="7_4ylde"]
+[ext_resource type="AudioStream" uid="uid://sr5lsalgsh00" path="res://Audio/SFX/UI/Evidence Introduced.ogg" id="8_663gq"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_eut6d"]
+streams_count = 3
+stream_0/stream = ExtResource("5_jfy3a")
+stream_1/stream = ExtResource("6_env5u")
+stream_2/stream = ExtResource("7_4ylde")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_lfy51"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("8_663gq")
 
 [node name="TableAudio" type="Node2D" unique_id=1196760623]
 
@@ -45,6 +61,20 @@ position = Vector2(960, 540)
 stream = ExtResource("3_aj36v")
 volume_db = -16.0
 pitch_scale = 0.66
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="Sipping Coffee" type="AudioStreamPlayer2D" parent="." unique_id=1982715946]
+position = Vector2(1552, 275)
+stream = SubResource("AudioStreamRandomizer_eut6d")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="." unique_id=175612105]
+position = Vector2(960, 540)
+stream = SubResource("AudioStreamRandomizer_lfy51")
 attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"

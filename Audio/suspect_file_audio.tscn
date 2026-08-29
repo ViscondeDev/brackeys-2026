@@ -112,6 +112,13 @@ stream_1/stream = ExtResource("12_nc3md")
 stream_2/stream = ExtResource("13_uqtv0")
 stream_3/stream = ExtResource("14_d542t")
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dpao6"]
+streams_count = 4
+stream_0/stream = ExtResource("1_8a3oh")
+stream_1/stream = ExtResource("2_jo7kk")
+stream_2/stream = ExtResource("3_65vpa")
+stream_3/stream = ExtResource("4_c0wa3")
+
 [node name="SuspectFileAudio" type="Node2D" unique_id=820096805]
 
 [node name="Animals" type="Node" parent="." unique_id=331686320]
@@ -184,5 +191,12 @@ bus = &"UI"
 [node name="ClaimChoose" type="AudioStreamPlayer2D" parent="." unique_id=1686432948]
 stream = SubResource("AudioStreamRandomizer_c0wa3")
 volume_db = -8.529
+attenuation = 0.0
+bus = &"UI"
+
+[node name="MenuButtonClick" type="AudioStreamPlayer2D" parent="." unique_id=1707785715]
+stream = SubResource("AudioStreamRandomizer_dpao6")
+volume_db = -15.0
+pitch_scale = 2.0
 attenuation = 0.0
 bus = &"UI"
