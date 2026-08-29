@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://scenes/ui_scenes/suspect_file.tscn" id="1_ywm05"]
 
 [node name="SuspectsTab" type="HBoxContainer" unique_id=1113224858]
+visible = false
 custom_minimum_size = Vector2(960, 0)
 anchors_preset = 9
 anchor_bottom = 1.0
@@ -28,3 +29,5 @@ grow_vertical = 2
 [node name="SuspectFile" parent="." unique_id=1977787239 instance=ExtResource("1_ywm05")]
 unique_name_in_owner = true
 layout_mode = 2
+
+[connection signal="closed_tab" from="SuspectFile" to="." method="_close_suspects_tab"]

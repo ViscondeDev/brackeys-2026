@@ -215,9 +215,12 @@ layout_mode = 1
 unique_name_in_owner = true
 script = ExtResource("24_mq8rv")
 
-[connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
+[connection signal="pressed" from="SuspectsFolder" to="SuspectsTab" method="_open_suspects_tab"]
 [connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
 [connection signal="pressed" from="Summary" to="CrimeSummary" method="open_tab"]
 [connection signal="pressed" from="Summary" to="TableAudio" method="_on_crime_summary_pressed"]
+[connection signal="opened" from="SuspectsTab" to="." method="enable_blaming"]
 [connection signal="crime_introduced" from="CrimeSummary" to="." method="_release_suspects_folder"]
 [connection signal="crime_introduced" from="CrimeSummary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
+[connection signal="started_blaming" from="CrimeSummary" to="BlameScreen" method="open_blame_tab"]
+[connection signal="final_decision_took" from="BlameScreen" to="." method="_on_final_judgement_pressed"]

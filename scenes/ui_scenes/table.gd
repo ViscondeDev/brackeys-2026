@@ -69,21 +69,8 @@ func blame(suspect: Suspect) -> void:
 	_targeted_suspect = suspect
 
 
-func open_suspects_tab() -> void:
-	suspects_tab.visible = true
+func enable_blaming() -> void:
 	crime_summary_painel.blame_button.disabled = false
-
-
-func close_suspects_tab() -> void:
-	suspects_tab.visible = false
-
-
-func open_blame_tab() -> void:
-	blame_screen.visible = true
-
-
-func close_blame_tab() -> void:
-	blame_screen.visible = false
 
 
 func _release_suspects_folder() -> void:

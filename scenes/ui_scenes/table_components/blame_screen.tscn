@@ -58,3 +58,6 @@ theme = ExtResource("1_tvpv8")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 disabled = true
 text = "Blame"
+
+[connection signal="pressed" from="SuspectContainer/HBoxContainer/CloseButton" to="." method="close_blame_tab"]
+[connection signal="pressed" from="SuspectContainer/FinalJudgement" to="." method="_on_final_judgement_pressed"]

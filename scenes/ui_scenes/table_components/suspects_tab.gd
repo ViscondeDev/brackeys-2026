@@ -1,5 +1,8 @@
 extends HBoxContainer
 
+signal opened
+signal closed
+
 @onready var suspect_file: SuspectFile = %SuspectFile
 @onready var portraits_container: VBoxContainer = %PortraitsContainer
 @onready var audio_manager: SFXManager = %TableAudio
@@ -29,3 +32,14 @@ func add_suspect_to_tab(suspect: Suspect) -> void:
 ## AUDIO ##
 func _on_mouse_entered(hover_audio: AudioStreamPlayer2D) -> void:
 	hover_audio.play()
+
+
+func _open_suspects_tab() -> void:
+	print("Opened")
+	visible = true
+	opened.emit()
+
+
+func _close_suspects_tab() -> void:
+	visible = false
+	closed.emit()
