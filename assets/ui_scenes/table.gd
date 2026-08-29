@@ -19,14 +19,17 @@ var _targeted_suspect: Suspect
 @onready var audio_manager: SFXManager = %TableAudio
 @onready var props_animation: AnimationPlayer = %PropsAnimation
 @onready var final_judgement_buton: Button = %FinalJudgement
+@onready var close_up_evidence: TextureRect = %CloseUpEvidence
 @onready var summary: Label = %Summary
 @onready var result: Label = %Result
 @onready var ending_animation: AnimationPlayer = %EndingAnimation
+@onready var evidence_painel: Panel = %EvidenceDisplay
 
 
 func _ready() -> void:
 	load_settings()
 	setup_suspects_tab()
+	_bind_evidences()
 
 	## AUDIO ##
 	var music: AudioStreamPlayer = AudioGlobal.get_node("Music")
@@ -43,6 +46,7 @@ func load_settings() -> void:
 	for i in level_settings.size():
 		var item := level_settings[i]
 		var new_suspect: Suspect = item.suspect
+		new_suspect.claims.clear()
 		for statement in item.claims:
 			var new_claim := Claim.new()
 			new_claim.statement = statement
@@ -122,6 +126,12 @@ func _release_suspects_folder() -> void:
 		is_suspects_folder_released = true
 
 
+func _bind_evidences() -> void:
+	for child in get_children():
+		if child is Evidence:
+			child.pressed.connect(_open_evidence_display.bind(child.evidence_close_up))
+
+
 func _on_final_judgement_pressed() -> void:
 	var load_scene_path: String
 	if _targeted_suspect.id == culprit.id:
@@ -134,3 +144,12 @@ func _on_final_judgement_pressed() -> void:
 	ending_animation.play("cinematic_blame")
 	await ending_animation.animation_finished
 	Game.current.load_scene(load_scene_path)
+
+
+func _open_evidence_display(image: Texture2D) -> void:
+	close_up_evidence.texture = image
+	evidence_painel.visible = true
+
+
+func _close_evidence_display() -> void:
+	evidence_painel.visible = false

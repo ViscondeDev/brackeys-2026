@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://duxfts53xb14t"
-path="res://.godot/imported/cow_near.jpg-be0190cbf7f7772bc2f5f58210364511.ctex"
+uid="uid://bskpgvcga6r0p"
+path="res://.godot/imported/Barn_Map.jpg-6734be551a4be580e3f593cb40c314f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/loading_screens/cow_near.jpg"
-dest_files=["res://.godot/imported/cow_near.jpg-be0190cbf7f7772bc2f5f58210364511.ctex"]
+source_file="res://assets/loading_screens/Barn_Map.jpg"
+dest_files=["res://.godot/imported/Barn_Map.jpg-6734be551a4be580e3f593cb40c314f1.ctex"]
 
 [params]
 

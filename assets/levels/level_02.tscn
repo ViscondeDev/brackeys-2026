@@ -1,0 +1,674 @@
+[gd_scene format=3 uid="uid://cjdcqcdtedh7y"]
+
+[ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="1_ehftj"]
+[ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://assets/ui_scenes/table.gd" id="2_xopth"]
+[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://assets/resource/suspect_claims.gd" id="3_ewqdl"]
+[ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://assets/resource/suspects/sherlock.tres" id="5_a6h53"]
+[ext_resource type="Resource" uid="uid://25dppg4jko3r" path="res://assets/resource/suspects/hercules.tres" id="5_xopth"]
+[ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://assets/ui_scenes/table_backdrop.jpg" id="6_8eqp4"]
+[ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://assets/resource/suspects/madonna.tres" id="6_xopth"]
+[ext_resource type="Texture2D" uid="uid://ujdejh1j5wfa" path="res://assets/ui_elements/suspect_folder.png" id="7_ucjb8"]
+[ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/ui_elements/crime_summary.png" id="8_r265m"]
+[ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/ui_elements/coffe.png" id="9_1h6t3"]
+[ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/ui_elements/blueprint.png" id="10_ewqdl"]
+[ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://assets/ui_scenes/suspect_file.tscn" id="10_m7i23"]
+[ext_resource type="Script" uid="uid://b365lfdmtu82s" path="res://assets/resource/evidence.gd" id="11_a6h53"]
+[ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://assets/ui_scenes/crime_summary.gd" id="11_l22np"]
+[ext_resource type="Texture2D" uid="uid://bskpgvcga6r0p" path="res://assets/loading_screens/Barn_Map.jpg" id="12_8eqp4"]
+[ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/ui_elements/suspect_file.png" id="12_fbhlv"]
+[ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="13_niktx"]
+[ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/ui_elements/marker_section1.png" id="14_t2ad7"]
+[ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="15_blshm"]
+[ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/ui_elements/blame.png" id="16_ywae8"]
+[ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/ui_elements/x.png" id="17_5e7eu"]
+[ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://assets/ui_scenes/blame_screen.gd" id="18_l1e13"]
+[ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/ui_elements/X_White_PNG.png" id="19_i4dq3"]
+[ext_resource type="Texture2D" uid="uid://cld0gslv5ntxm" path="res://assets/ui_elements/ending/Outside_Dark.png" id="20_fnxbu"]
+[ext_resource type="Texture2D" uid="uid://tt0usv3q7csn" path="res://assets/ui_elements/ending/Barn_Doors_Open.png" id="21_jyktv"]
+[ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/ui_elements/ending/Hands_Together_PNG.png" id="22_ctryi"]
+[ext_resource type="PackedScene" uid="uid://dyw4w7opyexso" path="res://Audio/table_audio.tscn" id="23_o24jq"]
+[ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="24_bnidb"]
+
+[sub_resource type="Resource" id="Resource_11g2q"]
+script = ExtResource("3_ewqdl")
+suspect = ExtResource("5_a6h53")
+claims = Array[String](["I couldn't have been me! I was cleaning my mess at the storage room all morning", "It was very tedious, except for seeing Hercules sliping, while rushing in the barn."])
+metadata/_custom_type_script = "uid://baneahiclaxn6"
+
+[sub_resource type="Resource" id="Resource_heyy7"]
+script = ExtResource("3_ewqdl")
+suspect = ExtResource("5_xopth")
+claims = Array[String](["How akward it can be to need to poo! I got in, did my thing, and left  thru thenearest door.", "I didn't see anybody , my vision was turning dark already."])
+metadata/_custom_type_script = "uid://baneahiclaxn6"
+
+[sub_resource type="Resource" id="Resource_4jsbl"]
+script = ExtResource("3_ewqdl")
+suspect = ExtResource("6_xopth")
+claims = Array[String](["I was having tea at the kitchen when the brute rushed thru the corridor.", "I didn't want to hear the horrors on the next door, so i left.", "The brute ate it. It wasn't me!"])
+metadata/_custom_type_script = "uid://baneahiclaxn6"
+
+[sub_resource type="Animation" id="Animation_06edn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrimeSummary:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(988, -725)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SuspectsFolder:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-143, -530.0001)]
+}
+
+[sub_resource type="Animation" id="Animation_x7xbf"]
+resource_name = "crime_summary"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CrimeSummary:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.23170438, 0.04736628),
+"update": 0,
+"values": [Vector2(988, -725), Vector2(857, 183.00006)]
+}
+
+[sub_resource type="Animation" id="Animation_t50tk"]
+resource_name = "suspects_folder"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SuspectsFolder:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.20306318, 1),
+"update": 0,
+"values": [Vector2(-143, -530.0001), Vector2(171, 211.00006)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t50tk"]
+_data = {
+&"RESET": SubResource("Animation_06edn"),
+&"crime_summary": SubResource("Animation_x7xbf"),
+&"suspects_folder": SubResource("Animation_t50tk")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nqv2"]
+atlas = ExtResource("12_fbhlv")
+region = Rect2(0, 0, 1210.1726, 2091)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh6pq"]
+content_margin_left = 47.0
+content_margin_top = 10.0
+content_margin_right = 47.0
+content_margin_bottom = 10.0
+texture = ExtResource("14_t2ad7")
+
+[sub_resource type="Theme" id="Theme_uwoax"]
+default_font = ExtResource("15_blshm")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_wh6pq")
+
+[sub_resource type="Animation" id="Animation_gklel"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outside:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_fnxbu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barn:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_jyktv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hands:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_ctryi")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Result:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_50oi6"]
+resource_name = "cinematic_blame"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Outside:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("20_fnxbu")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barn:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("21_jyktv")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hands:texture")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("22_ctryi")]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Result:theme_override_colors/font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Result:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xuraf"]
+_data = {
+&"RESET": SubResource("Animation_gklel"),
+&"cinematic_blame": SubResource("Animation_50oi6")
+}
+
+[node name="Table" type="Control" unique_id=1200437378]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ehftj")
+script = ExtResource("2_xopth")
+level_settings = Array[ExtResource("3_ewqdl")]([SubResource("Resource_11g2q"), SubResource("Resource_heyy7"), SubResource("Resource_4jsbl")])
+culprit = ExtResource("6_xopth")
+crime_summary = "The barn kitchen was left alone for a few minutes.
+My chocolate cake was eaten!
+
+[ THEFT - DAMAGE: 2$ ]"
+
+[node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_8eqp4")
+expand_mode = 2
+
+[node name="SuspectsFolder" type="Button" parent="." unique_id=412238982]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 0
+offset_left = -143.0
+offset_top = -530.0001
+offset_right = 157.0
+offset_bottom = -230.00009
+rotation = -0.39351276
+icon = ExtResource("7_ucjb8")
+flat = true
+expand_icon = true
+
+[node name="CrimeSummary" type="Button" parent="." unique_id=1148271384]
+custom_minimum_size = Vector2(150, 300)
+layout_mode = 0
+offset_left = 988.0
+offset_top = -725.0
+offset_right = 1288.0024
+offset_bottom = -424.99994
+rotation = 0.17627825
+icon = ExtResource("8_r265m")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Blueprint" type="Button" parent="." unique_id=505070944]
+custom_minimum_size = Vector2(450, 450)
+layout_mode = 0
+offset_left = 1312.0001
+offset_top = 409.00006
+offset_right = 1762.0001
+offset_bottom = 859.00006
+rotation = 0.17627825
+icon = ExtResource("10_ewqdl")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("11_a6h53")
+evidence_close_up = ExtResource("12_8eqp4")
+metadata/_custom_type_script = "uid://b365lfdmtu82s"
+
+[node name="Coffe" type="Button" parent="." unique_id=2083269590]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 1478.0
+offset_top = 106.0
+offset_right = 1678.0
+offset_bottom = 306.0
+icon = ExtResource("9_1h6t3")
+flat = true
+expand_icon = true
+
+[node name="PropsAnimatinon" type="AnimationPlayer" parent="." unique_id=708165391]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_t50tk")
+
+[node name="SuspectsTab" type="HBoxContainer" parent="." unique_id=670705892]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 960.0
+grow_vertical = 2
+
+[node name="PortraitsTab" type="ColorRect" parent="SuspectsTab" unique_id=548384124]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+color = Color(0, 0, 0, 0.4627451)
+
+[node name="PortraitsContainer" type="VBoxContainer" parent="SuspectsTab/PortraitsTab" unique_id=579858527]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SuspectFile" parent="SuspectsTab" unique_id=1977787239 instance=ExtResource("10_m7i23")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="EvidenceDisplay" type="Panel" parent="." unique_id=222464744]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(960, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="CloseUpEvidence" type="TextureRect" parent="EvidenceDisplay" unique_id=416112670]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(960, -1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_ewqdl")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CloseButton2" type="Button" parent="EvidenceDisplay" unique_id=199920971]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 868.0
+offset_top = 40.0
+offset_right = 928.0
+offset_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("19_i4dq3")
+flat = true
+expand_icon = true
+
+[node name="Crime Summary" type="Panel" parent="." unique_id=1745212918]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_l22np")
+
+[node name="TextureRect" type="TextureRect" parent="Crime Summary" unique_id=909616572]
+custom_minimum_size = Vector2(700, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -360.0
+offset_right = 275.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1nqv2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Crime Summary/TextureRect" unique_id=336324107]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Crime Summary/TextureRect/MarginContainer" unique_id=534276644]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=371947333]
+layout_mode = 2
+theme = ExtResource("13_niktx")
+text = "CRIME SUMMARY"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1758578665]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uwoax")
+
+[node name="MarginContainer" type="MarginContainer" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel" unique_id=503376255]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 47
+theme_override_constants/margin_bottom = 25
+
+[node name="Summary" type="Label" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1865474277]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "In the middle of the night, a stranger came from the storage room.
+Some tools fell, but only one broke.
+
+PROPERTY DAMAGE - LOSS: $8
+
+Check the suspects folder to investigate."
+autowrap_mode = 2
+
+[node name="Blame" type="Button" parent="Crime Summary/TextureRect/MarginContainer/VBoxContainer" unique_id=1585372613]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "BLAME"
+icon = ExtResource("16_ywae8")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="CloseButton" type="Button" parent="Crime Summary/TextureRect/MarginContainer" unique_id=1986349345]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("17_5e7eu")
+flat = true
+expand_icon = true
+
+[node name="BlameScreen" type="Panel" parent="." unique_id=357223526]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_niktx")
+script = ExtResource("18_l1e13")
+
+[node name="SuspectContainer" type="VBoxContainer" parent="BlameScreen" unique_id=205099891]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(1000, 1000)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.5
+offset_top = -90.0
+offset_right = 92.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BlameScreen/SuspectContainer" unique_id=1597132762]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=1058853291]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "Who did it?"
+horizontal_alignment = 1
+
+[node name="CloseButton" type="Button" parent="BlameScreen/SuspectContainer/HBoxContainer" unique_id=442902463]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("19_i4dq3")
+flat = true
+expand_icon = true
+
+[node name="FinalJudgement" type="Button" parent="BlameScreen/SuspectContainer" unique_id=1130879573]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+theme = ExtResource("13_niktx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+disabled = true
+text = "Blame"
+
+[node name="Ending" type="Panel" parent="." unique_id=1892932566]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outside" type="TextureRect" parent="Ending" unique_id=1959556679]
+custom_maximum_size = Vector2(202, 382.5)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = -159.0
+offset_right = 63.0
+offset_bottom = 223.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("20_fnxbu")
+expand_mode = 1
+
+[node name="Barn" type="TextureRect" parent="Ending" unique_id=1864861659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("21_jyktv")
+expand_mode = 1
+
+[node name="Hands" type="TextureRect" parent="Ending" unique_id=1085777207]
+custom_minimum_size = Vector2(1416, 292)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_top = -292.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("22_ctryi")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="Result" type="Label" parent="Ending" unique_id=1073709426]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -25.0
+offset_right = 20.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("13_niktx")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 193
+text = "INNOCENT"
+
+[node name="EndingAnimation" type="AnimationPlayer" parent="Ending" unique_id=1245525047]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_xuraf")
+
+[node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("23_o24jq")]
+unique_name_in_owner = true
+script = ExtResource("24_bnidb")
+
+[connection signal="pressed" from="SuspectsFolder" to="." method="open_suspects_tab"]
+[connection signal="pressed" from="SuspectsFolder" to="TableAudio" method="_on_suspects_folder_pressed"]
+[connection signal="pressed" from="CrimeSummary" to="Crime Summary" method="open_tab"]
+[connection signal="pressed" from="CrimeSummary" to="TableAudio" method="_on_crime_summary_pressed"]
+[connection signal="closed_tab" from="SuspectsTab/SuspectFile" to="." method="close_suspects_tab"]
+[connection signal="pressed" from="EvidenceDisplay/CloseButton2" to="." method="_close_evidence_display"]
+[connection signal="pressed" from="EvidenceDisplay/CloseButton2" to="TableAudio" method="_on_close_tab_pressed"]
+[connection signal="crime_introduced" from="Crime Summary" to="." method="_release_suspects_folder"]
+[connection signal="crime_introduced" from="Crime Summary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="." method="open_blame_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/VBoxContainer/Blame" to="TableAudio" method="_on_blame_opened"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="Crime Summary" method="close_tab"]
+[connection signal="pressed" from="Crime Summary/TextureRect/MarginContainer/CloseButton" to="TableAudio" method="_on_close_tab_pressed"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="." method="close_blame_tab"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/HBoxContainer/CloseButton" to="TableAudio" method="_on_close_button_pressed"]
+[connection signal="pressed" from="BlameScreen/SuspectContainer/FinalJudgement" to="." method="_on_final_judgement_pressed"]

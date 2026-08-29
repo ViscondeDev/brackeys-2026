@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://eupmiumoh7i5"]
 
-[ext_resource type="Texture2D" uid="uid://duxfts53xb14t" path="res://assets/loading_screens/cow_near.jpg" id="1_f56bm"]
+[ext_resource type="Texture2D" uid="uid://duxfts53xb14t" path="res://assets/ui_elements/ending/close_up/cow_near.jpg" id="1_f56bm"]
 [ext_resource type="Script" uid="uid://bjx6amattofyd" path="res://assets/ui_scenes/loading_screen.gd" id="1_k4jan"]
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://assets/resource/fonts/body.tres" id="2_we6oi"]
 

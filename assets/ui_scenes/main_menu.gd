@@ -1,7 +1,7 @@
 extends Control
 
 func _on_play_pressed() -> void:
-	Game.current.load_scene("uid://c00fgjnaetb0i") # table.tscn
+	Game.current.load_scene("uid://crirpn6s5r34h") # table.tscn
 
 
 func _on_play_mouse_entered() -> void:
