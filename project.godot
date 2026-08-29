@@ -50,7 +50,10 @@ enabled=PackedStringArray("res://addons/at-icons/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://assets/ui_elements/ending/": "red"
+"res://assets/": "purple",
+"res://export/": "gray",
+"res://resources/": "yellow",
+"res://scenes/": "blue"
 }
 
 [physics]

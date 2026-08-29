@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://c5l3x25widvqp"]
+
+[ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_d0038"]
+[ext_resource type="Texture2D" uid="uid://crf81016jltsj" path="res://assets/portraits/sheep_portrait.png" id="2_200sv"]
+
+[resource]
+script = ExtResource("1_d0038")
+suspect_name = "Socrates"
+suspect_portrait = ExtResource("2_200sv")
+suspect_role = "Advisor"
+metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

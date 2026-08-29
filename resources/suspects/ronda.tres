@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://dhtneyh1oxcq2"]
+
+[ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_7o3t4"]
+[ext_resource type="Texture2D" uid="uid://bm3svq4l4rtfv" path="res://assets/portraits/chicken_portrait.png" id="2_scrck"]
+
+[resource]
+script = ExtResource("1_7o3t4")
+suspect_name = "Ronda"
+suspect_portrait = ExtResource("2_scrck")
+suspect_role = "Chicken Coop Guard"
+metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

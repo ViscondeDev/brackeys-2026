@@ -1,0 +1,31 @@
+[gd_resource type="Theme" format=3 uid="uid://ctcaf1s74pnhp"]
+
+[ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://resources/fonts/myoldrem.ttf" id="1_1wtb0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh6pq"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.54901963)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ib1hh"]
+bg_color = Color(0.2051174, 0.20511746, 0.20511732, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djxap"]
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+shadow_size = 5
+
+[resource]
+default_font = ExtResource("1_1wtb0")
+default_font_size = 28
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(0.4545251, 0.45452386, 0.45452428, 0.5019608)
+Button/constants/line_spacing = 10
+Label/colors/Color = Color(0, 0, 0, 1)
+Label/colors/font_color = Color(0.14406255, 0.14406255, 0.14406255, 1)
+Panel/styles/panel = SubResource("StyleBoxFlat_wh6pq")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ib1hh")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_djxap")

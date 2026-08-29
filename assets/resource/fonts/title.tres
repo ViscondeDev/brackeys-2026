@@ -1,9 +1,0 @@
-[gd_resource type="Theme" format=3 uid="uid://bhjvd5dc7gm8"]
-
-[ext_resource type="FontFile" uid="uid://cf7fiu5o76mw7" path="res://assets/resource/fonts/OldNewspaperTypes.ttf" id="1_krhq4"]
-
-[resource]
-default_font = ExtResource("1_krhq4")
-default_font_size = 40
-Label/colors/Color = Color(0, 0, 0, 1)
-Label/colors/font_color = Color(0.09239707, 0.09239706, 0.09239706, 1)
