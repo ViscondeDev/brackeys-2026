@@ -28,6 +28,12 @@
 [ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/ui_elements/ending/Hands_Together_PNG.png" id="22_ctryi"]
 [ext_resource type="PackedScene" uid="uid://dyw4w7opyexso" path="res://Audio/table_audio.tscn" id="23_o24jq"]
 [ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="24_bnidb"]
+[ext_resource type="Texture2D" uid="uid://julc7xjywo5l" path="res://assets/ui_elements/ending/far_away/Dog_Far_Away_PNG.png" id="26_ucjb8"]
+[ext_resource type="Texture2D" uid="uid://2ys1iycsyaot" path="res://assets/ui_elements/ending/Outside.png" id="27_8eqp4"]
+[ext_resource type="Texture2D" uid="uid://b8xoc6ri65vih" path="res://assets/ui_elements/ending/close_up/Dog_PNG.png" id="27_l22np"]
+[ext_resource type="Texture2D" uid="uid://bdj720a1y3a6f" path="res://assets/ui_elements/ending/Barn_Doors_Closed.jpg" id="29_r265m"]
+[ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/ui_elements/ending/Come_Here_Hand__Hay.png" id="30_1h6t3"]
+[ext_resource type="Texture2D" uid="uid://bwikl18nl0u1c" path="res://assets/ui_elements/ending/Pointing_Hand__Hay.png" id="32_fbhlv"]
 
 [sub_resource type="Resource" id="Resource_11g2q"]
 script = ExtResource("3_ewqdl")
@@ -172,7 +178,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Result:visible")
+tracks/3/path = NodePath(".:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -184,7 +190,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath(".:visible")
+tracks/4/path = NodePath("AnimalFar:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -193,10 +199,70 @@ tracks/4/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimalFar:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1920, 1080)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimalFar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimalNear:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Result:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_50oi6"]
 resource_name = "cinematic_blame"
-length = 4.0
+length = 16.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -204,10 +270,10 @@ tracks/0/path = NodePath("Outside:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1.2, 1.2515699, 1.2971357, 1.3392029),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
-"values": [ExtResource("20_fnxbu")]
+"values": [ExtResource("20_fnxbu"), ExtResource("27_8eqp4"), ExtResource("20_fnxbu"), ExtResource("27_8eqp4"), ExtResource("20_fnxbu")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -216,10 +282,10 @@ tracks/1/path = NodePath("Barn:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.4),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("21_jyktv")]
+"values": [ExtResource("21_jyktv"), ExtResource("29_r265m")]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -228,46 +294,94 @@ tracks/2/path = NodePath("Hands:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 2.4, 7.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [ExtResource("22_ctryi")]
+"values": [ExtResource("22_ctryi"), ExtResource("30_1h6t3"), ExtResource("32_fbhlv")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Result:theme_override_colors/font_color")
+tracks/3/path = NodePath(".:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 0,
-"values": []
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Result:visible")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath(".:visible")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimalFar:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.2, 7.4333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AnimalFar:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.4, 7.4333334),
+"transitions": PackedFloat32Array(7.4642596, 1),
+"update": 0,
+"values": [Vector2(1920, 1080), Vector2(3264, 1836)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimalFar:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(2.4, 7.4333334),
+"transitions": PackedFloat32Array(7.4642496, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-615, -516)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimalNear:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 7.4333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("%Result:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 9.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("ColorRect:modulate")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(11.333333, 16),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xuraf"]
@@ -617,20 +731,38 @@ grow_vertical = 2
 texture = ExtResource("21_jyktv")
 expand_mode = 1
 
+[node name="AnimalFar" type="TextureRect" parent="Ending" unique_id=207947333]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("26_ucjb8")
+expand_mode = 1
+
+[node name="AnimalNear" type="TextureRect" parent="Ending" unique_id=1640670118]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("27_l22np")
+expand_mode = 1
+
 [node name="Hands" type="TextureRect" parent="Ending" unique_id=1085777207]
 custom_minimum_size = Vector2(1416, 292)
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -292.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 texture = ExtResource("22_ctryi")
-expand_mode = 2
-stretch_mode = 4
+expand_mode = 1
 
 [node name="Result" type="Label" parent="Ending" unique_id=1073709426]
 unique_name_in_owner = true
@@ -641,10 +773,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -25.0
-offset_right = 20.0
-offset_bottom = 25.0
+offset_left = -554.0
+offset_top = -483.0
+offset_right = 554.0
+offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("13_niktx")
@@ -655,6 +787,16 @@ text = "INNOCENT"
 [node name="EndingAnimation" type="AnimationPlayer" parent="Ending" unique_id=1245525047]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_xuraf")
+
+[node name="ColorRect" type="ColorRect" parent="Ending" unique_id=1229056453]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
 
 [node name="TableAudio" parent="." unique_id=1196760623 instance=ExtResource("23_o24jq")]
 unique_name_in_owner = true
