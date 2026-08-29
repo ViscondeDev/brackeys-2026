@@ -16,7 +16,9 @@
 [ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://assets/ui_scenes/crime_summary.gd" id="11_l22np"]
 [ext_resource type="Texture2D" uid="uid://bskpgvcga6r0p" path="res://assets/loading_screens/Barn_Map.jpg" id="12_8eqp4"]
 [ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/ui_elements/suspect_file.png" id="12_fbhlv"]
+[ext_resource type="Texture2D" uid="uid://oklfl87lk7yv" path="res://assets/ui_elements/picture.png" id="13_fbhlv"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://assets/resource/fonts/title.tres" id="13_niktx"]
+[ext_resource type="Texture2D" uid="uid://xlm6st34dcte" path="res://assets/evidences/Kitchen_Footprints_PNG.png" id="14_niktx"]
 [ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/ui_elements/marker_section1.png" id="14_t2ad7"]
 [ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://assets/resource/fonts/myoldrem.ttf" id="15_blshm"]
 [ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/ui_elements/blame.png" id="16_ywae8"]
@@ -404,7 +406,9 @@ culprit = ExtResource("6_xopth")
 crime_summary = "The barn kitchen was left alone for a few minutes.
 My chocolate cake was eaten!
 
-[ THEFT - DAMAGE: 2$ ]"
+[ THEFT - DAMAGE: 2$ ]
+
+A kitchen door picture was taken minutes after the crime took place,."
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
 layout_mode = 1
@@ -455,6 +459,22 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("11_a6h53")
 evidence_close_up = SubResource("AtlasTexture_a6h53")
+metadata/_custom_type_script = "uid://b365lfdmtu82s"
+
+[node name="Evidence" type="Button" parent="." unique_id=1079425560]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 948.00006
+offset_top = 746.0
+offset_right = 1148.0
+offset_bottom = 946.0
+rotation = 0.17627825
+icon = ExtResource("13_fbhlv")
+flat = true
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("11_a6h53")
+evidence_close_up = ExtResource("14_niktx")
 metadata/_custom_type_script = "uid://b365lfdmtu82s"
 
 [node name="Coffe" type="Button" parent="." unique_id=2083269590]
