@@ -41,3 +41,29 @@ func _on_close_button_pressed() -> void:
 func _on_coffee_pressed() -> void:
 	audio_player = get_node("Sipping Coffee")
 	audio_player.play()
+
+
+func _on_doors_open() -> void:
+	$Cinematic/DoorsOpen.play()
+
+func _on_thunder() -> void:
+	$Cinematic/Thunder.play()
+
+func _on_animal_talk(animalName) -> void:
+	var audio_player = $Cinematic/DoorsOpen
+	audio_player.play()
+
+func _on_doors_close() -> void:
+	$Cinematic/DoorsClose.play()
+
+func _on_animal_walk() -> void:
+	$Cinematic/AnimalWalk.play()
+
+func _on_pointing_hand() -> void:
+	$Cinematic/PointingHand.play()
+
+func _on_success() -> void:
+	$Cinematic/Success.play()
+
+func _on_failure() -> void:
+	$Cinematic/Failure.play()
