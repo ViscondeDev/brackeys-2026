@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="1_5t8rk"]
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://scenes/ui_scenes/table.gd" id="2_cag23"]
-[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://resources/classes/suspect_claims.gd" id="3_5t8rk"]
+[ext_resource type="Script" uid="uid://caycyhfyln2c7" path="res://resources/classes/suspect_claims.gd" id="3_5t8rk"]
 [ext_resource type="Resource" uid="uid://bbe4naaa4iy42" path="res://resources/suspects/elton.tres" id="4_3pila"]
 [ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://resources/suspects/sherlock.tres" id="5_d86x1"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://scenes/ui_scenes/table_backdrop.jpg" id="6_bfb10"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/props/crime_summary.png" id="8_cag23"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/props/coffe.png" id="9_3pila"]
 [ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/props/blueprint.png" id="10_d86x1"]
-[ext_resource type="Script" uid="uid://b365lfdmtu82s" path="res://resources/classes/evidence.gd" id="11_cag23"]
+[ext_resource type="Script" uid="uid://budixog1iposo" path="res://resources/classes/evidence.gd" id="11_cag23"]
 [ext_resource type="Texture2D" uid="uid://bskpgvcga6r0p" path="res://assets/evidences/Barn_Map.jpg" id="12_5t8rk"]
 [ext_resource type="PackedScene" uid="uid://cyifq1dcnncr" path="res://scenes/ui_scenes/table_components/evidence_display.tscn" id="13_cag23"]
 [ext_resource type="PackedScene" uid="uid://cokwr672up0sg" path="res://scenes/ui_scenes/table_components/suspects_tab.tscn" id="14_iu1m7"]
@@ -23,14 +23,12 @@
 [sub_resource type="Resource" id="Resource_uwoax"]
 script = ExtResource("3_5t8rk")
 suspect = ExtResource("4_3pila")
-claims = Array[String](["The noise happened in the middle of the night. I was at my stall at that moment", "I went out checking, when i saw Sherlock running from the storage room", "I went back to sleep when he screamed \"I'm on it\""])
-metadata/_custom_type_script = "uid://baneahiclaxn6"
+claims = Array[String](["That crash noise woke me up, it was around 3AM.", "I went back to sleep when Sherlock barked \"I'm on it\""])
 
 [sub_resource type="Resource" id="Resource_4af6t"]
 script = ExtResource("3_5t8rk")
 suspect = ExtResource("5_d86x1")
-claims = Array[String](["I was on the storage room when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody on my way out, except for Elton. He was quite sleepy."])
-metadata/_custom_type_script = "uid://baneahiclaxn6"
+claims = Array[String](["I was in the storage room when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody on my way out, except for Elton. He was quite sleepy."])
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noiio"]
 atlas = ExtResource("12_5t8rk")
@@ -111,13 +109,13 @@ theme = ExtResource("1_5t8rk")
 script = ExtResource("2_cag23")
 level_settings = Array[ExtResource("3_5t8rk")]([SubResource("Resource_uwoax"), SubResource("Resource_4af6t")])
 culprit = ExtResource("5_d86x1")
-next_level_path = "uid://cjdcqcdtedh7y"
+next_level_path = "uid://bxsnjshuiideu"
 crime_summary = "In the middle of the night, a loud crash came from the stable storage room.
-Some tools fell, but only one broke.
 
 [ PROPERTY DAMAGE – LOSS: US$ 8 ]
 
 Check the suspects folder to investigate.
+
 Come back here if you find the culprit."
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
@@ -180,7 +178,6 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("11_cag23")
 evidence_close_up = SubResource("AtlasTexture_noiio")
-metadata/_custom_type_script = "uid://b365lfdmtu82s"
 
 [node name="PropsAnimation" type="AnimationPlayer" parent="." unique_id=708165391]
 unique_name_in_owner = true

@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://bbe4naaa4iy42"]
 
+[ext_resource type="Texture2D" uid="uid://jjunha2umh6k" path="res://assets/portraits/far_away/Horse_Far_Away_PNG.png" id="1_2lbuo"]
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_h6egl"]
+[ext_resource type="Texture2D" uid="uid://cbg1dssnydpse" path="res://assets/portraits/close_up/Horse_PNG.png" id="2_4k2fe"]
 [ext_resource type="Texture2D" uid="uid://b08pnarac27t3" path="res://assets/portraits/Portrait_Horse_PNG.png" id="2_vvwaa"]
 
 [resource]
@@ -8,4 +10,5 @@ script = ExtResource("1_h6egl")
 suspect_name = "Elton"
 suspect_portrait = ExtResource("2_vvwaa")
 suspect_role = "Carriage Driver"
-metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
+far = ExtResource("1_2lbuo")
+near = ExtResource("2_4k2fe")

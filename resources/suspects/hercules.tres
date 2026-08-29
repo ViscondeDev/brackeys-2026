@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://25dppg4jko3r"]
 
+[ext_resource type="Texture2D" uid="uid://bk31ncw6580a4" path="res://assets/portraits/far_away/Pig_Far_Away_PNG.png" id="1_1bjhi"]
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_6koxh"]
 [ext_resource type="Texture2D" uid="uid://bfmx51qnruroa" path="res://assets/portraits/pig_portrait.png" id="2_6koxh"]
+[ext_resource type="Texture2D" uid="uid://dvw0e4q14k556" path="res://assets/portraits/close_up/Pig_PNG.png" id="2_tthdh"]
 
 [resource]
 script = ExtResource("1_6koxh")
 suspect_name = "Hercules"
 suspect_portrait = ExtResource("2_6koxh")
 suspect_role = "Farm Hands"
-metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
+far = ExtResource("1_1bjhi")
+near = ExtResource("2_tthdh")

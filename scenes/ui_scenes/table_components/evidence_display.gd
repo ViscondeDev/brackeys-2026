@@ -14,5 +14,6 @@ func open_tab(image: Texture2D) -> void:
 
 
 func close_tab() -> void:
-	visible = false
 	closed.emit()
+	visible = false
+	print("release blueprint")

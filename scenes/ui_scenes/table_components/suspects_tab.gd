@@ -1,3 +1,4 @@
+class_name SuspectsTab
 extends HBoxContainer
 
 signal opened

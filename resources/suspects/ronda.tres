@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://dhtneyh1oxcq2"]
 
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_7o3t4"]
+[ext_resource type="Texture2D" uid="uid://doedqf7gxhpl3" path="res://assets/portraits/far_away/Chicken_Far_Away_PNG.png" id="1_67qys"]
+[ext_resource type="Texture2D" uid="uid://cnhlptdcamkxi" path="res://assets/portraits/close_up/Chicken_PNG.png" id="2_5y2t8"]
 [ext_resource type="Texture2D" uid="uid://bm3svq4l4rtfv" path="res://assets/portraits/chicken_portrait.png" id="2_scrck"]
 
 [resource]
@@ -8,4 +10,6 @@ script = ExtResource("1_7o3t4")
 suspect_name = "Ronda"
 suspect_portrait = ExtResource("2_scrck")
 suspect_role = "Chicken Coop Guard"
+far = ExtResource("1_67qys")
+near = ExtResource("2_5y2t8")
 metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

@@ -1,6 +1,8 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://c5l3x25widvqp"]
 
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_d0038"]
+[ext_resource type="Texture2D" uid="uid://022ykvl2s3i4" path="res://assets/portraits/far_away/Sheep_Far_Away_PNG.png" id="1_r5n3o"]
+[ext_resource type="Texture2D" uid="uid://ccsec1e1i0xcu" path="res://assets/portraits/close_up/Sheep_PNG.png" id="2_5ngbs"]
 [ext_resource type="Texture2D" uid="uid://crf81016jltsj" path="res://assets/portraits/sheep_portrait.png" id="2_200sv"]
 
 [resource]
@@ -8,4 +10,6 @@ script = ExtResource("1_d0038")
 suspect_name = "Socrates"
 suspect_portrait = ExtResource("2_200sv")
 suspect_role = "Advisor"
+far = ExtResource("1_r5n3o")
+near = ExtResource("2_5ngbs")
 metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

@@ -1,11 +1,14 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://byg3vf73dour"]
 
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_4v6ay"]
+[ext_resource type="Texture2D" uid="uid://julc7xjywo5l" path="res://assets/portraits/far_away/Dog_Far_Away_PNG.png" id="1_lurqf"]
 [ext_resource type="Texture2D" uid="uid://bcvnl3vjk6bi4" path="res://assets/portraits/Portrait_Dog_PNG.png" id="2_4v6ay"]
+[ext_resource type="Texture2D" uid="uid://b8xoc6ri65vih" path="res://assets/portraits/close_up/Dog_PNG.png" id="2_mjb54"]
 
 [resource]
 script = ExtResource("1_4v6ay")
 suspect_name = "Sherlock"
 suspect_portrait = ExtResource("2_4v6ay")
 suspect_role = "Head of Security"
-metadata/_custom_type_script = "uid://mhxjg2k1fx0b"
+far = ExtResource("1_lurqf")
+near = ExtResource("2_mjb54")

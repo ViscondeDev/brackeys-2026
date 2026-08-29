@@ -1,11 +1,15 @@
 [gd_resource type="Resource" script_class="Suspect" format=3 uid="uid://cn214fev2btj6"]
 
 [ext_resource type="Script" uid="uid://mhxjg2k1fx0b" path="res://resources/suspects/suspect.gd" id="1_3sedv"]
+[ext_resource type="Texture2D" uid="uid://b6cxxo7ykkavq" path="res://assets/portraits/far_away/Cow_Far_Away_PNG.png" id="1_yq8bf"]
 [ext_resource type="Texture2D" uid="uid://bsbonwexa1a2m" path="res://assets/portraits/cow_portrait.png" id="2_3sedv"]
+[ext_resource type="Texture2D" uid="uid://bvwivlnxtogqe" path="res://assets/portraits/close_up/Cow_PNG.png" id="2_tftj0"]
 
 [resource]
 script = ExtResource("1_3sedv")
 suspect_name = "Oprah"
 suspect_portrait = ExtResource("2_3sedv")
 suspect_role = "Milkmaid"
+far = ExtResource("1_yq8bf")
+near = ExtResource("2_tftj0")
 metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

@@ -11,6 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://bdj720a1y3a6f" path="res://assets/cinematic_elements/Barn_Doors_Closed.jpg" id="8_guv13"]
 [ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/cinematic_elements/Come_Here_Hand__Hay.png" id="9_lmkcm"]
 [ext_resource type="Texture2D" uid="uid://bwikl18nl0u1c" path="res://assets/cinematic_elements/Pointing_Hand__Hay.png" id="10_cocp7"]
+[ext_resource type="AudioStream" uid="uid://6od5ysjqcpe8" path="res://Audio/Music/03/ClosingCinematic.ogg" id="12_dcaid"]
+[ext_resource type="AudioStream" uid="uid://fu5bb2r8k3sx" path="res://Audio/Music/02/Failure_womp.ogg" id="13_7g08e"]
+[ext_resource type="AudioStream" uid="uid://blmge2q03isk" path="res://Audio/Music/02/Success_womp.ogg" id="14_8n7tg"]
 
 [sub_resource type="Animation" id="Animation_gklel"]
 length = 0.001
@@ -134,6 +137,18 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_50oi6"]
 resource_name = "cinematic_blame"
@@ -157,7 +172,7 @@ tracks/1/path = NodePath("Barn:texture")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2.4),
+"times": PackedFloat32Array(0, 2.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [ExtResource("2_0qhh8"), ExtResource("8_guv13")]
@@ -169,7 +184,7 @@ tracks/2/path = NodePath("Hands:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2.4, 7.4333334),
+"times": PackedFloat32Array(0, 2.4, 6.6666665),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [ExtResource("5_7g08e"), ExtResource("9_lmkcm"), ExtResource("10_cocp7")]
@@ -193,10 +208,10 @@ tracks/4/path = NodePath("AnimalFar:visible")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 1.2, 7.4333334),
+"times": PackedFloat32Array(0, 1.2, 4.633333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [true, true, false]
 }
 tracks/5/type = "value"
 tracks/5/imported = false
@@ -205,10 +220,10 @@ tracks/5/path = NodePath("AnimalFar:size")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(2.4, 7.4333334),
+"times": PackedFloat32Array(2.4, 4.633333),
 "transitions": PackedFloat32Array(7.4642596, 1),
 "update": 0,
-"values": [Vector2(1920, 1080), Vector2(3264, 1836)]
+"values": [Vector2(1920, 1080), Vector2(4896, 2754)]
 }
 tracks/6/type = "value"
 tracks/6/imported = false
@@ -217,10 +232,10 @@ tracks/6/path = NodePath("AnimalFar:position")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(2.4, 7.4333334),
+"times": PackedFloat32Array(2.4, 4.633333),
 "transitions": PackedFloat32Array(7.4642496, 1),
 "update": 0,
-"values": [Vector2(0, 0), Vector2(-615, -516)]
+"values": [Vector2(0, 0), Vector2(-1393, -1111)]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -229,7 +244,7 @@ tracks/7/path = NodePath("AnimalNear:visible")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(0, 7.4333334),
+"times": PackedFloat32Array(0, 4.633333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -241,7 +256,7 @@ tracks/8/path = NodePath("Result:visible")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 9.366667),
+"times": PackedFloat32Array(0, 9.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -257,6 +272,32 @@ tracks/9/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/11/type = "method"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath(".")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(9.6),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"play_woomp"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qdved"]
@@ -302,6 +343,7 @@ texture = ExtResource("2_0qhh8")
 expand_mode = 1
 
 [node name="AnimalFar" type="TextureRect" parent="." unique_id=1509072972]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -313,6 +355,7 @@ texture = ExtResource("3_dcaid")
 expand_mode = 1
 
 [node name="AnimalNear" type="TextureRect" parent="." unique_id=1495452158]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -367,3 +410,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1661139328]
+stream = ExtResource("12_dcaid")
+
+[node name="FailureWomp" type="AudioStreamPlayer" parent="." unique_id=1400202364]
+unique_name_in_owner = true
+stream = ExtResource("13_7g08e")
+
+[node name="SuccessWomp" type="AudioStreamPlayer" parent="." unique_id=2009593376]
+unique_name_in_owner = true
+stream = ExtResource("14_8n7tg")

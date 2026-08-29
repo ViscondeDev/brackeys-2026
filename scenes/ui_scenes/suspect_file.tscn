@@ -137,6 +137,7 @@ expand_icon = true
 [node name="SuspectFileAudio" parent="." unique_id=820096805 instance=ExtResource("6_xyf37")]
 script = ExtResource("7_0a840")
 
+[connection signal="text_changed" from="MarginContainer/VBoxContainer/Notes/TextEdit" to="." method="update_notes"]
 [connection signal="text_changed" from="MarginContainer/VBoxContainer/Notes/TextEdit" to="SuspectFileAudio" method="_on_text_edit_text_changed"]
 [connection signal="pressed" from="CloseButton" to="." method="close_tab"]
 [connection signal="pressed" from="CloseButton" to="SuspectFileAudio" method="_on_close_button_pressed"]

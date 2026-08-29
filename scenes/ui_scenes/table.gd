@@ -1,4 +1,9 @@
+class_name Level
 extends Control
+
+signal suspect_updated
+
+static var current: Level
 
 @export var level_settings: Array[SuspectClaims]
 @export var culprit: Suspect
@@ -10,9 +15,10 @@ var suspects: Array[Suspect]
 var is_suspects_folder_released: bool
 
 var _targeted_suspect: Suspect
+var _revealed_props: Array[String]
 
 @onready var ending_screen: EndingScreen = %EndingScreen
-@onready var suspects_tab: HBoxContainer = %SuspectsTab
+@onready var suspects_tab: SuspectsTab = %SuspectsTab
 @onready var blame_screen: BlameScreen = %BlameScreen
 @onready var audio_manager: SFXManager = %TableAudio
 @onready var props_animation: AnimationPlayer = %PropsAnimation
@@ -21,6 +27,7 @@ var _targeted_suspect: Suspect
 
 
 func _ready() -> void:
+	suspects_tab.suspect_file.suspect_updated.connect(update_suspect_info)
 	load_settings()
 	setup_suspects_tab()
 	_bind_evidences()
@@ -62,6 +69,8 @@ func setup_suspects_tab() -> void:
 
 func update_suspect_info(suspect: Suspect) -> void:
 	suspects[suspect.id] = suspect
+	suspect_updated.emit()
+	print("updated")
 
 
 func blame(suspect: Suspect) -> void:
@@ -71,6 +80,13 @@ func blame(suspect: Suspect) -> void:
 
 func enable_blaming() -> void:
 	crime_summary_painel.blame_button.disabled = false
+
+
+func animate_prop_in(animation: String) -> void:
+	print("attempting to play ",animation)
+	if not _revealed_props.has(animation):
+		props_animation.play(animation)
+		_revealed_props.append(animation)
 
 
 func _release_suspects_folder() -> void:
@@ -95,6 +111,11 @@ func _on_final_judgement_pressed() -> void:
 		ending_screen.result.text = "INNOCENT"
 		load_scene_path = self.scene_file_path
 
+	ending_screen.update_animals(_targeted_suspect)
 	ending_screen.ending_animation.play("cinematic_blame")
+	var music: AudioStreamPlayer = AudioGlobal.get_node("Music")
+	var interactive_music := music.get_stream_playback() as AudioStreamPlaybackInteractive
+	music.stream_paused = true
 	await ending_screen.ending_animation.animation_finished
+	music.stream_paused = false
 	Game.current.load_scene(load_scene_path)

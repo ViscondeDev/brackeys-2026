@@ -5,6 +5,8 @@ extends Resource
 @export var suspect_name: String
 @export var suspect_portrait: Texture2D
 @export var suspect_role: String
+@export var far: Texture2D
+@export var near: Texture2D
 
 var claims: Array[Claim]
 var notes: String
