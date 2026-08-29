@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://bc38ooghq3tag"]
+
+[ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://scenes/ui_scenes/table_components/crime_summary.gd" id="1_3f8hu"]
+[ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/props/suspect_file.png" id="2_3gdov"]
+[ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://resources/fonts/title.tres" id="3_j4ems"]
+[ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/props/marker_section1.png" id="4_6i1mm"]
+[ext_resource type="FontFile" uid="uid://dwmpnpqy47hdq" path="res://resources/fonts/myoldrem.ttf" id="5_wggic"]
+[ext_resource type="Texture2D" uid="uid://bh6u2yki8rbqd" path="res://assets/icons/blame.png" id="6_i8f5f"]
+[ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/icons/x.png" id="7_jyvfg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nqv2"]
+atlas = ExtResource("2_3gdov")
+region = Rect2(0, 0, 1210.1726, 2091)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wh6pq"]
+content_margin_left = 47.0
+content_margin_top = 10.0
+content_margin_right = 47.0
+content_margin_bottom = 10.0
+texture = ExtResource("4_6i1mm")
+
+[sub_resource type="Theme" id="Theme_uwoax"]
+default_font = ExtResource("5_wggic")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Panel/styles/panel = SubResource("StyleBoxTexture_wh6pq")
+
+[node name="Crime Summary" type="Panel" unique_id=665752187]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3f8hu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1459329218]
+custom_minimum_size = Vector2(700, 720)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -360.0
+offset_right = 275.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1nqv2")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect" unique_id=1065815550]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer" unique_id=1272184248]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=2041779179]
+layout_mode = 2
+theme = ExtResource("3_j4ems")
+text = "CRIME SUMMARY"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=184070233]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_uwoax")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/VBoxContainer/Panel" unique_id=1721207640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 66
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 47
+theme_override_constants/margin_bottom = 25
+
+[node name="Summary" type="Label" parent="TextureRect/MarginContainer/VBoxContainer/Panel/MarginContainer" unique_id=1134807075]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+text = "In the middle of the night, a stranger came from the storage room.
+Some tools fell, but only one broke.
+
+PROPERTY DAMAGE - LOSS: $8
+
+Check the suspects folder to investigate."
+autowrap_mode = 2
+
+[node name="Blame" type="Button" parent="TextureRect/MarginContainer/VBoxContainer" unique_id=493200369]
+unique_name_in_owner = true
+layout_mode = 2
+disabled = true
+text = "BLAME"
+icon = ExtResource("6_i8f5f")
+flat = true
+alignment = 2
+icon_alignment = 2
+expand_icon = true
+
+[node name="CloseButton" type="Button" parent="TextureRect/MarginContainer" unique_id=1515619200]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("7_jyvfg")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="TextureRect/MarginContainer/CloseButton" to="." method="close_tab"]

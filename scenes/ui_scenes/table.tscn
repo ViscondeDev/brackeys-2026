@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/props/crime_summary.png" id="8_y8xl2"]
 [ext_resource type="Script" uid="uid://c7u1b0wlua01a" path="res://Audio/Scripts/table_audio.gd" id="12_4avul"]
 [ext_resource type="PackedScene" uid="uid://dyw4w7opyexso" path="res://Audio/table_audio.tscn" id="13_gy5u2"]
-[ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://scenes/ui_scenes/crime_summary.gd" id="14_1nqv2"]
+[ext_resource type="Script" uid="uid://cn8mlqkuqugj" path="res://scenes/ui_scenes/table_components/crime_summary.gd" id="14_1nqv2"]
 [ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/props/suspect_file.png" id="14_deiwr"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://resources/fonts/title.tres" id="15_bnpxl"]
 [ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/props/marker_section1.png" id="16_deiwr"]
@@ -22,7 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/icons/x.png" id="19_qm3u3"]
 [ext_resource type="Texture2D" uid="uid://cld0gslv5ntxm" path="res://assets/cinematic_elements/Outside_Dark.png" id="21_4af6t"]
 [ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/icons/X_White_PNG.png" id="21_06edn"]
-[ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://scenes/ui_scenes/blame_screen.gd" id="21_x7xbf"]
+[ext_resource type="Script" uid="uid://lhvphm6tass7" path="res://scenes/ui_scenes/table_components/blame_screen.gd" id="21_x7xbf"]
 [ext_resource type="Texture2D" uid="uid://tt0usv3q7csn" path="res://assets/cinematic_elements/Barn_Doors_Open.png" id="22_3gyjp"]
 [ext_resource type="Texture2D" uid="uid://budc0k676r88e" path="res://assets/cinematic_elements/Hands_Together_PNG.png" id="23_gklel"]
 

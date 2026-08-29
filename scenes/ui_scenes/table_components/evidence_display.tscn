@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cyifq1dcnncr"]
+
+[ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/props/blueprint.png" id="1_doxwq"]
+[ext_resource type="Script" uid="uid://dnb126obvy1ml" path="res://scenes/ui_scenes/table_components/evidence_display.gd" id="1_ppo42"]
+[ext_resource type="Texture2D" uid="uid://japhtiw7kah0" path="res://assets/icons/X_White_PNG.png" id="2_ppo42"]
+
+[node name="EvidenceDisplay" type="Panel" unique_id=406908390]
+visible = false
+custom_minimum_size = Vector2(960, 0)
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -960.0
+grow_horizontal = 0
+grow_vertical = 2
+script = ExtResource("1_ppo42")
+
+[node name="CloseUpEvidence" type="TextureRect" parent="." unique_id=285274691]
+unique_name_in_owner = true
+custom_maximum_size = Vector2(960, -1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_doxwq")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="CloseButton" type="Button" parent="." unique_id=1686836409]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 0
+offset_left = 868.0
+offset_top = 40.0
+offset_right = 928.0
+offset_bottom = 100.0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+icon = ExtResource("2_ppo42")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="CloseButton" to="." method="close_tab"]

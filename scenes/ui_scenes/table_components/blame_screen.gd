@@ -4,6 +4,7 @@ extends Panel
 var suspect_item: PackedScene = preload("uid://v4imfh3a4t4g")
 
 @onready var suspect_container: VBoxContainer = %SuspectContainer
+@onready var final_judgement_buton: Button = %FinalJudgement
 
 
 func add_suspect(suspect: Suspect) -> Button:
