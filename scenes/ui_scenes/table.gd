@@ -117,7 +117,9 @@ func _on_final_judgement_pressed() -> void:
 	ending_screen.ending_animation.play("cinematic_blame")
 	var music: AudioStreamPlayer = AudioGlobal.get_node("Music")
 	var interactive_music := music.get_stream_playback() as AudioStreamPlaybackInteractive
-	music.stream_paused = true
+	interactive_music.switch_to_clip_by_name("Cinematic")
+	#music.stream_paused = true
 	await ending_screen.ending_animation.animation_finished
-	music.stream_paused = false
+	interactive_music.switch_to_clip_by_name("Investigation")
+	#music.stream_paused = false
 	Game.current.load_scene(load_scene_path)

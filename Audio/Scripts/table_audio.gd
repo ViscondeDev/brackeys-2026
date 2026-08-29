@@ -44,26 +44,33 @@ func _on_coffee_pressed() -> void:
 
 
 func _on_doors_open() -> void:
-	$Cinematic/DoorsOpen.play()
+	audio_player = get_node("Cinematic/DoorsOpen")
+	audio_player.play()
 
 func _on_thunder() -> void:
-	$Cinematic/Thunder.play()
+	audio_player = get_node("Cinematic/Thunder")
+	audio_player.play()
 
 func _on_animal_talk(_animal_name) -> void:
-	var audio_player = $Cinematic/DoorsOpen
+	audio_player = get_node("Cinematic/DoorsOpen")
 	audio_player.play()
 
 func _on_doors_close() -> void:
-	$Cinematic/DoorsClose.play()
+	audio_player = get_node("Cinematic/DoorsClose")
+	audio_player.play()
 
 func _on_animal_walk() -> void:
-	$Cinematic/AnimalWalk.play()
+	audio_player = get_node("Cinematic/AnimalWalk")
+	audio_player.play()
 
 func _on_pointing_hand() -> void:
-	$Cinematic/PointingHand.play()
+	audio_player = get_node("Cinematic/PointingHand")
+	audio_player.play()
 
 func _on_success() -> void:
-	$Cinematic/Success.play()
+	audio_player = get_node("Cinematic/Success")
+	audio_player.play()
 
 func _on_failure() -> void:
-	$Cinematic/Failure.play()
+	audio_player = get_node("Cinematic/Failure")
+	audio_player.play()

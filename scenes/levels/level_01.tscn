@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="1_5t8rk"]
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://scenes/ui_scenes/table.gd" id="2_cag23"]
-[ext_resource type="Script" uid="uid://caycyhfyln2c7" path="res://resources/classes/suspect_claims.gd" id="3_5t8rk"]
+[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://resources/classes/suspect_claims.gd" id="3_5t8rk"]
 [ext_resource type="Resource" uid="uid://bbe4naaa4iy42" path="res://resources/suspects/elton.tres" id="4_3pila"]
 [ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://resources/suspects/sherlock.tres" id="5_d86x1"]
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://scenes/ui_scenes/table_backdrop.jpg" id="6_bfb10"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/props/crime_summary.png" id="8_cag23"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/props/coffe.png" id="9_3pila"]
 [ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/props/blueprint.png" id="10_d86x1"]
-[ext_resource type="Script" uid="uid://budixog1iposo" path="res://resources/classes/evidence.gd" id="11_cag23"]
+[ext_resource type="Script" uid="uid://b365lfdmtu82s" path="res://resources/classes/evidence.gd" id="11_cag23"]
 [ext_resource type="Texture2D" uid="uid://bskpgvcga6r0p" path="res://assets/evidences/Barn_Map.jpg" id="12_5t8rk"]
 [ext_resource type="PackedScene" uid="uid://cyifq1dcnncr" path="res://scenes/ui_scenes/table_components/evidence_display.tscn" id="13_cag23"]
 [ext_resource type="PackedScene" uid="uid://cokwr672up0sg" path="res://scenes/ui_scenes/table_components/suspects_tab.tscn" id="14_iu1m7"]
@@ -24,11 +24,13 @@
 script = ExtResource("3_5t8rk")
 suspect = ExtResource("4_3pila")
 claims = Array[String](["That crash noise woke me up, it was around 3AM.", "I went back to sleep when Sherlock barked \"I'm on it\""])
+metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="Resource" id="Resource_4af6t"]
 script = ExtResource("3_5t8rk")
 suspect = ExtResource("5_d86x1")
 claims = Array[String](["I was in the storage room when the noise went off", "I didn't see anybody else there, so i went out checking", "I didn't find anybody on my way out, except for Elton. He was quite sleepy."])
+metadata/_custom_type_script = "uid://baneahiclaxn6"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_noiio"]
 atlas = ExtResource("12_5t8rk")
@@ -222,8 +224,3 @@ script = ExtResource("24_mq8rv")
 [connection signal="crime_introduced" from="CrimeSummary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="started_blaming" from="CrimeSummary" to="BlameScreen" method="open_blame_tab"]
 [connection signal="final_decision_took" from="BlameScreen" to="." method="_on_final_judgement_pressed"]
-[connection signal="animal_walk" from="EndingScreen" to="TableAudio" method="_on_animal_walk"]
-[connection signal="doors_close" from="EndingScreen" to="TableAudio" method="_on_doors_close"]
-[connection signal="doors_open" from="EndingScreen" to="TableAudio" method="_on_doors_open"]
-[connection signal="pointing_hand" from="EndingScreen" to="TableAudio" method="_on_pointing_hand"]
-[connection signal="thunder" from="EndingScreen" to="TableAudio" method="_on_thunder"]

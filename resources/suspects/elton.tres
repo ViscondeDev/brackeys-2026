@@ -12,3 +12,4 @@ suspect_portrait = ExtResource("2_vvwaa")
 suspect_role = "Carriage Driver"
 far = ExtResource("1_2lbuo")
 near = ExtResource("2_4k2fe")
+metadata/_custom_type_script = "uid://mhxjg2k1fx0b"

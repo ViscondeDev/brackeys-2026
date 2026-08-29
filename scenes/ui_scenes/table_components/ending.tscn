@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://dgek5bngmgroq" path="res://assets/cinematic_elements/Come_Here_Hand__Hay.png" id="9_lmkcm"]
 [ext_resource type="Texture2D" uid="uid://bwikl18nl0u1c" path="res://assets/cinematic_elements/Pointing_Hand__Hay.png" id="10_cocp7"]
 [ext_resource type="AudioStream" uid="uid://6od5ysjqcpe8" path="res://Audio/Music/03/ClosingCinematic.ogg" id="12_dcaid"]
-[ext_resource type="AudioStream" uid="uid://fu5bb2r8k3sx" path="res://Audio/Music/02/Failure_womp.ogg" id="13_7g08e"]
-[ext_resource type="AudioStream" uid="uid://blmge2q03isk" path="res://Audio/Music/02/Success_womp.ogg" id="14_8n7tg"]
+[ext_resource type="AudioStream" uid="uid://q8h4vnnna3um" path="res://Audio/Music/04/Failure_womp2.ogg" id="13_7g08e"]
+[ext_resource type="AudioStream" uid="uid://i0ic7cm3qdjh" path="res://Audio/Music/04/Success_womp2.ogg" id="14_8n7tg"]
 
 [sub_resource type="Animation" id="Animation_gklel"]
 length = 0.001
@@ -139,7 +139,7 @@ tracks/9/keys = {
 }
 tracks/10/type = "value"
 tracks/10/imported = false
-tracks/10/enabled = true
+tracks/10/enabled = false
 tracks/10/path = NodePath("AudioStreamPlayer:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
@@ -275,7 +275,7 @@ tracks/9/keys = {
 }
 tracks/10/type = "value"
 tracks/10/imported = false
-tracks/10/enabled = true
+tracks/10/enabled = false
 tracks/10/path = NodePath("AudioStreamPlayer:playing")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
@@ -292,11 +292,14 @@ tracks/11/path = NodePath(".")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0, 1.2, 2.4, 2.5, 6.633333, 9.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.3, 1.2, 2.0333333, 2.5, 6.633333, 9.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"_on_doors_open"
+}, {
+"args": [],
+"method": &"_on_animal_talk"
 }, {
 "args": [],
 "method": &"_on_thunder"
@@ -428,11 +431,15 @@ color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1661139328]
 stream = ExtResource("12_dcaid")
+volume_db = -80.0
+bus = &"MUSIC"
 
 [node name="FailureWomp" type="AudioStreamPlayer" parent="." unique_id=1400202364]
 unique_name_in_owner = true
 stream = ExtResource("13_7g08e")
+bus = &"MUSIC"
 
 [node name="SuccessWomp" type="AudioStreamPlayer" parent="." unique_id=2009593376]
 unique_name_in_owner = true
 stream = ExtResource("14_8n7tg")
+bus = &"MUSIC"

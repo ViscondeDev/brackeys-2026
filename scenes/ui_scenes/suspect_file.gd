@@ -71,7 +71,7 @@ func populate_claims(claims: Array[Claim]) -> void:
 		pressed_audio.pitch_scale = 0.8
 		pressed_audio.position = menu_button.position
 		menu_button.add_child(pressed_audio)
-		out = menu_button.pressed.connect(_on_menu_button_pressed.bind(pressed_audio))
+		out = menu_button.pressed.connect(_on_menu_button_pressed)
 		if out == ERR_INVALID_PARAMETER:
 			printerr("Failed to connect button (AUDIO mouse pressed)")
 		### AUDIO END ##
@@ -102,5 +102,4 @@ func _on_menu_button_pressed() -> void:
 ## AUDIO ##
 func _delayed_play(audio_player: AudioStreamPlayer2D) -> void:
 	audio_player.play()
-	print("Runs after 2 seconds, but doesn’t block other code")
 ## AUDIO END##

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cokwr672up0sg"]
 
-[ext_resource type="Script" uid="uid://bphs42pkn53h8" path="res://scenes/ui_scenes/table_components/suspects_tab.gd" id="1_kygl0"]
+[ext_resource type="Script" uid="uid://bw3omwc2nlyw0" path="res://scenes/ui_scenes/table_components/suspects_tab.gd" id="1_kygl0"]
 [ext_resource type="PackedScene" uid="uid://dejl7iabov4op" path="res://scenes/ui_scenes/suspect_file.tscn" id="1_ywm05"]
 
 [node name="SuspectsTab" type="HBoxContainer" unique_id=1113224858]
