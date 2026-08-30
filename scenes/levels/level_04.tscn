@@ -33,17 +33,17 @@ claims = Array[String](["As the artesian, is natural you'd suspect of me for hav
 [sub_resource type="Resource" id="Resource_x1re1"]
 script = ExtResource("3_5q4vb")
 suspect = ExtResource("4_eqf4o")
-claims = Array[String](["Some bastard threw a brush on my head earlier. All sheep were there, and saw it happening", "I was looking at the silo, and it hit me from the left", "I would take advise from Gatsby, he knows his stuff.", "I did see Elton walking off the barn, and going off the far horizon of the garden"])
+claims = Array[String](["Some bastard threw a brush on my head earlier. All sheep were there, and saw it happening", "I was looking at the silo, and it hit me from the left", "I would take advice from Gatsby, he knows his stuff.", "I did see Elton walking off the barn, and going out off to the far horizon of the garden"])
 
 [sub_resource type="Resource" id="Resource_sibhc"]
 script = ExtResource("3_5q4vb")
 suspect = ExtResource("6_axo1c")
-claims = Array[String](["I left the breakfast table a little early, because i heard a noise comming from the barn.", "There was a small fire taking place, which Elton helped me put off", "I went to the pond to take some water after that. I was never so scared in my life!"])
+claims = Array[String](["I left the breakfast table a little early, because i heard a noise coming from the barn.", "There was a small fire taking place, which Elton helped me put out", "I went to the pond to take some water after that. I was never so scared in my life!"])
 
 [sub_resource type="Resource" id="Resource_vdcoq"]
 script = ExtResource("3_5q4vb")
 suspect = ExtResource("7_axo1c")
-claims = Array[String](["After the breakfast catch-up, i went back to the barn, only to find Sherlock desperate, putting a fire out. I helped him with that", "Once i finised the fire fireman job, i didn't even had time to recoer, and had to deliver a passenger.", "When i came back, all sorts of acusation were directed to me. I still don't even know what's going on"])
+claims = Array[String](["After the breakfast catch-up, i went back to the barn, only to find Sherlock desperately putting a fire out. I helped him with that", "Once i finished the fireman job, i didn't even had time to recover, and had to deliver a passenger.", "When i came back, all sorts of acusation were directed at me. I still don't even know what's going on"])
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_5q4vb"]
 random_pitch = 1.122462
@@ -244,7 +244,7 @@ She woke up to find that someone has defaced her with unflattering imagery
 
 The weapon of the crime was found in the sheep yard
 
-[ DIFAMATION - LOSS: RESPECT ]"
+[ DESECRATION - LOSS: RESPECT ]"
 
 [node name="Backdrop" type="TextureRect" parent="." unique_id=1552385600]
 layout_mode = 1

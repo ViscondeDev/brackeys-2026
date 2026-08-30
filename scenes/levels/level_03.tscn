@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="1_b7kj7"]
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://scenes/ui_scenes/table.gd" id="2_410tk"]
-[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://resources/classes/suspect_claims.gd" id="3_gpenj"]
+[ext_resource type="Script" uid="uid://caycyhfyln2c7" path="res://resources/classes/suspect_claims.gd" id="3_gpenj"]
 [ext_resource type="Resource" uid="uid://c5l3x25widvqp" path="res://resources/suspects/socrates.tres" id="4_410tk"]
 [ext_resource type="Resource" uid="uid://25dppg4jko3r" path="res://resources/suspects/hercules.tres" id="5_jeigf"]
 [ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://resources/suspects/madonna.tres" id="6_f2g2i"]
@@ -33,7 +33,7 @@ claims = Array[String](["I was taking a shower when the drain started making str
 [sub_resource type="Resource" id="Resource_1uqhn"]
 script = ExtResource("3_gpenj")
 suspect = ExtResource("5_jeigf")
-claims = Array[String](["The clothes were mine, yes, but i wasn't the one to put them there", "People say i was missing. I was looking for my clothes in the pigpen!", "I'm strong, but i have a heart two!"])
+claims = Array[String](["The clothes were mine, yes, but i wasn't the one to put them there", "People say i was missing. I was looking for my clothes in the pigpen!", "I'm strong, but i have a heart too!"])
 
 [sub_resource type="Resource" id="Resource_kapun"]
 script = ExtResource("3_gpenj")
@@ -43,7 +43,7 @@ claims = Array[String](["I spent all morning looking after a few newborns.", "Th
 [sub_resource type="Resource" id="Resource_tipwo"]
 script = ExtResource("3_gpenj")
 suspect = ExtResource("7_gpenj")
-claims = Array[String](["I was scratching the ground outside when i heard noises from the main house.", "I went in, and bumped Socrates on his way out of the shower, and Madonna screaming in the kitchen", "Hercules wasn't spotted on my morning watch arround the field."])
+claims = Array[String](["I was scratching the ground outside when i heard noises from the main house.", "I went in, and bumped Socrates on his way out of the shower, and Madonna screaming in the kitchen", "Hercules wasn't spotted on my morning watch around the field."])
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dn1io"]
 random_pitch = 1.122462
@@ -244,7 +244,7 @@ script = ExtResource("2_410tk")
 level_settings = Array[ExtResource("3_gpenj")]([SubResource("Resource_ghs8o"), SubResource("Resource_1uqhn"), SubResource("Resource_kapun"), SubResource("Resource_tipwo")])
 culprit = ExtResource("5_jeigf")
 next_level_path = "uid://c04jponbgml37"
-crime_summary = "The loundry room floded, because Hercules clothes were so dirty, they clogged the drain.
+crime_summary = "The laudry room flooded, because Hercules clothes were so dirty, they clogged the drain.
 
 Crime reported by Honda, at 11:45AM
 
@@ -311,10 +311,10 @@ expand_icon = true
 [node name="Blueprint" type="Button" parent="." unique_id=532343110]
 custom_minimum_size = Vector2(450, 450)
 layout_mode = 0
-offset_left = 1255.0001
-offset_top = 260.0
-offset_right = 1705.0001
-offset_bottom = 710.0
+offset_left = 1923.0001
+offset_top = -506.0
+offset_right = 2373.0
+offset_bottom = -56.0
 rotation = 0.17627825
 icon = ExtResource("11_j1cpe")
 flat = true
