@@ -7,7 +7,7 @@
 
 [resource]
 script = ExtResource("1_7o3t4")
-suspect_name = "Ronda"
+suspect_name = "Honda"
 suspect_portrait = ExtResource("2_scrck")
 suspect_role = "Chicken Coop Guard"
 far = ExtResource("1_67qys")

@@ -174,12 +174,13 @@ theme = ExtResource("1_kxbgd")
 script = ExtResource("2_lky54")
 level_settings = Array[ExtResource("3_ies7a")]([SubResource("Resource_1uqhn"), SubResource("Resource_iu1m7"), SubResource("Resource_tipwo")])
 culprit = ExtResource("6_xwa1x")
-crime_summary = "The kitchen was left alone, and half a cake was eaten.
+next_level_path = "uid://cfsedog81a0v4"
+crime_summary = "The kitchen was left alone, and half a watermelon was eaten.
 There were no witnesses.
 
 A picture of the kitchen door was taken as evidence.
 
-[ THEFT – LOSS: US$ 2 ]
+[ THEFT – LOSS: US$ 1 ]
 
 Come back here if you find the culprit."
 

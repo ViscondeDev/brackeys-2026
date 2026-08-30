@@ -26,7 +26,7 @@ var current_state: State
 var current_scene: Node
 
 # Scene Loading parameters
-var _use_sub_threads: bool = true
+var _use_sub_threads: bool = false
 var _loading_path: String = ""
 var _loading_progress: Array
 var _loading_screen: PackedScene = preload("uid://eupmiumoh7i5")
