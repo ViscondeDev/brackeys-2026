@@ -14,8 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/props/coffe.png" id="11_afct4"]
 [ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/props/blueprint.png" id="12_lqu3g"]
 [ext_resource type="Script" uid="uid://b365lfdmtu82s" path="res://resources/classes/evidence.gd" id="13_1a7k5"]
-[ext_resource type="Texture2D" uid="uid://bbm6j50ncaq28" path="res://assets/evidences/Main_House_Map.jpg" id="14_x5hhl"]
 [ext_resource type="Texture2D" uid="uid://oklfl87lk7yv" path="res://assets/props/picture.png" id="15_4w8xk"]
+[ext_resource type="Texture2D" uid="uid://cey60ivw75eod" path="res://assets/evidences/full_farm.png" id="15_mf6hd"]
 [ext_resource type="Texture2D" uid="uid://ct376vgmupd7l" path="res://assets/evidences/Mark__Brush_PNG.png" id="16_axo1c"]
 [ext_resource type="PackedScene" uid="uid://cyifq1dcnncr" path="res://scenes/ui_scenes/table_components/evidence_display.tscn" id="17_maafn"]
 [ext_resource type="PackedScene" uid="uid://cokwr672up0sg" path="res://scenes/ui_scenes/table_components/suspects_tab.tscn" id="18_1f6xj"]
@@ -50,6 +50,9 @@ random_pitch = 1.122462
 random_volume_offset_db = 2.0
 streams_count = 1
 stream_0/stream = ExtResource("10_mf6hd")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mf6hd"]
+atlas = ExtResource("15_mf6hd")
 
 [sub_resource type="Animation" id="Animation_06edn"]
 length = 0.001
@@ -238,6 +241,7 @@ grow_vertical = 2
 theme = ExtResource("1_axo1c")
 script = ExtResource("2_mf6hd")
 level_settings = Array[ExtResource("3_5q4vb")]([SubResource("Resource_vmerw"), SubResource("Resource_x1re1"), SubResource("Resource_sibhc"), SubResource("Resource_vdcoq")])
+culprit = ExtResource("6_axo1c")
 next_level_path = "uid://ds05k8rponoaf"
 crime_summary = "Oprah felt a little sick, and slept a little more today.
 She woke up to find that someone has defaced her with unflattering imagery
@@ -317,7 +321,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 script = ExtResource("13_1a7k5")
-evidence_close_up = ExtResource("14_x5hhl")
+evidence_close_up = SubResource("AtlasTexture_mf6hd")
 
 [node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="Blueprint" unique_id=68211371]
 stream = SubResource("AudioStreamRandomizer_5q4vb")

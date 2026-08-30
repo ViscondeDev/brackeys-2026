@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="1_kxbgd"]
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://scenes/ui_scenes/table.gd" id="2_lky54"]
-[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://resources/classes/suspect_claims.gd" id="3_ies7a"]
+[ext_resource type="Script" uid="uid://caycyhfyln2c7" path="res://resources/classes/suspect_claims.gd" id="3_ies7a"]
 [ext_resource type="Resource" uid="uid://byg3vf73dour" path="res://resources/suspects/sherlock.tres" id="4_kx1rr"]
 [ext_resource type="Resource" uid="uid://25dppg4jko3r" path="res://resources/suspects/hercules.tres" id="5_gus8w"]
 [ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://resources/suspects/madonna.tres" id="6_xwa1x"]
@@ -37,7 +37,7 @@ claims = Array[String](["I'll be honest, i needed to take a dump!", "I went into
 [sub_resource type="Resource" id="Resource_tipwo"]
 script = ExtResource("3_ies7a")
 suspect = ExtResource("6_xwa1x")
-claims = Array[String](["I was having tea in the stable, when i saw the brute rushing trough the corridor", "I didn't want to hear the horrors from next door, so i left imidiatelly.", "The brute ate it! It wasn't me"])
+claims = Array[String](["I was having tea in the stall, when i saw the brute rushing trough the corridor", "I didn't want to hear the horrors from next door, so i left imidiatelly.", "The brute ate it! It wasn't me"])
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ies7a"]
 random_pitch = 1.122462

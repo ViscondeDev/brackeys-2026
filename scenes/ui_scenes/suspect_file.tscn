@@ -4,12 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bgytumtxfnw8k" path="res://assets/props/suspect_file.png" id="1_xudbm"]
 [ext_resource type="Theme" uid="uid://bhjvd5dc7gm8" path="res://resources/fonts/title.tres" id="3_scr4r"]
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="4_scr4s"]
+[ext_resource type="Texture2D" uid="uid://7yafruq7cmd6" path="res://assets/props/marker_section1.png" id="5_38j1i"]
 [ext_resource type="Texture2D" uid="uid://wpn36cr37luc" path="res://assets/icons/x.png" id="5_scr4r"]
 [ext_resource type="PackedScene" uid="uid://crpme068tjc45" path="res://Audio/suspect_file_audio.tscn" id="6_xyf37"]
 [ext_resource type="Script" uid="uid://b3oo0vfqrkxsh" path="res://Audio/Scripts/suspect_file_audio.gd" id="7_0a840"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_naxq3"]
-load_path = "res://.godot/imported/marker_section1.png-179d31e5d2bbdbb9cebe51345518e608.ctex"
 
 [node name="SuspectFile" type="NinePatchRect" unique_id=1977787239]
 size_flags_horizontal = 3
@@ -70,7 +68,7 @@ expand_mode = 4
 [node name="NinePatchRect" type="NinePatchRect" parent="MarginContainer/VBoxContainer" unique_id=1683715981]
 layout_mode = 2
 size_flags_vertical = 3
-texture = SubResource("CompressedTexture2D_naxq3")
+texture = ExtResource("5_38j1i")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/NinePatchRect" unique_id=60120010]
 layout_mode = 1

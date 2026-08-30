@@ -244,7 +244,7 @@ script = ExtResource("2_410tk")
 level_settings = Array[ExtResource("3_gpenj")]([SubResource("Resource_ghs8o"), SubResource("Resource_1uqhn"), SubResource("Resource_kapun"), SubResource("Resource_tipwo")])
 culprit = ExtResource("5_jeigf")
 next_level_path = "uid://c04jponbgml37"
-crime_summary = "The laudry room flooded, because Hercules clothes were so dirty, they clogged the drain.
+crime_summary = "The laundry room flooded, because Hercules clothes were so dirty, they clogged the drain.
 
 Crime reported by Honda, at 11:45AM
 
