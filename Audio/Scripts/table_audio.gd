@@ -1,21 +1,31 @@
 class_name SFXManager
 extends Node2D
 
-@onready var audio_player: AudioStreamPlayer2D
+#@onready var audio_player: AudioStreamPlayer
 
 
 func _on_suspects_folder_pressed() -> void:
-	audio_player = get_node("FileOpen")
+	var audio_player = get_node("FileOpen")
 	audio_player.play()
 
 
-func _on_crime_summary_pressed() -> void:
-	audio_player = get_node("SummaryOpen")
+func _on_summary_pressed() -> void:
+	var audio_player = get_node("SummaryOpen")
+	audio_player.play()
+
+
+func _on_blueprint_pressed() -> void:
+	var audio_player = get_node("BlueprintOpen")
+	audio_player.play()
+
+
+func _on_picture_pressed() -> void:
+	var audio_player = get_node("PictureOpen")
 	audio_player.play()
 
 
 func _on_blame_opened() -> void:
-	audio_player = get_node("BlameOpen")
+	var audio_player = get_node("BlameOpen")
 	audio_player.play()
 
 
@@ -24,53 +34,65 @@ func on_blame_pressed() -> void:
 
 
 func _on_close_tab_pressed() -> void:
-	audio_player = get_node("SummaryClose")
+	var audio_player = get_node("SummaryClose")
 	audio_player.play()
 
 
 func _on_close_button_pressed() -> void:
-	audio_player = get_node("BlameClose")
+	var audio_player = get_node("BlameClose")
 	audio_player.play()
 
 
 #func _new_evidence_or_prop_introduced() -> void:
 	#audio_player = get_node("Evidence Introduced")
+	#audio_player.position = Vector2(0,0)
 	#audio_player.play()
 
 
-func _on_coffee_pressed() -> void:
-	audio_player = get_node("Sipping Coffee")
+func _on_coffe_pressed() -> void:
+	var audio_player = get_node("Sipping Coffee")
 	audio_player.play()
 
 
 func _on_doors_open() -> void:
-	audio_player = get_node("Cinematic/DoorsOpen")
+	var audio_player = get_node("Cinematic/DoorsOpen")
 	audio_player.play()
 
 func _on_thunder() -> void:
-	audio_player = get_node("Cinematic/Thunder")
+	var audio_player = get_node("Cinematic/Thunder")
 	audio_player.play()
 
 func _on_animal_talk(_animal_name) -> void:
-	audio_player = get_node("Cinematic/DoorsOpen")
+	var audio_player = get_node("Cinematic/DoorsOpen")
 	audio_player.play()
 
 func _on_doors_close() -> void:
-	audio_player = get_node("Cinematic/DoorsClose")
+	var audio_player = get_node("Cinematic/DoorsClose")
 	audio_player.play()
 
 func _on_animal_walk() -> void:
-	audio_player = get_node("Cinematic/AnimalWalk")
+	var audio_player = get_node("Cinematic/AnimalWalk")
 	audio_player.play()
 
 func _on_pointing_hand() -> void:
-	audio_player = get_node("Cinematic/PointingHand")
+	var audio_player = get_node("Cinematic/PointingHand")
 	audio_player.play()
 
 func _on_success() -> void:
-	audio_player = get_node("Cinematic/Success")
+	var audio_player = get_node("Cinematic/Success")
 	audio_player.play()
 
 func _on_failure() -> void:
-	audio_player = get_node("Cinematic/Failure")
+	var audio_player = get_node("Cinematic/Failure")
+	audio_player.play()
+
+
+#func _on_evidence_audio_with_position(pos: Vector2) -> void:
+	#audio_player = get_node("Evidence Introduced")
+	#audio_player.position = pos
+	#audio_player.play()
+
+
+func _on_evidence_display_closed() -> void:
+	var audio_player = get_node("BlueprintClose")
 	audio_player.play()

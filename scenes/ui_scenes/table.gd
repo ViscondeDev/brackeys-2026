@@ -39,7 +39,7 @@ func _ready() -> void:
 	## AUDIO END ##
 	await get_tree().create_timer(3).timeout
 	props_animation.play("crime_summary")
-	#$"CrimeSummary/Evidence Introduced".play()
+	#$"Summary/Evidence Introduced".play()
 	crime_summary_painel.label.text = crime_summary
 
 

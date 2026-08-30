@@ -29,7 +29,7 @@ sidechain = &"MUSIC"
 
 [resource]
 bus/0/effect/0/effect = SubResource("AudioEffectLimiter_j3pel")
-bus/0/effect/0/enabled = true
+bus/0/effect/0/enabled = false
 bus/1/name = &"SFX"
 bus/1/solo = false
 bus/1/mute = false
@@ -43,7 +43,7 @@ bus/2/bypass_fx = false
 bus/2/volume_db = 0.0
 bus/2/send = &"Master"
 bus/2/effect/0/effect = SubResource("AudioEffectCompressor_j3pel")
-bus/2/effect/0/enabled = true
+bus/2/effect/0/enabled = false
 bus/3/name = &"UI"
 bus/3/solo = false
 bus/3/mute = false
@@ -57,6 +57,6 @@ bus/4/bypass_fx = false
 bus/4/volume_db = 0.0
 bus/4/send = &"SFX"
 bus/4/effect/0/effect = SubResource("AudioEffectCompressor_g28q7")
-bus/4/effect/0/enabled = true
+bus/4/effect/0/enabled = false
 bus/4/effect/1/effect = SubResource("AudioEffectCompressor_n8wo2")
-bus/4/effect/1/enabled = true
+bus/4/effect/1/enabled = false

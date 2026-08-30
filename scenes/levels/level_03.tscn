@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://ctcaf1s74pnhp" path="res://resources/fonts/body.tres" id="1_b7kj7"]
 [ext_resource type="Script" uid="uid://bpslms7m0oh7j" path="res://scenes/ui_scenes/table.gd" id="2_410tk"]
-[ext_resource type="Script" uid="uid://caycyhfyln2c7" path="res://resources/classes/suspect_claims.gd" id="3_gpenj"]
+[ext_resource type="Script" uid="uid://baneahiclaxn6" path="res://resources/classes/suspect_claims.gd" id="3_gpenj"]
 [ext_resource type="Resource" uid="uid://c5l3x25widvqp" path="res://resources/suspects/socrates.tres" id="4_410tk"]
 [ext_resource type="Resource" uid="uid://25dppg4jko3r" path="res://resources/suspects/hercules.tres" id="5_jeigf"]
 [ext_resource type="Resource" uid="uid://opfpvsm425br" path="res://resources/suspects/madonna.tres" id="6_f2g2i"]
@@ -10,9 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://b1o3ufmmmwwgg" path="res://scenes/ui_scenes/table_backdrop.jpg" id="7_s4yq3"]
 [ext_resource type="Texture2D" uid="uid://ujdejh1j5wfa" path="res://assets/props/suspect_folder.png" id="8_01jms"]
 [ext_resource type="Texture2D" uid="uid://bil6koqge51g1" path="res://assets/props/crime_summary.png" id="9_2v2jw"]
+[ext_resource type="AudioStream" uid="uid://sr5lsalgsh00" path="res://Audio/SFX/UI/Evidence Introduced.ogg" id="10_gpenj"]
 [ext_resource type="Texture2D" uid="uid://dhed2iu3vuyfw" path="res://assets/props/coffe.png" id="10_py8xv"]
 [ext_resource type="Texture2D" uid="uid://eepbaga36tct" path="res://assets/props/blueprint.png" id="11_j1cpe"]
-[ext_resource type="Script" uid="uid://budixog1iposo" path="res://resources/classes/evidence.gd" id="12_d10hc"]
+[ext_resource type="Script" uid="uid://b365lfdmtu82s" path="res://resources/classes/evidence.gd" id="12_d10hc"]
 [ext_resource type="Texture2D" uid="uid://oklfl87lk7yv" path="res://assets/props/picture.png" id="14_8bbnc"]
 [ext_resource type="Texture2D" uid="uid://bbm6j50ncaq28" path="res://assets/evidences/Main_House_Map.jpg" id="14_410tk"]
 [ext_resource type="Texture2D" uid="uid://cfeby1317yw1v" path="res://assets/evidences/Duckling_Picture_PNG.png" id="16_410tk"]
@@ -43,6 +44,12 @@ claims = Array[String](["I spent all morning looking after a few newborns.", "Th
 script = ExtResource("3_gpenj")
 suspect = ExtResource("7_gpenj")
 claims = Array[String](["I was scratching the ground outside when i heard noises from the main house.", "I went in, and bumped Socrates on his way out of the shower, and Madonna screaming in the kitchen", "Hercules wasn't spotted on my morning watch arround the field."])
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dn1io"]
+random_pitch = 1.122462
+random_volume_offset_db = 2.0
+streams_count = 1
+stream_0/stream = ExtResource("10_gpenj")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gpenj"]
 atlas = ExtResource("14_410tk")
@@ -111,7 +118,21 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.22531271, 1),
 "update": 0,
-"values": [Vector2(1923.0001, -506), Vector2(1159.0001, 137)]
+"values": [Vector2(1923.0001, -506), Vector2(1255.0001, 260.00003)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Blueprint/Evidence Introduced")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_x7xbf"]
@@ -127,6 +148,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.23170438, 0.04736628),
 "update": 0,
 "values": [Vector2(988, -725), Vector2(857, 183.00006)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Summary/Evidence Introduced")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_b7kj7"]
@@ -144,6 +179,20 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(674.00024, -324.99994), Vector2(1601, 776)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Picture/Evidence Introduced")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_t50tk"]
 resource_name = "suspects_folder"
@@ -158,6 +207,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(0.20306318, 1),
 "update": 0,
 "values": [Vector2(-143, -530.0001), Vector2(171, 211.00006)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SuspectsFolder/Evidence Introduced")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_t50tk"]
@@ -209,6 +272,12 @@ icon = ExtResource("8_01jms")
 flat = true
 expand_icon = true
 
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="SuspectsFolder" unique_id=669793378]
+stream = SubResource("AudioStreamRandomizer_dn1io")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
 [node name="Summary" type="Button" parent="." unique_id=1148271384]
 custom_minimum_size = Vector2(150, 300)
 layout_mode = 0
@@ -221,6 +290,12 @@ icon = ExtResource("9_2v2jw")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="Summary" unique_id=193422378]
+stream = SubResource("AudioStreamRandomizer_dn1io")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
 
 [node name="Coffe" type="Button" parent="." unique_id=2083269590]
 custom_minimum_size = Vector2(200, 200)
@@ -236,10 +311,10 @@ expand_icon = true
 [node name="Blueprint" type="Button" parent="." unique_id=532343110]
 custom_minimum_size = Vector2(450, 450)
 layout_mode = 0
-offset_left = 1923.0001
-offset_top = -506.0
-offset_right = 2373.0
-offset_bottom = -56.0
+offset_left = 1255.0001
+offset_top = 260.0
+offset_right = 1705.0001
+offset_bottom = 710.0
 rotation = 0.17627825
 icon = ExtResource("11_j1cpe")
 flat = true
@@ -247,6 +322,12 @@ icon_alignment = 1
 expand_icon = true
 script = ExtResource("12_d10hc")
 evidence_close_up = SubResource("AtlasTexture_gpenj")
+
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="Blueprint" unique_id=1472162848]
+stream = SubResource("AudioStreamRandomizer_dn1io")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
 
 [node name="Picture" type="Button" parent="." unique_id=1510741606]
 layout_mode = 0
@@ -260,6 +341,12 @@ flat = true
 expand_icon = true
 script = ExtResource("12_d10hc")
 evidence_close_up = ExtResource("16_410tk")
+
+[node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="Picture" unique_id=287824128]
+stream = SubResource("AudioStreamRandomizer_dn1io")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
 
 [node name="PropsAnimation" type="AnimationPlayer" parent="." unique_id=708165391]
 unique_name_in_owner = true
@@ -299,10 +386,13 @@ script = ExtResource("22_ka027")
 [connection signal="pressed" from="SuspectsFolder" to="." method="animate_prop_in" binds= ["blueprint"]]
 [connection signal="pressed" from="Summary" to="." method="_release_suspects_folder"]
 [connection signal="pressed" from="Summary" to="CrimeSummary" method="open_tab"]
-[connection signal="pressed" from="Summary" to="TableAudio" method="_on_crime_summary_pressed"]
+[connection signal="pressed" from="Summary" to="TableAudio" method="_on_summary_pressed"]
+[connection signal="pressed" from="Coffe" to="TableAudio" method="_on_coffe_pressed"]
+[connection signal="pressed" from="Blueprint" to="TableAudio" method="_on_blueprint_pressed"]
+[connection signal="pressed" from="Picture" to="TableAudio" method="_on_picture_pressed"]
+[connection signal="closed" from="EvidenceDisplay" to="TableAudio" method="_on_evidence_display_closed"]
 [connection signal="opened" from="EvidenceDisplay" to="." method="animate_prop_in" binds= ["picture"]]
 [connection signal="opened" from="SuspectsTab" to="." method="enable_blaming"]
-[connection signal="crime_introduced" from="CrimeSummary" to="TableAudio" method="_new_evidence_or_prop_introduced"]
 [connection signal="started_blaming" from="CrimeSummary" to="BlameScreen" method="open_blame_tab"]
 [connection signal="final_decision_took" from="BlameScreen" to="." method="_on_final_judgement_pressed"]
 [connection signal="animal_walk" from="EndingScreen" to="TableAudio" method="_on_animal_walk"]

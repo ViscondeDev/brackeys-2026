@@ -103,12 +103,14 @@ stream = ExtResource("15_4eonp")
 bus = &"SFX"
 
 [node name="FileOpen" type="AudioStreamPlayer2D" parent="." unique_id=1591868439]
+position = Vector2(195, 246)
 stream = ExtResource("1_r4vw5")
 attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"
 
 [node name="FileClose" type="AudioStreamPlayer2D" parent="." unique_id=1379058919]
+position = Vector2(195, 246)
 stream = ExtResource("2_04opr")
 attenuation = 0.0
 panning_strength = 2.0
@@ -128,15 +130,44 @@ attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"
 
+[node name="BlueprintOpen" type="AudioStreamPlayer2D" parent="." unique_id=17302372]
+position = Vector2(1396, 547)
+stream = ExtResource("1_r4vw5")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="BlueprintClose" type="AudioStreamPlayer2D" parent="." unique_id=1619139024]
+position = Vector2(1396, 547)
+stream = ExtResource("2_04opr")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="PictureOpen" type="AudioStreamPlayer2D" parent="." unique_id=784526888]
+position = Vector2(1693, 886)
+stream = ExtResource("1_r4vw5")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
+[node name="PictureClose" type="AudioStreamPlayer2D" parent="." unique_id=1758704318]
+position = Vector2(1693, 886)
+stream = ExtResource("2_04opr")
+attenuation = 0.0
+panning_strength = 2.0
+bus = &"UI"
+
 [node name="BlameOpen" type="AudioStreamPlayer2D" parent="." unique_id=1141336925]
-position = Vector2(960, 540)
+position = Vector2(960, 400)
 stream = ExtResource("4_vy73c")
+volume_db = 3.0
 attenuation = 0.0
 panning_strength = 2.0
 bus = &"UI"
 
 [node name="BlameClose" type="AudioStreamPlayer2D" parent="." unique_id=1412018030]
-position = Vector2(960, 540)
+position = Vector2(960, 400)
 stream = ExtResource("3_aj36v")
 volume_db = -16.0
 pitch_scale = 0.66
@@ -152,7 +183,7 @@ panning_strength = 2.0
 bus = &"UI"
 
 [node name="Evidence Introduced" type="AudioStreamPlayer2D" parent="." unique_id=175612105]
-position = Vector2(960, 540)
+position = Vector2(960, 650)
 stream = SubResource("AudioStreamRandomizer_lfy51")
 attenuation = 0.0
 panning_strength = 2.0

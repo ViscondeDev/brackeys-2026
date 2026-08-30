@@ -64,6 +64,36 @@ Vector2i(-1, 4): {
 "fade_mode": 0,
 "from_time": 0,
 "to_time": 1
+},
+Vector2i(0, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(1, 1): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(2, 2): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(3, 3): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+},
+Vector2i(4, 4): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
 }
 }
 
@@ -107,7 +137,7 @@ bus = &"Amb"
 
 [node name="DoorsOpen" type="AudioStreamPlayer" parent="Cinematic" unique_id=28037933]
 stream = ExtResource("6_edein")
-volume_db = 4.0
+volume_db = 2.0
 bus = &"SFX"
 
 [node name="Thunder" type="AudioStreamPlayer" parent="Cinematic" unique_id=292986073]
