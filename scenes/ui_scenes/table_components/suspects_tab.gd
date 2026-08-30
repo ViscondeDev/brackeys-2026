@@ -16,13 +16,9 @@ func add_suspect_to_tab(suspect: Suspect) -> void:
 	var out: int = new_button.pressed.connect(suspect_file.setup_suspect_file.bind(suspect))
 	if out == ERR_INVALID_PARAMETER:
 		printerr("Failed to connect button")
-
-	out = new_button.pressed.connect(audio_manager.on_blame_pressed)
-	if out == ERR_INVALID_PARAMETER:
-		printerr("Failed to connect button (AUDIO blame pressed)")
-
+	
 	## AUDIO ##
-	var hover_audio = AudioGlobal.get_node("ButtonHover").duplicate()
+	var hover_audio: AudioStreamPlayer2D = AudioGlobal.get_node("ButtonHover").duplicate()
 	new_button.add_child(hover_audio)
 	out = new_button.mouse_entered.connect(_on_mouse_entered.bind(hover_audio))
 	if out == ERR_INVALID_PARAMETER:

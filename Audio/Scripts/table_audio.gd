@@ -29,8 +29,9 @@ func _on_blame_opened() -> void:
 	audio_player.play()
 
 
-func on_blame_pressed() -> void:
-	pass #Blame someone for real
+#func on_blame_pressed() -> void:
+	#print('blamed')
+	#pass #Blame someone for real
 
 
 func _on_close_tab_pressed() -> void:

@@ -3,8 +3,12 @@
 [ext_resource type="AudioStream" uid="uid://cmg27x7x77obp" path="res://Audio/SFX/UI/Mouse Hover.ogg" id="1_nnvre"]
 [ext_resource type="AudioStream" uid="uid://bjbpf36g81c66" path="res://Audio/Music/02/Title_MainMenu_pass_1.ogg" id="2_48blk"]
 [ext_resource type="AudioStream" uid="uid://c2ml2u5jcx1ls" path="res://Audio/SFX/UI/Mouse Hover Main Menu.ogg" id="2_rs3km"]
+[ext_resource type="AudioStream" uid="uid://b41apvofn0ydc" path="res://Audio/SFX/UI/Typing 01.ogg" id="3_brfjy"]
 [ext_resource type="AudioStream" uid="uid://c1u4mofrdwtk5" path="res://Audio/Music/02/Investigation_background_1.ogg" id="3_rs3km"]
+[ext_resource type="AudioStream" uid="uid://q6k3gjaxuet4" path="res://Audio/SFX/UI/Typing 02.ogg" id="4_hqncn"]
+[ext_resource type="AudioStream" uid="uid://dgywplq8qyb4b" path="res://Audio/SFX/UI/Typing 03.ogg" id="5_ekmd1"]
 [ext_resource type="AudioStream" uid="uid://6od5ysjqcpe8" path="res://Audio/Music/03/ClosingCinematic.ogg" id="5_rs3km"]
+[ext_resource type="AudioStream" uid="uid://d02kfy1wjjmuk" path="res://Audio/SFX/UI/Typing 04.ogg" id="6_22fa2"]
 [ext_resource type="AudioStream" uid="uid://q8h4vnnna3um" path="res://Audio/Music/04/Failure_womp2.ogg" id="6_62kri"]
 [ext_resource type="AudioStream" uid="uid://dlu5x4dkkkg4k" path="res://Audio/SFX/Cinematic/DoorsOpen.ogg" id="6_edein"]
 [ext_resource type="AudioStream" uid="uid://i0ic7cm3qdjh" path="res://Audio/Music/04/Success_womp2.ogg" id="7_2ndwn"]
@@ -22,6 +26,13 @@
 [ext_resource type="AudioStream" uid="uid://cdrbkmba6y4ck" path="res://Audio/SFX/Cinematic/PointingHand.ogg" id="18_7vj5p"]
 [ext_resource type="AudioStream" uid="uid://ch7rlbvep7h88" path="res://Audio/SFX/Cinematic/Success.ogg" id="19_h7qr7"]
 [ext_resource type="AudioStream" uid="uid://dellns3vhyd07" path="res://Audio/SFX/Cinematic/Failure.ogg" id="20_ljixu"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_imp4e"]
+streams_count = 4
+stream_0/stream = ExtResource("3_brfjy")
+stream_1/stream = ExtResource("4_hqncn")
+stream_2/stream = ExtResource("5_ekmd1")
+stream_3/stream = ExtResource("6_22fa2")
 
 [sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_fgi6g"]
 clip_count = 5
@@ -121,6 +132,13 @@ stream = ExtResource("2_rs3km")
 volume_db = -31.831
 attenuation = 0.0
 panning_strength = 2.0
+bus = &"UI"
+
+[node name="MenuButtonClick" type="AudioStreamPlayer2D" parent="." unique_id=1359898356]
+stream = SubResource("AudioStreamRandomizer_imp4e")
+volume_db = -15.0
+pitch_scale = 2.0
+attenuation = 0.0
 bus = &"UI"
 
 [node name="Music" type="AudioStreamPlayer" parent="." unique_id=847624706]
